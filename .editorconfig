@@ -1,0 +1,45 @@
+# EditorConfig helps developers define and maintain consistent
+# coding styles between different editors and IDEs.
+# https://editorconfig.org
+
+root = true
+
+# ---------------------------------------------------------
+# 全局默认设置 (适用于所有文件)
+# ---------------------------------------------------------
+[*]
+charset = utf-8
+indent_style = space
+indent_size = 4
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# ---------------------------------------------------------
+# Python 文件 (严格遵循 PEP 8)
+# ---------------------------------------------------------
+[*.py]
+indent_style = space
+indent_size = 4
+# 配合 Ruff/Black 的默认行宽 (通常是 88 或 120，这里设为 88)
+max_line_length = 88
+
+# ---------------------------------------------------------
+# 配置文件 & 前端文件 (通常使用 2 空格)
+# Python 开发者通常喜欢让 JSON, YAML, HTML 保持 2 空格缩进，
+# 这样嵌套深的时候如果不至于跑太远。
+# ---------------------------------------------------------
+[*.{json,yaml,yml,md,markdown,js,jsx,ts,tsx,html,css,scss}]
+indent_size = 2
+
+# ---------------------------------------------------------
+# Makefiles (必须使用 Tab 缩进)
+# ---------------------------------------------------------
+[Makefile]
+indent_style = tab
+
+# ---------------------------------------------------------
+# Windows 批处理文件
+# ---------------------------------------------------------
+[*.{bat,cmd}]
+end_of_line = crlf

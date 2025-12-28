@@ -1,0 +1,22 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: Current File",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      // 关键：将工作目录设为项目根目录，
+      // 这样运行 src/graph/nodes/crawler.py 时，
+      // 才能正确处理基于根目录的文件读写
+      "cwd": "${workspaceFolder}",
+      // 如果你的代码在 src 目录下，且有跨文件夹 import 的情况，
+      // 可能需要把 src 加入 PYTHONPATH
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/src"
+      }
+    }
+  ]
+}

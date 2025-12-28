@@ -1,0 +1,49 @@
+{
+  // --------------------------------------------------------
+  // Python 基础设置
+  // --------------------------------------------------------
+
+  // 启用 Pylance 语言服务器（提供极强的智能提示）
+  "python.languageServer": "Pylance",
+
+  // 开启类型检查提示 (basic 即可，strict 比较严格)
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.autoImportCompletions": true,
+  // cursor 下的
+  "cursorpyright.analysis.typeCheckingMode": "basic",
+  "cursorpyright.analysis.autoImportCompletions": true,
+
+  // --------------------------------------------------------
+  // 格式化与 Linting (推荐使用 Ruff)
+  // --------------------------------------------------------
+
+  // 设置默认格式化工具为 Ruff
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit"
+    }
+  },
+
+  // --------------------------------------------------------
+  // 文件排除 (让 Cursor 索引更干净)
+  // --------------------------------------------------------
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.pytest_cache": true,
+    "**/.venv": true,
+    "**/*.pyc": true
+  },
+  "search.exclude": {
+    "**/__pycache__": true,
+    "**/.venv": true
+  },
+
+  // --------------------------------------------------------
+  // 终端设置
+  // --------------------------------------------------------
+  // 自动激活虚拟环境
+  "python.terminal.activateEnvironment": true
+}
