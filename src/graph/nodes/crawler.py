@@ -104,3 +104,10 @@ def crawler():
     except Exception as e:
         print(f"获取趋势数据失败: {e}")
         return []
+
+
+def crawler_node(state: dict) -> dict:
+    """LangGraph 节点：抓取 trending 列表写入 state.repos。"""
+    repos = crawler()
+    print(f"[crawler] 抓取到 {len(repos)} 个仓库")
+    return {"repos": repos}

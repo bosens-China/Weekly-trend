@@ -1,0 +1,53 @@
+name: Weekly Trend Report
+
+on:
+  schedule:
+    # 每周一 00:00 UTC（北京时间周一 08:00）
+    - cron: "0 0 * * 1"
+  workflow_dispatch: {} # 支持手动触发
+
+permissions:
+  contents: write # 需要把生成的周刊 commit 回仓库
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Set up Python
+        run: uv python install 3.12
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Install Chromium for Playwright
+        run: uv run playwright install --with-deps chromium
+
+      - name: Generate weekly report
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          # 可选：自定义模型 / 代理网关
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
+          OPENAI_BASE_URL: ${{ vars.OPENAI_BASE_URL }}
+          # 用于调 GitHub API 抓 README，提高速率限制
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: uv run python src/main.py
+
+      - name: Commit report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/
+          if git diff --staged --quiet; then
+            echo "本周无新增报告，跳过提交。"
+          else
+            git commit -m "docs: 自动生成本周 Trending 周刊"
+            git push
+          fi
