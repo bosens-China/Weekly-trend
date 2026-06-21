@@ -23,4 +23,5 @@ class WeeklyState(TypedDict, total=False):
     report_md: str  # generate_report 产出的 markdown 正文
     issue_number: int  # 第几期
     date_str: str  # 报告日期 yyyy_mm_dd
+    tmp_assets_dir: str  # 候选图片的临时目录（被正文引用的才会移入正式 assets）
     output_path: str  # 最终写入的文件路径

@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 load_dotenv(Path(__file__).resolve().parents[1] / ".env")
 
 from graph.build import build_graph  # noqa: E402  （需在 load_dotenv 之后导入）
+from log import log  # noqa: E402
 
 
 def main():
@@ -16,17 +17,18 @@ def main():
     """
     # 未配置 LLM 凭证则直接跳过，不执行后续任何步骤
     if not os.getenv("OPENAI_API_KEY"):
-        print("⏭️  未检测到 OPENAI_API_KEY，跳过本次周刊生成。"
-              "（本地请在 .env 配置，CI 请在 Secrets 配置）")
+        log("main", "未检测到 OPENAI_API_KEY，跳过本次周刊生成。"
+                    "（本地请在 .env 配置，CI 请在 Secrets 配置）", "warn")
         return None
 
+    log("main", "开始生成本周周刊…")
     graph = build_graph()
     result = graph.invoke({})
     path = result.get("output_path")
     if path:
-        print(f"✅ 周刊已生成：{path}（第 {result.get('issue_number')} 期）")
+        log("main", f"周刊已生成：{path}（第 {result.get('issue_number')} 期）", "ok")
     else:
-        print("⚠️ 未生成周刊，请检查日志。")
+        log("main", "未生成周刊，请检查日志。", "warn")
     return result
 
 

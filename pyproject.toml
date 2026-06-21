@@ -5,11 +5,10 @@ description = "每周自动抓取 GitHub Trending 并用 LLM 生成中文周刊"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "httpx>=0.28.1",
+    "httpx[socks]>=0.28.1",
     "langchain>=1.2.0",
     "langchain-openai>=1.1.6",
     "langgraph>=1.0.5",
-    "playwright>=1.49.0",
     "python-dotenv>=1.0.1",
     "selectolax>=0.4.6",
 ]

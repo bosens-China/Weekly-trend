@@ -6,7 +6,9 @@ from urllib.parse import urljoin, urlparse
 
 import httpx
 
+from cache import JsonCache, make_key
 from graph.state import EnrichedRepo, WeeklyState
+from log import log
 
 API_BASE = "https://api.github.com"
 
@@ -109,7 +111,7 @@ def _fetch_repo(client: httpx.Client, owner: str, repo: str) -> EnrichedRepo:
         enriched["topics"] = data.get("topics") or []
         default_branch = data.get("default_branch", "main")
     except Exception as e:
-        print(f"[enrich] {owner}/{repo} 基础信息获取失败: {e}")
+        log("enrich", f"{owner}/{repo} 基础信息获取失败: {e}", "warn")
         default_branch = "main"
         enriched["homepage"] = ""
         enriched["topics"] = []
@@ -130,7 +132,7 @@ def _fetch_repo(client: httpx.Client, owner: str, repo: str) -> EnrichedRepo:
             else f"https://raw.githubusercontent.com/{owner}/{repo}/{default_branch}/"
         )
     except Exception as e:
-        print(f"[enrich] {owner}/{repo} README 获取失败: {e}")
+        log("enrich", f"{owner}/{repo} README 获取失败: {e}", "warn")
         text = ""
         raw_base = f"https://raw.githubusercontent.com/{owner}/{repo}/{default_branch}/"
 
@@ -139,17 +141,31 @@ def _fetch_repo(client: httpx.Client, owner: str, repo: str) -> EnrichedRepo:
     return enriched
 
 
-def _enrich_one(client: httpx.Client, repo: dict) -> EnrichedRepo:
-    """补全单个仓库（供并行调用）。"""
+def _enrich_one(
+    client: httpx.Client, repo: dict, cache: JsonCache
+) -> Tuple[EnrichedRepo, bool]:
+    """补全单个仓库（供并行调用）。返回 (结果, 是否命中缓存)。"""
     base: EnrichedRepo = dict(repo)  # type: ignore[assignment]
     parsed = _split_owner_repo(repo["url"])
     if not parsed:
         base["image_candidates"] = []
         base["readme"] = ""
-        return base
+        return base, False
     owner, name = parsed
-    base.update(_fetch_repo(client, owner, name))
-    return base
+
+    # 缓存 key 含 owner/repo + README 截断长度；任一变化则自然失效
+    key = make_key("enrich:v1", f"{owner}/{name}", str(_readme_max_chars()))
+    cached = cache.get(key)
+    if cached is not None:
+        base.update(cached)
+        return base, True
+
+    fetched = _fetch_repo(client, owner, name)
+    # 只缓存「确实抓到 README」的结果；失败/限流导致的空结果不写缓存，下次重试
+    if fetched.get("readme"):
+        cache.set(key, fetched)
+    base.update(fetched)
+    return base, False
 
 
 def enrich_node(state: WeeklyState) -> dict:
@@ -157,14 +173,21 @@ def enrich_node(state: WeeklyState) -> dict:
     LangGraph 节点：并行对每个 repo 抓取 README / 主页链接 / topics / 图片候选。
     """
     repos = state.get("repos", [])
+    # 提交进仓库（cache/），让 CI 跨周复用，避免每次冷启动重抓 README
+    cache = JsonCache("enrich", shared=True)
 
     # httpx.Client 线程安全，多线程共享一个连接池即可
     with httpx.Client(timeout=30, follow_redirects=True) as client:
         with ThreadPoolExecutor(max_workers=_concurrency()) as pool:
             # executor.map 保序，输出顺序与 trending 排名一致
-            enriched_list: List[EnrichedRepo] = list(
-                pool.map(lambda r: _enrich_one(client, r), repos)
-            )
+            results = list(pool.map(lambda r: _enrich_one(client, r, cache), repos))
 
-    print(f"[enrich] 完成 {len(enriched_list)} 个仓库的信息补全")
+    cache.save()
+    enriched_list: List[EnrichedRepo] = [e for e, _ in results]
+    hits = sum(1 for _, hit in results if hit)
+    log(
+        "enrich",
+        f"完成 {len(enriched_list)} 个仓库的信息补全（缓存命中 {hits}，实抓 {len(enriched_list) - hits}）",
+        "ok",
+    )
     return {"enriched": enriched_list}

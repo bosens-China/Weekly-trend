@@ -2,7 +2,8 @@ name: Weekly Trend Report
 
 on:
   schedule:
-    # 每周一 00:00 UTC（北京时间周一 08:00）
+    # GitHub Trending 的「本周」是滚动 7 天窗口、约每天重算一次，没有固定的每周清零时刻，
+    # 所以一周里任意固定时间跑都行。这里取周一 00:00 UTC（北京时间周一 08:00），代表「过去一周」。
     - cron: "0 0 * * 1"
   workflow_dispatch: {} # 支持手动触发
 
@@ -27,9 +28,6 @@ jobs:
       - name: Install dependencies
         run: uv sync
 
-      - name: Install Chromium for Playwright
-        run: uv run playwright install --with-deps chromium
-
       - name: Generate weekly report
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -44,10 +42,11 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add reports/
+          # reports/ 是周刊与期数台账；cache/ 是视觉判定缓存，提交回仓库供下次跨周复用
+          git add reports/ cache/
           if git diff --staged --quiet; then
             echo "本周无新增报告，跳过提交。"
           else
-            git commit -m "docs: 自动生成本周 Trending 周刊"
+            git commit -m "docs: 自动生成 GitHub 一周热点"
             git push
           fi

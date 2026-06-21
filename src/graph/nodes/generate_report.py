@@ -3,15 +3,20 @@ from typing import List
 
 from graph.state import EnrichedRepo, WeeklyState
 from llm import get_llm
+from log import log
 
 _SYSTEM = """你是 GitHub Trending 周刊的主编。读者是中文开发者。
 你会收到本周 GitHub Trending（weekly）上的仓库数据（JSON 数组）。
 
 请输出一份**中文 Markdown 周刊正文**，要求：
+0. **必须为输入数组里的每一个仓库都生成一个条目，一个都不能遗漏、跳过或合并**（即使你觉得某个项目不重要、冷门或与别的相似，也要保留）。输出的条目数必须等于输入仓库数。
 1. 先按主题给项目**分类**（如「AI / 大模型」「开发工具」「Web 前端」「基础设施」等，类目由你根据实际数据归纳，不要生造空类目）。
 2. 每个项目用 `### [owner/repo](url)` 作为小标题，紧跟一行徽章式信息：⭐ 总 star、🔥 本周 star、💻 语言。
-3. 用 1~3 句话中文介绍项目是做什么的、为什么本周火（结合 README 概括，不要直接翻译堆砌）。
-4. 如果该项目的 `relevant_images` 非空，挑最有代表性的 1 张用 `![](路径)` 嵌入到介绍下方。这些是相对 reports 目录的本地图片路径（形如 `assets/12/owner__repo__0.png`），必须**原样使用**，不要改写、不要拼接域名。
+3. 项目简介按以下取材优先级，用 1~3 句中文概括（不要直接翻译堆砌）：
+   - 优先依据 `readme` 概括项目是做什么的、为什么本周火；
+   - `readme` 为空时，退而用 `description` 概括；
+   - `readme` 和 `description` **都为空时，不要编造，直接省略简介那段**（该项目只保留小标题和徽章行即可）。
+4. 如果该项目的 `relevant_images` 非空，挑最有代表性的 1 张用 `![](路径)` 嵌入到介绍下方。这些是相对周刊 md 的本地图片路径（形如 `assets/owner__repo__0.png`），必须**原样使用**，不要改写、不要拼接域名。
 5. 如果有 `homepage`，附一行 `🔗 官网: <homepage>`。
 6. 适当用 `topics` 作为标签点缀，但不要喧宾夺主。
 
@@ -52,12 +57,36 @@ def generate_report_node(state: WeeklyState) -> dict:
             {"role": "system", "content": _SYSTEM},
             {
                 "role": "user",
-                "content": "本周仓库数据如下：\n```json\n"
+                "content": f"本周共 {len(payload)} 个仓库，请确保这 {len(payload)} 个全部覆盖。"
+                "数据如下：\n```json\n"
                 + json.dumps(payload, ensure_ascii=False)
                 + "\n```",
             },
         ]
     )
     body = msg.content if isinstance(msg.content, str) else str(msg.content)
-    print(f"[generate_report] 生成正文 {len(body)} 字")
+
+    missing = _missing_repos(enriched, body)
+    if missing:
+        log("generate_report", f"{len(missing)} 个仓库未出现在正文中: {', '.join(missing)}", "warn")
+
+    covered = len(enriched) - len(missing)
+    log(
+        "generate_report",
+        f"生成正文 {len(body)} 字，覆盖 {covered}/{len(enriched)} 个仓库",
+        "ok" if not missing else "info",
+    )
     return {"report_md": body}
+
+
+def _missing_repos(enriched: List[EnrichedRepo], body: str) -> List[str]:
+    """校验每个仓库是否都出现在正文里（按 url 或 owner/repo 匹配），返回遗漏列表。"""
+    missing: List[str] = []
+    for r in enriched:
+        url = r.get("url", "")
+        owner, repo = r.get("owner", ""), r.get("repo", "")
+        key = f"{owner}/{repo}" if owner and repo else ""
+        if (url and url in body) or (key and key in body):
+            continue
+        missing.append(key or url or r.get("name", "?"))
+    return missing

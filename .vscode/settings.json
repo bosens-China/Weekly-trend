@@ -9,9 +9,12 @@
   // 开启类型检查提示 (basic 即可，strict 比较严格)
   "python.analysis.typeCheckingMode": "basic",
   "python.analysis.autoImportCompletions": true,
+  // 源码根是 src/，让 Pyright 能解析 `from llm import ...`、`from log import ...` 等
+  "python.analysis.extraPaths": ["src"],
   // cursor 下的
   "cursorpyright.analysis.typeCheckingMode": "basic",
   "cursorpyright.analysis.autoImportCompletions": true,
+  "cursorpyright.analysis.extraPaths": ["src"],
 
   // --------------------------------------------------------
   // 格式化与 Linting (推荐使用 Ruff)

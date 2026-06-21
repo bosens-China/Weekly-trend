@@ -3,6 +3,8 @@ from typing import List, Optional, TypedDict
 import httpx
 from selectolax.parser import HTMLParser, Node
 
+from log import log
+
 
 class RepoData(TypedDict):
     name: str  # 仓库名 (如: exo-explore / exo)
@@ -90,7 +92,10 @@ def crawler():
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
     }
     try:
-        resp = httpx.get(URL, headers=headers)
+        # timeout 防止网络卡死时 CI 永久挂起；follow_redirects 跟随 GitHub 跳转；
+        # raise_for_status 让 429/503 等错误页不会被当成正常 HTML 解析成空列表
+        resp = httpx.get(URL, headers=headers, timeout=30, follow_redirects=True)
+        resp.raise_for_status()
         html = HTMLParser(resp.text)
         articles = html.css("article.Box-row")
         results: List[RepoData] = []
@@ -100,14 +105,17 @@ def crawler():
             if data:
                 results.append(data)
 
+        if not results:
+            # 页面结构变化或被反爬时会解析出 0 个仓库，明确告警以便排查
+            log("crawler", "未解析到任何仓库，可能是页面结构变化或被限流", "warn")
         return results
     except Exception as e:
-        print(f"获取趋势数据失败: {e}")
+        log("crawler", f"获取趋势数据失败: {e}", "error")
         return []
 
 
 def crawler_node(state: dict) -> dict:
     """LangGraph 节点：抓取 trending 列表写入 state.repos。"""
     repos = crawler()
-    print(f"[crawler] 抓取到 {len(repos)} 个仓库")
+    log("crawler", f"抓取到 {len(repos)} 个仓库", "ok" if repos else "warn")
     return {"repos": repos}

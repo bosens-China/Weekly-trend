@@ -11,3 +11,18 @@ wheels/
 
 # Local secrets
 .env
+.claude
+
+# OS / 编辑器杂物
+.DS_Store
+**/.DS_Store
+
+# 本地工具产物（Claude Code skills / codegraph / skillink），与本项目无关
+.codegraph/
+
+# 周刊生成过程中的临时图片目录（被引用的图才会移入 reports/<日期>/assets/）
+reports/.tmp/
+
+# 缓存：cache/（不带点）是提交进仓库的共享缓存（enrich + 视觉判定），让 CI 跨周复用；
+# .cache/（带点）仅为可选的纯本地缓存（JsonCache(shared=False)），不提交。
+.cache/
