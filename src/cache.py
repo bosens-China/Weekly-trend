@@ -73,5 +73,6 @@ class JsonCache:
         with self._lock:
             self.path.parent.mkdir(parents=True, exist_ok=True)
             self.path.write_text(
-                json.dumps(self._data, ensure_ascii=False), encoding="utf-8"
+                json.dumps(self._data, ensure_ascii=False, indent=2) + "\n",
+                encoding="utf-8",
             )
