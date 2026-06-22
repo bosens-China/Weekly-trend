@@ -36,9 +36,9 @@ jobs:
       - name: Generate weekly report
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          # 可选：自定义模型 / 代理网关
-          OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
-          OPENAI_BASE_URL: ${{ vars.OPENAI_BASE_URL }}
+          # 可选：自定义模型 / 代理网关（与 KEY 一并存放在 Secrets 里）
+          OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
+          OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
           # 用于调 GitHub API 抓 README，提高速率限制
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: uv run python src/main.py
