@@ -3,8 +3,13 @@ name: Weekly Trend Report
 on:
   schedule:
     # GitHub Trending 的「本周」是滚动 7 天窗口、约每天重算一次，没有固定的每周清零时刻，
-    # 所以一周里任意固定时间跑都行。这里取周一 00:00 UTC（北京时间周一 08:00），代表「过去一周」。
-    - cron: "0 0 * * 1"
+    # 所以一周里任意固定时间跑都行。这里取北京时间周一 07:48 = UTC 周日 23:48（故星期字段是 0=周日）。
+    # 注意：错开整点 / 0 点这类全球最拥堵时段，可显著降低 GitHub schedule 的派发延迟。
+    - cron: "48 23 * * 0"
+  push:
+    # push 也触发，但 src/main.py 里有守卫：本 ISO 周已生成过就跳过，只在本周缺报告时补生成。
+    # 机器人用 GITHUB_TOKEN 提交回仓库的 push 不会再触发新 run（GitHub 防递归机制），无需担心死循环。
+    branches: [master]
   workflow_dispatch: {} # 支持手动触发
 
 permissions:

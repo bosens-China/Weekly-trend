@@ -10,8 +10,12 @@
 
 import json
 import re
-from datetime import datetime, timezone
+from datetime import datetime
 from pathlib import Path
+from zoneinfo import ZoneInfo
+
+# 与 output_report 保持一致：全项目时间口径统一为北京时间
+BEIJING = ZoneInfo("Asia/Shanghai")
 
 REPORTS_DIR = Path(__file__).resolve().parents[1] / "reports"
 INDEX_JSON = REPORTS_DIR / "index.json"
@@ -31,7 +35,7 @@ def _load_existing() -> dict:
 
 
 def _iso_mtime(path: Path) -> str:
-    ts = datetime.fromtimestamp(path.stat().st_mtime, tz=timezone.utc).astimezone()
+    ts = datetime.fromtimestamp(path.stat().st_mtime, tz=BEIJING)
     return ts.isoformat(timespec="seconds")
 
 

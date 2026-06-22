@@ -8,10 +8,14 @@
 """
 
 import os
-from datetime import datetime, timezone
+from datetime import datetime
 from email.utils import format_datetime
+from zoneinfo import ZoneInfo
 
 from build_manifest import REPORTS_DIR, build_manifest, write_manifest
+
+# 与 output_report 保持一致：全项目时间口径统一为北京时间
+BEIJING = ZoneInfo("Asia/Shanghai")
 
 ROOT = REPORTS_DIR.parent
 README = ROOT / "README.md"
@@ -46,7 +50,7 @@ def _parse_dt(entry: dict) -> datetime:
     try:
         return datetime.fromisoformat(raw)
     except ValueError:
-        return datetime.strptime(entry["date"], "%Y_%m_%d").replace(tzinfo=timezone.utc)
+        return datetime.strptime(entry["date"], "%Y_%m_%d").replace(tzinfo=BEIJING)
 
 
 def render_readme_block(entries: list[dict]) -> str:
@@ -119,7 +123,7 @@ def main() -> None:
     write_manifest(entries)  # 顺手保证 index.json 与磁盘一致
 
     changed = inject_readme(render_readme_block(entries))
-    now = datetime.now(timezone.utc).astimezone()
+    now = datetime.now(BEIJING)
     FEED.write_text(render_feed(entries, now), encoding="utf-8")
 
     print(

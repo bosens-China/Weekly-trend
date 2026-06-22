@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 load_dotenv(ROOT / ".env")
 
 from graph.build import build_graph  # noqa: E402  （需在 load_dotenv 之后导入）
+from graph.nodes.output_report import current_week_has_report  # noqa: E402
 from log import log  # noqa: E402
 
 
@@ -37,6 +38,12 @@ def main():
             "（本地请在 .env 配置，CI 请在 Secrets 配置）",
             "warn",
         )
+        return None
+
+    # push 触发：本 ISO 周已生成过就跳过，只在「本周缺报告」时补生成。
+    # （定时 schedule / 手动 workflow_dispatch / 本地运行不受此限制，总是生成）
+    if os.getenv("GITHUB_EVENT_NAME") == "push" and current_week_has_report():
+        log("main", "本周报告已存在，push 触发不重复生成，跳过。", "warn")
         return None
 
     log("main", "开始生成本周周刊…")

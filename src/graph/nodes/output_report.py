@@ -1,12 +1,17 @@
 import json
 import re
 import shutil
-from datetime import datetime, timezone
+from datetime import datetime, timedelta
 from pathlib import Path
 from typing import List, Tuple
+from zoneinfo import ZoneInfo
 
 from graph.state import WeeklyState
 from log import log
+
+# 全项目以北京时间为准：定时任务、日期目录、期数都按这个时区算，
+# 避免 CI（runner 默认 UTC）把「北京周一」算成「UTC 周日」。
+BEIJING = ZoneInfo("Asia/Shanghai")
 
 # reports 目录：相对项目根（src 的上一级）
 REPORTS_DIR = Path(__file__).resolve().parents[3] / "reports"
@@ -52,9 +57,7 @@ def _update_manifest(issue: int, date_str: str, repos: int) -> None:
             "date": date_str,
             "dir": date_str,
             "repos": repos,
-            "generated_at": datetime.now(timezone.utc)
-            .astimezone()
-            .isoformat(timespec="seconds"),
+            "generated_at": datetime.now(BEIJING).isoformat(timespec="seconds"),
         }
     )
     manifest.sort(key=lambda e: int(e.get("issue", 0)))
@@ -64,15 +67,45 @@ def _update_manifest(issue: int, date_str: str, repos: int) -> None:
     )
 
 
+def _week_monday_str() -> str:
+    """本期日期 = 北京时间「本周周一」的 yyyy_mm_dd。
+
+    不论周几跑（定时周一、或周中手动 push 补生成），同一 ISO 周都落在同一个
+    周一日期目录，保证「一周一期、日期恒为周一」。weekday(): 周一=0。
+    """
+    today = datetime.now(BEIJING).date()
+    monday = today - timedelta(days=today.weekday())
+    return monday.strftime("%Y_%m_%d")
+
+
 def compute_issue_and_date() -> Tuple[int, str]:
     """统一计算「第几期 + 日期串」，图片节点与输出节点共用。"""
-    now = datetime.now(timezone.utc).astimezone()
-    date_str = now.strftime("%Y_%m_%d")
-    # 同一天重跑：沿用台账里已有的期号，避免期号虚增
+    date_str = _week_monday_str()
+    # 本周重跑：沿用台账里已有的期号，避免期号虚增
     for e in _load_manifest():
         if e.get("date") == date_str and e.get("issue"):
             return int(e["issue"]), date_str
     return _next_issue_number(), date_str
+
+
+def _iso_week_key(date_str: str):
+    """把 yyyy_mm_dd 日期串转成 (ISO 年, ISO 周) 元组；解析失败返回 None。"""
+    try:
+        d = datetime.strptime(date_str, "%Y_%m_%d").date()
+    except (TypeError, ValueError):
+        return None
+    iso = d.isocalendar()
+    return (iso[0], iso[1])
+
+
+def current_week_has_report() -> bool:
+    """
+    台账里是否已存在「本 ISO 周（周一为起点）」的报告。
+    用于 push 触发时判断：本周已生成过就跳过，没有才补生成。
+    """
+    today = datetime.now(BEIJING).date()
+    cur = (today.isocalendar()[0], today.isocalendar()[1])
+    return any(_iso_week_key(e.get("date", "")) == cur for e in _load_manifest())
 
 
 def _referenced_assets(body: str) -> List[str]:
