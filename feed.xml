@@ -6,6 +6,13 @@
     <atom:link href="https://raw.githubusercontent.com/bosens-China/Weekly-trend/master/feed.xml" rel="self" type="application/rss+xml"/>
     <description>每周自动抓取 GitHub Trending，用 LLM 整理成分类、带图的中文周刊。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 22 Jun 2026 08:39:35 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 22 Jun 2026 09:15:42 +0800</lastBuildDate>
+    <item>
+      <title>第 1 期 · 2026-06-22</title>
+      <link>https://github.com/bosens-China/Weekly-trend/blob/master/reports/2026_06_22/README.md</link>
+      <guid isPermaLink="true">https://github.com/bosens-China/Weekly-trend/blob/master/reports/2026_06_22/README.md</guid>
+      <pubDate>Mon, 22 Jun 2026 09:15:42 +0800</pubDate>
+      <description>本期收录 19 个项目</description>
+    </item>
   </channel>
 </rss>

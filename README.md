@@ -15,7 +15,9 @@
 ## 📰 往期周刊
 
 <!-- ISSUES:START -->
-_暂无往期，生成第一期后会自动出现在这里。_
+| 期号 | 日期 | 收录项目 | 链接 |
+| :--: | :--: | :--: | :-- |
+| 第 1 期 | 2026-06-22 | 19 个 | [阅读](https://github.com/bosens-China/Weekly-trend/blob/master/reports/2026_06_22/README.md) |
 <!-- ISSUES:END -->
 
 ## 📡 订阅（RSS）
