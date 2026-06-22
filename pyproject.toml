@@ -16,3 +16,17 @@ dependencies = [
 [tool.uv]
 # 这是一个脚本式项目（没有 build backend），只用 uv 管理依赖，不安装自身
 package = false
+
+[dependency-groups]
+# 开发期工具：格式化 / 静态检查，由 pre-commit 钩子调用（uv run 默认含 dev 组）
+dev = ["ruff>=0.12.5"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+# E/W 风格、F 错误、I import 排序
+select = ["E", "W", "F", "I"]
+# 行宽交给 ruff format 处理；E501 只会在无法换行的长中文字符串 / URL 上误报，故忽略
+ignore = ["E501"]

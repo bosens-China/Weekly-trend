@@ -1,0 +1,19 @@
+{
+  "name": "weekly-trend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Git hooks (husky + lint-staged) for the weekly-trend Python project",
+  "scripts": {
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.py": [
+      "uv run ruff format",
+      "uv run ruff check --fix"
+    ]
+  },
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.8"
+  }
+}

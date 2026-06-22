@@ -26,3 +26,6 @@ reports/.tmp/
 # 缓存：cache/（不带点）是提交进仓库的共享缓存（enrich + 视觉判定），让 CI 跨周复用；
 # .cache/（带点）仅为可选的纯本地缓存（JsonCache(shared=False)），不提交。
 .cache/
+
+# Node 依赖（husky / lint-staged 钩子工具）
+node_modules/
