@@ -75,6 +75,8 @@ def generate_report_node(state: WeeklyState) -> dict:
     if dropped:
         log("generate_report", f"清理了 {dropped} 个空类目", "dim")
 
+    body = _normalize_card_spacing(body)
+
     missing = _missing_repos(enriched, body)
     if missing:
         log(
@@ -118,6 +120,32 @@ def _strip_empty_sections(body: str) -> tuple[str, int]:
     # 收敛多余空行（删段后可能留下 3 连空行）
     cleaned = re.sub(r"\n{3,}", "\n\n", cleaned).strip()
     return cleaned, dropped
+
+
+# 卡片内的结构性标记行：小标题、徽章、图片、官网、标签等，
+# 各自应独立成段；其余行视作简介正文，连续多行保持在同一段不拆开。
+_MARKER_PREFIXES = ("#", "⭐", "![", "🔗", "`", ">", "-", "|")
+
+
+def _normalize_card_spacing(body: str) -> str:
+    """
+    GitHub 渲染 .md 时单个换行会被并成空格，导致徽章/简介/图片/官网/标签连成一段。
+    这里在相邻行之间补空行让它们各自成块；但两行都是简介正文时不拆，避免把多行简介切碎。
+    """
+
+    def is_prose(line: str) -> bool:
+        return not line.lstrip().startswith(_MARKER_PREFIXES)
+
+    out: List[str] = []
+    for line in body.split("\n"):
+        if out and line.strip() and out[-1].strip():
+            # 只有「上一行与当前行都是简介正文」时才连排，其余相邻行补空行隔开
+            if not (is_prose(out[-1]) and is_prose(line)):
+                out.append("")
+        out.append(line)
+
+    # 合并删段/补空行可能产生的连续空行
+    return re.sub(r"\n{3,}", "\n\n", "\n".join(out)).strip()
 
 
 def _missing_repos(enriched: List[EnrichedRepo], body: str) -> List[str]:

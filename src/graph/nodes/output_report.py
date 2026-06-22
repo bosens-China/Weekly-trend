@@ -160,7 +160,6 @@ def output_report_node(state: WeeklyState) -> dict:
     header = (
         f"# GitHub 一周热点 · 第 {issue} 期\n\n"
         f"> 📅 {date_str.replace('_', '-')} ｜ 数据来源：GitHub Trending（本周）\n\n"
-        "---\n\n"
     )
     out_path = date_dir / REPORT_MD_NAME
     out_path.write_text(header + body + "\n", encoding="utf-8")
