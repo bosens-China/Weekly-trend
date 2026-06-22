@@ -54,7 +54,7 @@ _SYSTEM = (
     "排除：徽章(badge/shields)、贡献者头像、与项目无关的表情包/广告/打赏二维码、"
     "纯装饰分割线、加载失败的空白图。"
     '只返回 JSON，格式为 {"relevant_indices": [序号列表]}，序号从 1 开始；'
-    "若没有任何相关图片，返回 {\"relevant_indices\": []}。不要输出多余文字。"
+    '若没有任何相关图片，返回 {"relevant_indices": []}。不要输出多余文字。'
 )
 
 
@@ -83,7 +83,11 @@ def _download_one(client: httpx.Client, url: str, out_base: Path) -> Optional[Pa
         ctype = resp.headers.get("content-type", "").split(";")[0].strip().lower()
         ext = _MIME_TO_EXT.get(ctype)
         if ext is None:
-            log("filter_images", f"跳过非图片/不支持类型 [{ctype or '未知'}]: {url}", "dim")
+            log(
+                "filter_images",
+                f"跳过非图片/不支持类型 [{ctype or '未知'}]: {url}",
+                "dim",
+            )
             return None
         out_path = out_base.with_suffix("." + ext)
         out_path.write_bytes(resp.content)
@@ -146,7 +150,8 @@ def _select(model, shots: List[Path], readme: str) -> List[Path]:
         content.append(
             {
                 "type": "text",
-                "text": "项目 README 摘要（仅供判断上下文）：\n" + readme[:README_CONTEXT_CHARS],
+                "text": "项目 README 摘要（仅供判断上下文）：\n"
+                + readme[:README_CONTEXT_CHARS],
             }
         )
     content.append(
@@ -163,7 +168,10 @@ def _select(model, shots: List[Path], readme: str) -> List[Path]:
 
     try:
         msg = model.invoke(
-            [{"role": "system", "content": _SYSTEM}, {"role": "user", "content": content}]
+            [
+                {"role": "system", "content": _SYSTEM},
+                {"role": "user", "content": content},
+            ]
         )
         text = msg.content if isinstance(msg.content, str) else str(msg.content)
         idxs = _parse_indices(text, len(shots))

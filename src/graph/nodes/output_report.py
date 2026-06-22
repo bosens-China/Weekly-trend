@@ -52,7 +52,9 @@ def _update_manifest(issue: int, date_str: str, repos: int) -> None:
             "date": date_str,
             "dir": date_str,
             "repos": repos,
-            "generated_at": datetime.now(timezone.utc).astimezone().isoformat(timespec="seconds"),
+            "generated_at": datetime.now(timezone.utc)
+            .astimezone()
+            .isoformat(timespec="seconds"),
         }
     )
     manifest.sort(key=lambda e: int(e.get("issue", 0)))

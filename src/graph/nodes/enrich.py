@@ -22,6 +22,7 @@ def _concurrency() -> int:
     """并行抓取仓库的线程数，由 WEEKLY_CONCURRENCY 控制，默认 8。"""
     return int(os.getenv("WEEKLY_CONCURRENCY") or 8)
 
+
 # 启发式：这些一看就不是「项目相关」的图片（徽章/统计/打赏等），直接丢弃
 _BADGE_HOST_HINTS = (
     "shields.io",
@@ -50,7 +51,10 @@ def _split_owner_repo(url: str) -> Optional[Tuple[str, str]]:
 
 
 def _auth_headers() -> dict:
-    headers = {"Accept": "application/vnd.github+json", "User-Agent": "weekly-trend-bot"}
+    headers = {
+        "Accept": "application/vnd.github+json",
+        "User-Agent": "weekly-trend-bot",
+    }
     token = os.getenv("GITHUB_TOKEN")
     if token:
         headers["Authorization"] = f"Bearer {token}"
@@ -80,7 +84,9 @@ def _extract_image_urls(markdown: str, raw_base: str) -> List[str]:
     for m in re.findall(r"!\[[^\]]*\]\(([^)\s]+)", markdown):
         found.append(m)
     # HTML <img src="...">
-    for m in re.findall(r"<img[^>]+src=[\"']([^\"']+)[\"']", markdown, flags=re.IGNORECASE):
+    for m in re.findall(
+        r"<img[^>]+src=[\"']([^\"']+)[\"']", markdown, flags=re.IGNORECASE
+    ):
         found.append(m)
 
     result: List[str] = []

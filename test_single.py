@@ -61,7 +61,9 @@ def main() -> None:
 
     print(f"👉 选中：{chosen['name']}  ({chosen['url']})")
     print(f"   {chosen['description']}")
-    print(f"   ⭐ {chosen['total_stars']} | 🔥 {chosen['period_stars']} | 💻 {chosen['language']}")
+    print(
+        f"   ⭐ {chosen['total_stars']} | 🔥 {chosen['period_stars']} | 💻 {chosen['language']}"
+    )
 
     # 单仓库 state，后续节点逐个加工
     state: WeeklyState = {"repos": [chosen]}
@@ -85,7 +87,9 @@ def main() -> None:
     state.update(filtered_out)
     rel = filtered_out["enriched"][0].get("relevant_images", [])
     tmp_dir = filtered_out.get("tmp_assets_dir", "")
-    print(f"\n判定为项目相关的图片：{len(rel)} 张（临时目录 {tmp_dir}，正式运行时被正文引用的才会移入 assets/）")
+    print(
+        f"\n判定为项目相关的图片：{len(rel)} 张（临时目录 {tmp_dir}，正式运行时被正文引用的才会移入 assets/）"
+    )
     for p in rel:
         name = p.split("/")[-1]
         print(f"   ✅ {tmp_dir}/{name}")
