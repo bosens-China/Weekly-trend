@@ -40,10 +40,11 @@ def main():
         )
         return None
 
-    # push 触发：本 ISO 周已生成过就跳过，只在「本周缺报告」时补生成。
-    # （定时 schedule / 手动 workflow_dispatch / 本地运行不受此限制，总是生成）
-    if os.getenv("GITHUB_EVENT_NAME") == "push" and current_week_has_report():
-        log("main", "本周报告已存在，push 触发不重复生成，跳过。", "warn")
+    # push / schedule 触发：本 ISO 周已生成过就跳过，只在「本周缺报告」时补生成。
+    # （手动 workflow_dispatch / 本地运行不受此限制，总是生成）
+    event_name = os.getenv("GITHUB_EVENT_NAME")
+    if event_name in {"push", "schedule"} and current_week_has_report():
+        log("main", f"本周报告已存在，{event_name} 触发不重复生成，跳过。", "warn")
         return None
 
     log("main", "开始生成本周周刊…")
