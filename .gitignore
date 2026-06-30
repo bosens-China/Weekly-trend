@@ -29,3 +29,4 @@ reports/.tmp/
 
 # Node 依赖（husky / lint-staged 钩子工具）
 node_modules/
+.codex

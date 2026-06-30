@@ -16,9 +16,10 @@ BEIJING = ZoneInfo("Asia/Shanghai")
 # reports 目录：相对项目根（src 的上一级）
 REPORTS_DIR = Path(__file__).resolve().parents[3] / "reports"
 
-# 每期一个以日期命名的文件夹：reports/2026_06_21/{README.md, assets/}
+# 每期一个以日期命名的文件夹：reports/2026_06_21/{README.md, report.json, assets/}
 _DATE_RE = re.compile(r"^\d{4}_\d{2}_\d{2}$")
 REPORT_MD_NAME = "README.md"  # 用 README.md，GitHub 浏览该文件夹时会自动渲染
+REPORT_JSON_NAME = "report.json"  # 结构化周刊数据，供二次消费/调试
 INDEX_JSON = REPORTS_DIR / "index.json"  # 期数台账（源头）+ 往期清单
 
 
@@ -144,6 +145,9 @@ def output_report_node(state: WeeklyState) -> dict:
     moved = 0
     if tmp_dir and tmp_dir.exists():
         wanted = _referenced_assets(body)
+        # 同一期重跑时先清空旧图，保证 assets/ 只保留当前正文真正引用的图片。
+        if assets_dir.exists():
+            shutil.rmtree(assets_dir)
         if wanted:
             assets_dir.mkdir(parents=True, exist_ok=True)
         for name in wanted:
@@ -164,12 +168,27 @@ def output_report_node(state: WeeklyState) -> dict:
     out_path = date_dir / REPORT_MD_NAME
     out_path.write_text(header + body + "\n", encoding="utf-8")
 
+    report_json = dict(state.get("report_json") or {})
+    report_json.update(
+        {
+            "issue": issue,
+            "date": date_str,
+            "generated_at": datetime.now(BEIJING).isoformat(timespec="seconds"),
+        }
+    )
+    json_path = date_dir / REPORT_JSON_NAME
+    json_path.write_text(
+        json.dumps(report_json, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+
     # 更新期数台账（同时作为往期清单）
     _update_manifest(issue, date_str, len(state.get("enriched", []) or []))
 
-    log("output_report", f"已写入 {out_path}（第 {issue} 期）", "ok")
+    log("output_report", f"已写入 {out_path} / {json_path.name}（第 {issue} 期）", "ok")
     return {
         "issue_number": issue,
         "date_str": date_str,
         "output_path": str(out_path),
+        "json_path": str(json_path),
     }

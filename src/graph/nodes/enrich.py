@@ -7,7 +7,7 @@ from urllib.parse import urljoin, urlparse
 import httpx
 
 from cache import JsonCache, make_key
-from graph.state import EnrichedRepo, WeeklyState
+from graph.state import EnrichedRepo, ImageCandidate, WeeklyState
 from log import log
 
 API_BASE = "https://api.github.com"
@@ -32,13 +32,22 @@ _BADGE_HOST_HINTS = (
     "codecov.io",
     "coveralls.io",
     "app.codacy.com",
-    "github.com/.*/workflows",  # actions badge
     "img.buymeacoffee.com",
     "api.star-history.com",  # star 曲线，非项目图
     "visitor-badge",
     "hits.dwyl.com",
 )
-_BADGE_KEYWORDS = ("badge", "shield", "license", "/actions/workflows")
+_BADGE_KEYWORDS = (
+    "badge",
+    "shield",
+    "license",
+    "coverage",
+    "codecov",
+    "/actions/workflows",
+    "buymeacoffee",
+    "sponsor",
+    "donate",
+)
 
 
 def _split_owner_repo(url: str) -> Optional[Tuple[str, str]]:
@@ -61,46 +70,81 @@ def _auth_headers() -> dict:
     return headers
 
 
-def _is_badge(url: str) -> bool:
+def _is_badge(url: str, alt: str = "", context: str = "") -> bool:
     low = url.lower()
+    # 硬过滤只看 URL/alt，避免 README 邻近 badge 文本误伤正常截图。
+    text = f"{alt} {url}".lower()
     if any(h in low for h in _BADGE_HOST_HINTS):
         return True
-    if any(k in low for k in _BADGE_KEYWORDS):
+    if re.search(r"github\.com/.+/workflows/.+/badge\.svg", low):
         return True
-    # svg 基本都是徽章/图标，项目截图很少用 svg
-    if low.split("?")[0].endswith(".svg"):
+    if any(k in text for k in _BADGE_KEYWORDS):
         return True
     return False
 
 
-def _extract_image_urls(markdown: str, raw_base: str) -> List[str]:
+def _context(markdown: str, start: int, end: int, width: int = 160) -> str:
+    """截取图片附近的 README 文本，供后续规则打分使用。"""
+    snippet = markdown[max(0, start - width) : min(len(markdown), end + width)]
+    snippet = re.sub(r"\s+", " ", snippet)
+    return snippet.strip()[:360]
+
+
+def _normalize_image_url(raw: str, raw_base: str) -> str:
+    """把 README 里的相对图、GitHub blob 图规范成可直接下载的 URL。"""
+    url = raw.strip().strip("\"'")
+    if url.startswith("//"):
+        return "https:" + url
+    if not url.startswith("http"):
+        return urljoin(raw_base, url)
+
+    parsed = urlparse(url)
+    parts = parsed.path.strip("/").split("/")
+    if parsed.netloc.lower() == "github.com" and len(parts) >= 5:
+        owner, repo, marker, branch = parts[:4]
+        rest = "/".join(parts[4:])
+        if marker == "blob":
+            return f"https://raw.githubusercontent.com/{owner}/{repo}/{branch}/{rest}"
+        if marker == "raw":
+            return f"https://raw.githubusercontent.com/{owner}/{repo}/{branch}/{rest}"
+    return url
+
+
+def _extract_image_candidates(markdown: str, raw_base: str) -> List[ImageCandidate]:
     """
-    从 README 中提取图片 URL，包含 markdown ![](url) 与 HTML <img src="">。
-    相对路径基于 raw_base 解析为 raw.githubusercontent 绝对地址。
+    从 README 中提取图片候选，包含 markdown ![](url) 与 HTML <img src="">。
+    除 URL 外保留 alt 与附近上下文，后续用确定性规则选代表图。
     """
-    found: List[str] = []
+    found: List[Tuple[int, int, str, str]] = []
 
     # markdown 图片语法 ![alt](url "title")
-    for m in re.findall(r"!\[[^\]]*\]\(([^)\s]+)", markdown):
-        found.append(m)
-    # HTML <img src="...">
-    for m in re.findall(
-        r"<img[^>]+src=[\"']([^\"']+)[\"']", markdown, flags=re.IGNORECASE
-    ):
-        found.append(m)
+    md_img_re = re.compile(r"!\[([^\]]*)\]\(\s*([^) \t\n\r]+)(?:\s+[^)]*)?\)")
+    for m in md_img_re.finditer(markdown):
+        found.append((m.start(), m.end(), m.group(1) or "", m.group(2)))
 
-    result: List[str] = []
+    # HTML <img src="...">，同时尽量读取 alt
+    html_img_re = re.compile(r"<img\b[^>]*>", flags=re.IGNORECASE)
+    src_re = re.compile(r"\bsrc=[\"']([^\"']+)[\"']", flags=re.IGNORECASE)
+    alt_re = re.compile(r"\balt=[\"']([^\"']*)[\"']", flags=re.IGNORECASE)
+    for m in html_img_re.finditer(markdown):
+        tag = m.group(0)
+        src = src_re.search(tag)
+        if not src:
+            continue
+        alt = alt_re.search(tag)
+        found.append((m.start(), m.end(), alt.group(1) if alt else "", src.group(1)))
+
+    result: List[ImageCandidate] = []
     seen = set()
-    for raw in found:
-        url = raw.strip()
-        if url.startswith("//"):
-            url = "https:" + url
-        elif not url.startswith("http"):
-            url = urljoin(raw_base, url)  # 相对路径 -> 绝对
-        if url in seen or _is_badge(url):
+    for idx, (start, end, alt, raw) in enumerate(sorted(found), start=1):
+        context = _context(markdown, start, end)
+        url = _normalize_image_url(raw, raw_base)
+        if url in seen or _is_badge(url, alt, context):
             continue
         seen.add(url)
-        result.append(url)
+        result.append(
+            {"url": url, "alt": alt.strip(), "context": context, "index": idx}
+        )
     return result
 
 
@@ -142,7 +186,9 @@ def _fetch_repo(client: httpx.Client, owner: str, repo: str) -> EnrichedRepo:
         text = ""
         raw_base = f"https://raw.githubusercontent.com/{owner}/{repo}/{default_branch}/"
 
-    enriched["image_candidates"] = _extract_image_urls(text, raw_base) if text else []
+    enriched["image_candidates"] = (
+        _extract_image_candidates(text, raw_base) if text else []
+    )
     enriched["readme"] = text[: _readme_max_chars()]
     return enriched
 
@@ -159,8 +205,8 @@ def _enrich_one(
         return base, False
     owner, name = parsed
 
-    # 缓存 key 含 owner/repo + README 截断长度；任一变化则自然失效
-    key = make_key("enrich:v1", f"{owner}/{name}", str(_readme_max_chars()))
+    # v2 缓存包含图片 alt/context 元数据；README 截断长度变化也会自然失效
+    key = make_key("enrich:v2", f"{owner}/{name}", str(_readme_max_chars()))
     cached = cache.get(key)
     if cached is not None:
         base.update(cached)
