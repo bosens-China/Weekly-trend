@@ -15,12 +15,11 @@
 ## 📰 往期周刊
 
 <!-- ISSUES:START -->
-
-|  期号   |    日期    | 收录项目 | 链接                                                                                          |
-| :-----: | :--------: | :------: | :-------------------------------------------------------------------------------------------- |
-| 第 2 期 | 2026-06-29 |  21 个   | [阅读](https://github.com/bosens-China/Weekly-trend/blob/master/reports/2026_06_29/README.md) |
-| 第 1 期 | 2026-06-22 |  19 个   | [阅读](https://github.com/bosens-China/Weekly-trend/blob/master/reports/2026_06_22/README.md) |
-
+| 期号 | 日期 | 收录项目 | 链接 |
+| :--: | :--: | :--: | :-- |
+| 第 3 期 | 2026-07-06 | 21 个 | [阅读](https://github.com/bosens-China/Weekly-trend/blob/master/reports/2026_07_06/README.md) |
+| 第 2 期 | 2026-06-29 | 21 个 | [阅读](https://github.com/bosens-China/Weekly-trend/blob/master/reports/2026_06_29/README.md) |
+| 第 1 期 | 2026-06-22 | 19 个 | [阅读](https://github.com/bosens-China/Weekly-trend/blob/master/reports/2026_06_22/README.md) |
 <!-- ISSUES:END -->
 
 ## 📡 订阅（RSS）
