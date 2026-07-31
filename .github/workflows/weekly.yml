@@ -33,7 +33,7 @@ jobs:
         run: uv python install 3.12
 
       - name: Install dependencies
-        run: uv sync
+        run: uv sync --locked --no-dev
 
       - name: Generate weekly report
         env:
@@ -43,7 +43,7 @@ jobs:
           OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
           # 用于调 GitHub API 抓 README，提高速率限制
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: uv run python src/main.py
+        run: uv run --no-sync python src/main.py
 
       - name: Commit report
         run: |

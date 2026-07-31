@@ -33,6 +33,16 @@
 https://raw.githubusercontent.com/bosens-China/Weekly-trend/master/feed.xml
 ```
 
+## 开发与提交
+
+首次拉取仓库后执行 `pnpm install --frozen-lockfile`。安装过程会启用 Husky 的 Git 钩子；每次提交前，钩子会仅格式化并检查已暂存的 Python 文件，格式化结果会自动加入本次提交。
+
+需要手动格式化整个仓库时，运行 `pnpm format`；运行 Ruff 静态检查使用 `pnpm lint`；运行 Python 类型检查使用 `pnpm typecheck`。本地开发需要 Git、Node.js 22.22.1 或更高版本、pnpm，以及 uv。
+
+需要验证真实抓取与 LLM 报告链路时，配置 `.env` 后运行 `uv run python scripts/smoke_single.py`。该脚本只处理一个仓库并打印结果，不会写入正式周刊。
+
+> Git 的 `post-commit` 钩子无法修改已经创建的提交，因此这里使用 `pre-commit` 钩子，以确保提交中的代码本身已格式化。
+
 ## License
 
 [MIT](./LICENSE) © 2026 yliu

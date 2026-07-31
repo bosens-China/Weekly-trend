@@ -1,9 +1,12 @@
-from typing import List, Optional, TypedDict
+from typing import TYPE_CHECKING, List, Optional, TypedDict
 
 import httpx
 from selectolax.parser import HTMLParser, Node
 
 from log import log
+
+if TYPE_CHECKING:
+    from graph.state import WeeklyState
 
 
 class RepoData(TypedDict):
@@ -114,7 +117,7 @@ def crawler():
         return []
 
 
-def crawler_node(state: dict) -> dict:
+def crawler_node(state: "WeeklyState") -> dict:
     """LangGraph 节点：抓取 trending 列表写入 state.repos。"""
     repos = crawler()
     log("crawler", f"抓取到 {len(repos)} 个仓库", "ok" if repos else "warn")

@@ -4,6 +4,9 @@
   "private": true,
   "description": "Git hooks (husky + lint-staged) for the weekly-trend Python project",
   "scripts": {
+    "format": "uv run ruff format .",
+    "lint": "uv run ruff check .",
+    "typecheck": "uv run pyright",
     "prepare": "husky"
   },
   "lint-staged": {

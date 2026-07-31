@@ -2,12 +2,12 @@
 单仓库冒烟测试：把完整链路在「一个仓库」上跑一遍，逐步打印结果，方便排查。
 
 用法：
-    uv run python test_single.py            # 默认取 trending 第 1 个仓库
-    uv run python test_single.py 3          # 取第 4 个（下标从 0 起）
-    uv run python test_single.py langchain  # 按 owner/repo 模糊匹配第一个命中的
+    uv run python scripts/smoke_single.py            # 默认取 trending 第 1 个仓库
+    uv run python scripts/smoke_single.py 3          # 取第 4 个（下标从 0 起）
+    uv run python scripts/smoke_single.py langchain  # 按 owner/repo 模糊匹配首个结果
 
-会做：crawler 抓列表 -> 取 1 个 -> enrich -> filter_images（下载+识图）-> generate_report
-不会做：不写正式周刊文件（只打印正文）。被选中的图片会落在 reports/assets/<期数>/ 供预览。
+会做：crawler 抓列表 -> 取 1 个 -> enrich -> filter_images（下载+规则选图）-> generate_report
+不会做：不写正式周刊文件（只打印正文）。被选中的图片会暂存在 reports/.tmp/ 供预览。
 """
 
 import os
@@ -16,8 +16,9 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
-load_dotenv(Path(__file__).resolve().parent / ".env")
-sys.path.insert(0, str(Path(__file__).resolve().parent / "src"))
+ROOT = Path(__file__).resolve().parents[1]
+load_dotenv(ROOT / ".env")
+sys.path.insert(0, str(ROOT / "src"))
 
 
 def _hr(title: str) -> None:
@@ -81,8 +82,8 @@ def main() -> None:
     for i, u in enumerate(cands[:10], 1):
         print(f"   {i}. {u}")
 
-    # ---------- 3. filter_images：下载 + 多模态识图 ----------
-    _hr("3) filter_images 下载并识别项目相关图")
+    # ---------- 3. filter_images：下载 + 规则选图 ----------
+    _hr("3) filter_images 下载并选择项目代表图")
     filtered_out = filter_images_node(state)
     state.update(filtered_out)
     rel = filtered_out["enriched"][0].get("relevant_images", [])
@@ -100,7 +101,7 @@ def main() -> None:
     print("\n----- 周刊正文（单仓库）-----\n")
     print(state.get("report_md", "(空)"))
     print("\n----------------------------")
-    print("\n✅ 测试结束（未写正式周刊；如有相关图片见 reports/assets/）。")
+    print("\n✅ 冒烟运行结束（未写正式周刊；如有代表图见 reports/.tmp/）。")
 
 
 if __name__ == "__main__":

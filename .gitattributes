@@ -1,0 +1,2 @@
+# Git 钩子由 Git for Windows 的 sh 执行，固定为 LF 可避免 Windows 下的解释器错误。
+.husky/* text eol=lf
