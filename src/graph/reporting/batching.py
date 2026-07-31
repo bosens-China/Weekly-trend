@@ -11,6 +11,7 @@ from log import log
 
 DEFAULT_BATCH_CHARS = 20_000
 DEFAULT_CONCURRENCY = 5
+SPLIT_STRATEGY_VERSION = "markdown-structure:v1"
 
 
 def _positive_int_env(name: str, default: int) -> int:
@@ -30,7 +31,7 @@ def batch_chars() -> int:
     return _positive_int_env("REPORT_BATCH_CHARS", DEFAULT_BATCH_CHARS)
 
 
-def _compact(repo: EnrichedRepo) -> dict:
+def compact_repo_payload(repo: EnrichedRepo) -> dict:
     """裁剪成报告模型所需字段；图片和 star 等元信息由程序补回。"""
     return {
         "repo": repo_key(repo),
@@ -80,7 +81,7 @@ def _largest_fitting_prefix(base: dict, text: str, limit: int) -> int:
 
 def _split_repo_payload(repo: EnrichedRepo, limit: int) -> List[dict]:
     """仓库材料超限时按 Markdown 结构拆分，必要时再安全硬切。"""
-    payload = _compact(repo)
+    payload = compact_repo_payload(repo)
     readme = str(payload.pop("readme", "") or "")
     full = {**payload, "readme": readme, "part_index": 1, "part_total": 1}
     if _json_chars([full]) <= limit:
@@ -126,12 +127,17 @@ def _split_repo_payload(repo: EnrichedRepo, limit: int) -> List[dict]:
     ]
 
 
-def build_report_batches(
+def build_report_units(
     enriched: List[EnrichedRepo], limit: int | None = None
 ) -> List[dict]:
-    """保持 Trending 顺序，将仓库材料装箱到不超过字符上限的批次。"""
+    """先把仓库拆成稳定分析单元，此时尚未进行批次装箱。"""
     max_chars = limit or batch_chars()
-    units = [unit for repo in enriched for unit in _split_repo_payload(repo, max_chars)]
+    return [unit for repo in enriched for unit in _split_repo_payload(repo, max_chars)]
+
+
+def pack_report_units(units: List[dict], limit: int | None = None) -> List[dict]:
+    """只把需要调用 LLM 的分析单元装入字符受限批次。"""
+    max_chars = limit or batch_chars()
     batches: List[dict] = []
     current: List[dict] = []
     for unit in units:
@@ -154,3 +160,11 @@ def build_report_batches(
             }
         )
     return batches
+
+
+def build_report_batches(
+    enriched: List[EnrichedRepo], limit: int | None = None
+) -> List[dict]:
+    """兼容入口：拆分全部仓库后直接装批。"""
+    max_chars = limit or batch_chars()
+    return pack_report_units(build_report_units(enriched, max_chars), max_chars)

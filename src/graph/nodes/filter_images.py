@@ -95,7 +95,7 @@ def _safe(s: str) -> str:
 
 
 def _coerce_candidate(raw: object, index: int) -> Optional[ImageCandidate]:
-    """兼容旧缓存/手写测试里可能仍是字符串的图片候选。"""
+    """兼容旧数据或手写测试里可能仍是字符串的图片候选。"""
     if isinstance(raw, dict) and raw.get("url"):
         return {
             "url": str(raw.get("url") or ""),

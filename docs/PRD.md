@@ -26,7 +26,7 @@ GitHub Trending 每天都在变，但开发者很难持续跟进。本项目通�
 
 ## 4. 非功能需求
 
-- **成本可控**：README 截断（`README_MAX_CHARS`，默认 32k）、报告分批上限（`REPORT_BATCH_CHARS`，默认 20k）、单仓库候选图上限 8 张；**缓存** enrich 结果与视觉判定（`cache/` 提交进仓库供 CI 跨周复用；`CACHE_TTL_DAYS` 默认 30 天，超期自动清理），重跑/跨周复现的仓库不重复抓取与调模型。
+- **成本可控**：README 截断（`README_MAX_CHARS`，默认 32k）、报告分批上限（`REPORT_BATCH_CHARS`，默认 20k）、单仓库候选图上限 8 张；GitHub 数据每次重新抓取，确保输入新鲜；仅缓存解析成功的 LLM 输出（`cache/` 提交进仓库供 CI 跨周复用），批次分析以项目为缓存颗粒度，超长 README 的分片保存在同一个项目记录中，每个 LLM 批次结束后批量原子落盘；全局分类和导语按整期输入复用。缓存 key 包含阶段、Prompt、模型配置、输入和输出结构版本，`CACHE_TTL_DAYS` 默认 30 天。
 - **健壮兜底**：
   - 未配置 `OPENAI_API_KEY` → 直接跳过，不执行后续。
   - README 无图 / 抓取失败 → 跳过该仓库的图片处理，不影响整体。

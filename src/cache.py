@@ -1,30 +1,22 @@
-"""
-极简的本地 JSON 文件缓存，用于避免重复浪费（重跑/跨周复现时少打 GitHub API、少调视觉模型）。
+"""共享 JSON 缓存的底层存储。
 
-设计要点：
-- 两个位置：
-  - 共享缓存 `cache/`（提交进仓库，shared=True）：希望 CI 跨周复用的（enrich、视觉判定）。
-    不提交的话 CI 每次全新 checkout 都会冷启动，缓存等于白做。
-  - 本地缓存 `.cache/`（gitignored，shared=False）：可选，仅本地复用、不想进仓库时用。
-- 每个命名空间一个文件 `<dir>/<name>.json`，结构为 {key: {"value": ..., "ts": <秒>}}。
-- key 由调用方用 make_key(*parts) 生成：把「身份 + 关键参数 + prompt」拼起来做 sha256，
-  这样一旦 prompt / 参数变化，旧缓存自然失效，不会读到「用旧逻辑算出来的结果」。
-- TTL 默认 30 天（环境变量 CACHE_TTL_DAYS 可调）；**每次加载时直接丢弃超期条目**，
-  防止 key 无限累加导致文件越来越大。
-- 线程安全（enrich / filter_images 都是多线程跑的）。
+当前缓存只用于保存 LLM 输出，并提交到 ``cache/`` 供 CI 跨周复用。业务层负责
+把 Prompt、模型参数、输入和输出结构版本组成缓存 key；本模块只处理 TTL、
+线程安全与原子落盘。
 """
 
+import copy
 import hashlib
 import json
 import os
+import tempfile
 import threading
 import time
 from pathlib import Path
-from typing import Any, Optional
+from typing import Any, Callable, Optional
 
 _ROOT = Path(__file__).resolve().parents[1]
-LOCAL_CACHE_DIR = _ROOT / ".cache"  # gitignored，纯本地
-SHARED_CACHE_DIR = _ROOT / "cache"  # 提交进仓库，供 CI 跨周复用
+CACHE_DIR = _ROOT / "cache"
 
 
 def _ttl_seconds() -> int:
@@ -39,40 +31,95 @@ def make_key(*parts: str) -> str:
 
 
 class JsonCache:
-    def __init__(self, name: str, shared: bool = False):
-        base = SHARED_CACHE_DIR if shared else LOCAL_CACHE_DIR
+    """一个命名空间对应一个 JSON 文件的线程安全 TTL 缓存。"""
+
+    def __init__(self, name: str, directory: Path | None = None):
+        base = directory or CACHE_DIR
         self.path = base / f"{name}.json"
         self._lock = threading.Lock()
-        self._data: dict[str, dict] = {}
+        self._data: dict[str, dict[str, Any]] = {}
         self._load_and_prune()
 
     def _load_and_prune(self) -> None:
         try:
             raw = json.loads(self.path.read_text(encoding="utf-8"))
-        except Exception:
+        except (OSError, json.JSONDecodeError):
+            raw = {}
+        if not isinstance(raw, dict):
             raw = {}
         now = time.time()
         ttl = _ttl_seconds()
-        # 加载即清理：丢弃超过 TTL 的条目，控制文件大小
-        self._data = {
-            k: v
-            for k, v in raw.items()
-            if isinstance(v, dict) and (now - float(v.get("ts", 0))) <= ttl
-        }
+        valid: dict[str, dict[str, Any]] = {}
+        for key, entry in raw.items():
+            if not isinstance(key, str) or not isinstance(entry, dict):
+                continue
+            try:
+                age = now - float(entry.get("ts", 0))
+            except (TypeError, ValueError):
+                continue
+            if age <= ttl:
+                valid[key] = entry
+        self._data = valid
 
     def get(self, key: str) -> Optional[Any]:
         with self._lock:
             entry = self._data.get(key)
-            return entry.get("value") if entry else None
+            return copy.deepcopy(entry.get("value")) if entry else None
 
     def set(self, key: str, value: Any) -> None:
         with self._lock:
-            self._data[key] = {"value": value, "ts": time.time()}
+            self._data[key] = {"value": copy.deepcopy(value), "ts": time.time()}
+
+    def set_many_and_save(self, values: dict[str, Any]) -> None:
+        """在同一把锁内批量覆盖并原子落盘。"""
+        if not values:
+            return
+        with self._lock:
+            now = time.time()
+            for key, value in values.items():
+                self._data[key] = {"value": copy.deepcopy(value), "ts": now}
+            self._save_unlocked()
+
+    def merge_many_and_save(
+        self,
+        values: dict[str, Any],
+        merger: Callable[[Any, Any], Any],
+    ) -> None:
+        """原子合并多个 key，供并发批次更新同一项目的不同分片。"""
+        if not values:
+            return
+        with self._lock:
+            now = time.time()
+            for key, value in values.items():
+                entry = self._data.get(key)
+                current = copy.deepcopy(entry.get("value")) if entry else None
+                merged = merger(current, copy.deepcopy(value))
+                self._data[key] = {"value": merged, "ts": now}
+            self._save_unlocked()
 
     def save(self) -> None:
+        """使用同目录临时文件原子替换，避免中途退出留下半个 JSON。"""
         with self._lock:
-            self.path.parent.mkdir(parents=True, exist_ok=True)
-            self.path.write_text(
-                json.dumps(self._data, ensure_ascii=False, indent=2) + "\n",
-                encoding="utf-8",
-            )
+            self._save_unlocked()
+
+    def _save_unlocked(self) -> None:
+        self.path.parent.mkdir(parents=True, exist_ok=True)
+        payload = (
+            json.dumps(self._data, ensure_ascii=False, indent=2, sort_keys=True) + "\n"
+        )
+        fd, temp_name = tempfile.mkstemp(
+            dir=self.path.parent,
+            prefix=f".{self.path.name}.",
+            suffix=".tmp",
+            text=True,
+        )
+        temp_path = Path(temp_name)
+        try:
+            with os.fdopen(fd, "w", encoding="utf-8") as temp_file:
+                temp_file.write(payload)
+                temp_file.flush()
+                os.fsync(temp_file.fileno())
+            os.replace(temp_path, self.path)
+        except Exception:
+            temp_path.unlink(missing_ok=True)
+            raise

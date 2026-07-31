@@ -49,9 +49,13 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # reports/ 是周刊与期数台账；cache/ 是视觉判定缓存，提交回仓库供下次跨周复用；
+          # reports/ 是周刊与期数台账；cache/ 是 LLM 输出缓存，提交回仓库供下次跨周复用；
           # README.md（往期列表）与 feed.xml（RSS）随每期自动刷新，一并提交
-          git add reports/ cache/ README.md feed.xml
+          git add reports/ README.md feed.xml
+          # 首次成功写入 LLM 缓存后 cache/ 才会存在。
+          if [ -d cache ]; then
+            git add cache/
+          fi
           if git diff --staged --quiet; then
             echo "本周无新增报告，跳过提交。"
           else

@@ -3,14 +3,17 @@ import os
 import sys
 import unittest
 from pathlib import Path
+from tempfile import TemporaryDirectory
 from types import SimpleNamespace
 from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
+from cache import JsonCache  # noqa: E402
 from graph.nodes import generate_report  # noqa: E402
 from graph.reporting import workflow as report_workflow  # noqa: E402
+from graph.reporting.llm_cache import LlmOutputCache  # noqa: E402
 from graph.reporting.prompts import CATEGORY_GUIDE  # noqa: E402
 from graph.state import EnrichedRepo  # noqa: E402
 
@@ -34,11 +37,17 @@ def _repo(name: str, readme: str = "") -> EnrichedRepo:
 
 
 class _FakeModel:
+    def __init__(self) -> None:
+        self.call_count = 0
+        self.analyzed_repos: list[str] = []
+
     def invoke(self, messages: list[dict]) -> SimpleNamespace:
+        self.call_count += 1
         system = messages[0]["content"]
         content = messages[1]["content"]
         payload = json.loads(content.split("\n", 1)[1] if "\n" in content else content)
         if "项目分析编辑" in system:
+            self.analyzed_repos.extend(item["repo"] for item in payload)
             items = [
                 {
                     "repo": item["repo"],
@@ -238,20 +247,30 @@ class GenerateReportTests(unittest.TestCase):
             _repo("two", "b" * 260),
             _repo("three", "c" * 260),
         ]
-        workflow = generate_report.build_report_workflow()
+        model = _FakeModel()
 
-        with (
-            patch.object(report_workflow, "get_llm", return_value=_FakeModel()),
-            patch.dict(
-                os.environ,
-                {"REPORT_BATCH_CHARS": "500", "REPORT_CONCURRENCY": "5"},
-            ),
-        ):
-            input_state: report_workflow.ReportState = {"enriched": repos}
-            result = workflow.invoke(
-                input_state,
-                {"max_concurrency": generate_report.report_concurrency()},
+        with TemporaryDirectory() as temp_dir:
+            llm_cache = LlmOutputCache(
+                JsonCache("llm_outputs", directory=Path(temp_dir))
             )
+            workflow = generate_report.build_report_workflow(llm_cache)
+            with (
+                patch.object(report_workflow, "get_llm", return_value=model),
+                patch.dict(
+                    os.environ,
+                    {"REPORT_BATCH_CHARS": "500", "REPORT_CONCURRENCY": "5"},
+                ),
+            ):
+                input_state: report_workflow.ReportState = {"enriched": repos}
+                result = workflow.invoke(
+                    input_state,
+                    {"max_concurrency": generate_report.report_concurrency()},
+                )
+                first_run_calls = model.call_count
+                cached_result = workflow.invoke(
+                    input_state,
+                    {"max_concurrency": generate_report.report_concurrency()},
+                )
 
         items = [
             item
@@ -268,6 +287,42 @@ class GenerateReportTests(unittest.TestCase):
         )
         self.assertTrue(all(item["plain_explanation"] for item in items))
         self.assertNotIn("English description", result["report_md"])
+        self.assertGreater(first_run_calls, 0)
+        self.assertEqual(model.call_count, first_run_calls)
+        self.assertEqual(cached_result["report_json"], result["report_json"])
+
+    def test_report_workflow_reuses_projects_when_batch_composition_changes(
+        self,
+    ) -> None:
+        model = _FakeModel()
+        first_repos = [_repo("one"), _repo("two")]
+        second_repos = [_repo("two"), _repo("three")]
+
+        with TemporaryDirectory() as temp_dir:
+            llm_cache = LlmOutputCache(
+                JsonCache("llm_outputs", directory=Path(temp_dir))
+            )
+            workflow = generate_report.build_report_workflow(llm_cache)
+            with (
+                patch.object(report_workflow, "get_llm", return_value=model),
+                patch.dict(
+                    os.environ,
+                    {"REPORT_BATCH_CHARS": "20000", "REPORT_CONCURRENCY": "5"},
+                ),
+            ):
+                workflow.invoke(
+                    {"enriched": first_repos},
+                    {"max_concurrency": generate_report.report_concurrency()},
+                )
+                workflow.invoke(
+                    {"enriched": second_repos},
+                    {"max_concurrency": generate_report.report_concurrency()},
+                )
+
+        self.assertEqual(
+            model.analyzed_repos,
+            ["acme/one", "acme/two", "acme/three"],
+        )
 
 
 if __name__ == "__main__":
