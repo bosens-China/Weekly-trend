@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 load_dotenv(ROOT / ".env")
 
 from graph.build import build_graph  # noqa: E402  （需在 load_dotenv 之后导入）
+from graph.nodes.generate_report import report_concurrency  # noqa: E402
 from graph.nodes.output_report import current_week_has_report  # noqa: E402
 from log import log  # noqa: E402
 
@@ -49,7 +50,7 @@ def main():
 
     log("main", "开始生成本周周刊…")
     graph = build_graph()
-    result = graph.invoke({})
+    result = graph.invoke({}, {"max_concurrency": report_concurrency()})
     path = result.get("output_path")
     if path:
         log("main", f"周刊已生成：{path}（第 {result.get('issue_number')} 期）", "ok")
