@@ -17,6 +17,7 @@
 <!-- ISSUES:START -->
 | 期号 | 日期 | 收录项目 | 链接 |
 | :--: | :--: | :--: | :-- |
+| 第 7 期 | 2026-08-03 | 19 个 | [阅读](https://github.com/bosens-China/Weekly-trend/blob/master/reports/2026_08_03/README.md) |
 | 第 6 期 | 2026-07-27 | 23 个 | [阅读](https://github.com/bosens-China/Weekly-trend/blob/master/reports/2026_07_27/README.md) |
 | 第 5 期 | 2026-07-20 | 14 个 | [阅读](https://github.com/bosens-China/Weekly-trend/blob/master/reports/2026_07_20/README.md) |
 | 第 4 期 | 2026-07-13 | 21 个 | [阅读](https://github.com/bosens-China/Weekly-trend/blob/master/reports/2026_07_13/README.md) |
