@@ -1,4 +1,118 @@
 {
+  "00e69e8b8e77d5c46fea45e827d1ef22a923205e8d99b720a51e9f3acb1815f4": {
+    "ts": 1786322264.1929996,
+    "value": {
+      "input_hash": "c279fece8b5e9d20806c61ef15f6f814ab9aee599d4a1fe96423dcb2a7a47f2d",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 2,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 2,
+            "plain_explanation": "它帮助 Java/Kotlin 开发者更容易构建能自主决策的 AI 应用，例如自动完成任务或智能交互，就像在游戏 AI 中使用的规划算法，但用于企业软件开发。",
+            "repo": "embabel/embabel-agent",
+            "source_description": "Agent framework for the JVM. Pronounced Em-BAY-bel /ɛmˈbeɪbəl/",
+            "summary": "Embabel Agent Framework 是一个专为 JVM 设计的 AI 代理框架，允许开发者通过注解或 Kotlin DSL 定义代理流程，将大语言模型提示与代码和领域模型无缝集成。它采用基于目标的智能规划算法（如 GOAP），支持动态决策、扩展性和强类型，并构建在 Spring 生态之上，适用于 Java 和 Kotlin 开发者构建企业级代理应用。",
+            "tags": [
+              "agent",
+              "ai-agents",
+              "java",
+              "kotlin",
+              "spring",
+              "llms"
+            ]
+          },
+          "2": {
+            "part_index": 2,
+            "part_total": 2,
+            "plain_explanation": "这个框架帮助 Java/Kotlin 开发者快速搭建能自动搜索信息、处理数据并生成智能响应的应用，比如自动写新闻摘要或进行事实核查，让 AI 成为开发中的助手。",
+            "repo": "embabel/embabel-agent",
+            "source_description": "Agent framework for the JVM. Pronounced Em-BAY-bel /ɛmˈbeɪbəl/",
+            "summary": "Embabel Agent 是一个基于 Kotlin 的 AI 代理框架，用于在 JVM 上构建智能应用。它允许开发者通过注解定义代理动作，集成 web 工具和多种大语言模型（如 OpenAI、Anthropic），自动化处理任务。框架支持 Spring Boot，提供类型安全的数据模型和可测试性，强调开发者控制与 AI 加速开发流程。",
+            "tags": [
+              "agent",
+              "ai-agents",
+              "kotlin",
+              "spring",
+              "llms",
+              "multi-agents"
+            ]
+          }
+        },
+        "repo": "embabel/embabel-agent"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
+  "012b84edaf9f9232e292e21b584158b8fe0bdaaf9f667776bc6662585bc9bedf": {
+    "ts": 1786322244.227203,
+    "value": {
+      "input_hash": "a2605fc024345273a2a2ad75810ce818ba9b89a98e07eee479c13c9426b3799c",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 1,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 1,
+            "plain_explanation": "这个工具把你的技术书或文档变成 AI 助手可以随时查看的智能摘要，这样你就不用每次都让 AI 从头读整本书或担心它瞎猜了。适合经常需要翻阅技术资料的程序员或团队使用。",
+            "repo": "virgiliojr94/book-to-skill",
+            "source_description": "Turn any technical book PDF into a Claude Code skill — ready to study, reference, and use while you work.",
+            "summary": "该项目是一个将技术书籍、文档或来源材料转换为 AI 代理技能的工具。它通过提取和生成结构化文件，如 SKILL.md 和章节文件，使 AI 助手能按需加载内容，减少 token 使用并避免幻觉。适用于使用 GitHub Copilot CLI、Amp 或 Claude Code 的开发者，方便在工作中高效参考技术资料。",
+            "tags": [
+              "Agent Skills",
+              "PDF",
+              "AI",
+              "Documentation",
+              "Python"
+            ]
+          }
+        },
+        "repo": "virgiliojr94/book-to-skill"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
+  "0a6e0b001390185cd9f4565998ab5d2c7dd3336d321fa18c8b1b3dc71a023dbb": {
+    "ts": 1786322236.568712,
+    "value": {
+      "input_hash": "a58404c09e2cbf08db79cff3ca13ee8c0d6c78555c986137509a2362f71c86b5",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 1,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 1,
+            "plain_explanation": "SwarmForge 让多个 AI 代理能在同一项目中协作开发，通过 tmux 和 git 分离工作，避免互相干扰。它适合使用 AI 工具进行软件开发的程序员，简化多代理协调。",
+            "repo": "unclebob/swarm-forge",
+            "source_description": "A simple tool for coordinating several AI agents.",
+            "summary": "SwarmForge 是一个基于 tmux 的轻量级协调平台，用于将多个 AI 代理组织成可靠的软件工程团队。它通过配置文件定义角色和工作流，使用 git 工作树隔离工作，并支持 Codex、Claude 等多种 AI 后端。该平台提供从快速编码到完整规范的多种工作流模式，适用于需要多代理协作的本地开发项目。",
+            "tags": [
+              "AI agents",
+              "orchestration",
+              "tmux",
+              "git",
+              "software engineering",
+              "multi-agent systems"
+            ]
+          }
+        },
+        "repo": "unclebob/swarm-forge"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
   "0ddcca0e8ce4949984c96308a5126f51b88458fed7e5e85abf2d01e648405983": {
     "ts": 1785719847.5488024,
     "value": {
@@ -40,6 +154,72 @@
           }
         },
         "repo": "virgiliojr94/book-to-skill"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
+  "13a2165d58699b127e7af9fe1789eae009f661dce088ba9447d6c9bdcb740453": {
+    "ts": 1786322256.669009,
+    "value": {
+      "input_hash": "2ea34d9c69986c329a5ffe6edd468281e80681efe797bf0690c0a291295a4ab4",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 1,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 1,
+            "plain_explanation": "这个框架让开发者可以轻松创建能通过语音、视频和文本与用户实时交流的 AI 代理，比如智能客服或语音助手。",
+            "repo": "livekit/agents",
+            "source_description": "A framework for building realtime voice AI agents 🤖🎙️📹",
+            "summary": "LiveKit Agents 是一个开源的 Python 框架，专为构建能够实时交互的语音 AI 代理而设计。它集成了语音识别、大语言模型和语音合成等技术，支持语音、视频和文本等多模态通信。框架提供灵活的组件配置、内置的任务调度和测试工具，适用于开发者快速搭建智能语音助手或客服系统。",
+            "tags": [
+              "agents",
+              "ai",
+              "openai",
+              "real-time",
+              "video",
+              "voice"
+            ]
+          }
+        },
+        "repo": "livekit/agents"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
+  "159d41c016f31bfdbf74bd780e86a653c54313031954b85565777ab17bc807d3": {
+    "ts": 1786322224.173895,
+    "value": {
+      "input_hash": "0dbc992e7057cbbcf6169a9e4c6edc9f98aa8f9b3fa107b0c2e04fe642ce9552",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 1,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 1,
+            "plain_explanation": "这个工具就像给AI助手装了一个安全任务导航系统，让它知道面对不同漏洞或逆向问题时该用哪个工具和方法，避免瞎猜。主要用在安全研究、渗透测试或CTF比赛中，帮助开发者或安全工程师提高效率。",
+            "repo": "zhaoxuya520/reverse-skill",
+            "source_description": "Reverse Engineering / Authorized Penetration Testing / Security Research Skill Router Pack AI-powered routing + On-demand toolchain bootstrapping + Self-evolving knowledge base Supports Claude Code, Kiro, Cursor, Cline, and other AI coding clients 逆向/渗透/安全技能路由包 - AI 自动路由 + 按需自举工具链 + 自动进化经验库 | 支持 Claude Code / Kiro / Cursor / Cline 等代码 AI 客户端",
+            "summary": "reverse-skill 是一个面向AI代理的网络安全技能路由包，专为逆向工程、授权渗透测试和安全研究设计。它通过AI自动路由机制，将任务引导至正确的方法论、工具链和工作流，避免AI盲目尝试命令。支持Claude Code、Cursor等多种AI编码客户端，适用于APK分析、二进制逆向、CTF挑战、渗透测试等20多种安全场景。",
+            "tags": [
+              "reverse-engineering",
+              "penetration-testing",
+              "security",
+              "AI-routing",
+              "tools",
+              "cybersecurity"
+            ]
+          }
+        },
+        "repo": "zhaoxuya520/reverse-skill"
       },
       "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
       "schema_version": "report-llm:v1",
@@ -121,6 +301,39 @@
           }
         },
         "repo": "opengeos/GeoLibre"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
+  "2068a629fb692df8511c1af3ad70e1cbdfb4958d90e3a2f21f190a88f102a656": {
+    "ts": 1786322243.5675275,
+    "value": {
+      "input_hash": "c84bb1c8c2b6be3d7a00dc5f412b97492d7175bccac41f1fcf58895e5f22088a",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 1,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 1,
+            "plain_explanation": "它就像是一个‘登录中心’，让多个应用共享同一个账号系统，用户只需登录一次，适合管理多个服务的公司或团队。",
+            "repo": "goauthentik/authentik",
+            "source_description": "The authentication glue you need.",
+            "summary": "authentik 是一个开源身份提供者，专注于单点登录（SSO），支持多种认证协议如 SAML、OAuth2 和 OIDC。它设计用于自托管，从小型测试环境到大规模生产集群都能部署。适用于需要替换现有 IdP 或实现统一认证的团队。",
+            "tags": [
+              "sso",
+              "authentication",
+              "oauth2",
+              "oidc",
+              "saml",
+              "security"
+            ]
+          }
+        },
+        "repo": "goauthentik/authentik"
       },
       "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
       "schema_version": "report-llm:v1",
@@ -301,6 +514,39 @@
           }
         },
         "repo": "1jehuang/jcode"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
+  "4017ad1d8a71aabd83cc2b802d7f6c009f904beb8656f0bf63d1f28561a71d81": {
+    "ts": 1786322223.0783155,
+    "value": {
+      "input_hash": "53c1a70332a7782d0f588440850bc28afe69be5803bd6c4f74226fabdd60a111",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 1,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 1,
+            "plain_explanation": "这个工具帮助开发者快速判断 PDF 是否可以直接提取文本，避免不必要的 OCR 处理，从而节省时间和费用。特别适合处理报告、论文、财务文档等文本 PDF。",
+            "repo": "firecrawl/pdf-inspector",
+            "source_description": "Fast Rust library for PDF inspection, classification, and text extraction. Intelligently detects scanned vs text-based PDFs to enable smart routing decisions.",
+            "summary": "pdf-inspector 是一个用 Rust 编写的快速 PDF 处理库，专注于智能分类和文本提取。它能检测 PDF 是文本型还是扫描型，并直接提取文本生成 Markdown，无需 OCR 服务，处理速度通常在 200 毫秒内。支持 Python、Node.js 和 WebAssembly 绑定，适用于需要高效处理大量 PDF 的管道场景。",
+            "tags": [
+              "pdf",
+              "pdf-classification",
+              "pdf-extraction",
+              "rust",
+              "markdown",
+              "text-extraction"
+            ]
+          }
+        },
+        "repo": "firecrawl/pdf-inspector"
       },
       "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
       "schema_version": "report-llm:v1",
@@ -518,6 +764,121 @@
       "stage": "analyze_project"
     }
   },
+  "5ce898728f738ceab16e7a38c523475dbf85456acbc01d02e79ce019dc5e341b": {
+    "ts": 1786322258.6495204,
+    "value": {
+      "input_hash": "352e5fcbf1cf2d082672419242f175de938823ec606bb8a6e47208966671841e",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 2,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 2,
+            "plain_explanation": "ComfyUI 让用户通过连接可视化节点来搭建 AI 生成流程，就像用积木拼图一样，解决了内容创作中需要自定义参数和工作流的问题，适合设计师、艺术家和开发者使用。",
+            "repo": "Comfy-Org/ComfyUI",
+            "source_description": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface.",
+            "summary": "ComfyUI 是一个模块化的 AI 内容创作引擎，专为视觉专业人士设计，提供节点图界面构建图像、视频、3D 和音频生成的工作流。它支持多种开源和闭源扩散模型，可本地或云端运行，并通过 API 集成到生产流程中。项目强调灵活控制、高效执行和广泛模型兼容性。",
+            "tags": [
+              "ai",
+              "comfy",
+              "comfyui",
+              "python",
+              "pytorch",
+              "stable-diffusion"
+            ]
+          },
+          "2": {
+            "part_index": 2,
+            "part_total": 2,
+            "plain_explanation": "ComfyUI 帮助 AI 开发者和研究人员轻松搭建和运行图像生成模型工作流，支持多种硬件和扩展节点，适合需要灵活配置和高级功能的项目。",
+            "repo": "Comfy-Org/ComfyUI",
+            "source_description": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface.",
+            "summary": "ComfyUI 是一个模块化的扩散模型 GUI 和后端，支持节点式工作流构建。当前材料显示它兼容多种 AI 加速硬件，如 Ascend NPUs 和 Cambricon MLUs，并提供 ComfyUI-Manager 扩展来管理自定义节点。还介绍了运行选项、预览方法和 TLS/SSL 安全设置，前端已独立开发可灵活更新。",
+            "tags": [
+              "ai",
+              "comfy",
+              "comfyui",
+              "python",
+              "pytorch",
+              "stable-diffusion"
+            ]
+          }
+        },
+        "repo": "Comfy-Org/ComfyUI"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
+  "67c90064e80d3df04a3a63689e39fc2bb9d92f109c2076c880a8004ec4969bc3": {
+    "ts": 1786322243.5675275,
+    "value": {
+      "input_hash": "dceabada74afa6b2be438128f06571dce989fb70fbe67a4b5bee553c97f2c542",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 1,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 1,
+            "plain_explanation": "它就像 YouTube 的‘干净版’，让你看视频时不被广告打扰，也不追踪你的行为，适合不想被谷歌监控的人。",
+            "repo": "iv-org/invidious",
+            "source_description": "Invidious is an alternative front-end to YouTube",
+            "summary": "Invidious 是一个开源的 YouTube 替代前端，提供无广告、无跟踪的视频观看体验。它使用 Crystal 语言开发，支持自定义主页和订阅管理，无需 JavaScript 即可运行。适用于希望保护隐私或摆脱 Google 生态的用户。",
+            "tags": [
+              "youtube",
+              "video",
+              "alternative",
+              "privacy",
+              "open-source",
+              "libre"
+            ]
+          }
+        },
+        "repo": "iv-org/invidious"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
+  "7602bce16865bdccc041597c92318cf233e8f77ed657934407aa6269c71a3676": {
+    "ts": 1786322258.6495204,
+    "value": {
+      "input_hash": "606bd800418356e7968b545e8a2ac4149c425eeb6ab32b23a3ec2b00d994f1dd",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 1,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 1,
+            "plain_explanation": "DrawDB 让开发者在浏览器中拖拽绘制数据库关系图，并自动生成 SQL 代码，省去手动编写建表语句的麻烦，适合快速设计和团队协作。",
+            "repo": "drawdb-io/drawdb",
+            "source_description": "Free, simple, and intuitive online database diagram editor and SQL generator.",
+            "summary": "DrawDB 是一个免费、简单、直观的在线数据库模式编辑器和 SQL 生成器。用户可以在浏览器中通过点击创建实体关系图，支持导出 SQL 脚本和生成迁移，无需注册账户。项目基于 JavaScript 和 React 构建，提供本地开发和 Docker 部署选项。",
+            "tags": [
+              "database-schema",
+              "diagram-editor",
+              "sql",
+              "erd",
+              "javascript",
+              "react"
+            ]
+          }
+        },
+        "repo": "drawdb-io/drawdb"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
   "8dbc6fad4a4425608d4d32eae0513f7a17eb8461b54a25887c0da2a36ff6946f": {
     "ts": 1785719866.4455936,
     "value": {
@@ -545,6 +906,85 @@
           }
         },
         "repo": "alibaba/open-code-review"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
+  "9975053737964ef7019bd7c141552354190665f7e2e3e284d029a065dc41f4ce": {
+    "ts": 1786322277.6418457,
+    "value": {
+      "input_hash": "aa00038dd78626dc6e16521e42e91a81374a783ca23f73ddadc82cb4f9ff7f48",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 2,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 2,
+            "plain_explanation": "它就像一本系统设计的实战手册，帮助程序员在面试中展示设计大型系统的能力，适合准备技术面试的工程师使用。",
+            "repo": "donnemartin/system-design-primer",
+            "source_description": "Learn how to design large-scale systems. Prep for the system design interview. Includes Anki flashcards.",
+            "summary": "这是一个专注于大规模系统设计的学习资源库，旨在帮助开发者掌握系统设计原则并准备技术面试。项目整合了丰富的学习材料，包括设计模式、面试问题及解决方案，并提供 Anki 闪卡辅助记忆。它适用于希望提升架构能力或应对系统设计面试的工程师和程序员。",
+            "tags": [
+              "design",
+              "interview",
+              "system",
+              "programming",
+              "python"
+            ]
+          },
+          "2": {
+            "part_index": 2,
+            "part_total": 2,
+            "plain_explanation": "这部分内容帮助开发者理解设计大型网站或应用时需要考虑的关键问题，比如如何平衡速度和可靠性，常见于技术面试中，用于评估候选人对系统架构的掌握程度。",
+            "repo": "donnemartin/system-design-primer",
+            "source_description": "Learn how to design large-scale systems. Prep for the system design interview. Includes Anki flashcards.",
+            "summary": "本仓库的当前部分聚焦于系统设计的基础概念和权衡，详细讲解了性能与可扩展性、延迟与吞吐量的区别，以及 CAP 定理下可用性与一致性的取舍。它还阐述了一致性模式、可用性模式、DNS 和 CDN 等关键组件的工作原理。这些内容旨在帮助开发者理解设计大规模系统的核心挑战，尤其适用于准备系统设计面试的场景。",
+            "tags": [
+              "design",
+              "interview",
+              "system",
+              "distributed-systems"
+            ]
+          }
+        },
+        "repo": "donnemartin/system-design-primer"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
+  "b22c5fbf0c37fd2630b4f2b81360480e0c4b0130aaadbde086d79114714c8e7f": {
+    "ts": 1786322227.91821,
+    "value": {
+      "input_hash": "c1078af58576cbc109d4d0c7f3403f5315569db510153a2a04ccf8d4acea423c",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 1,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 1,
+            "plain_explanation": "它让昂贵的大语言模型能在普通电脑的显卡上跑，就像把大文件拆成小块逐个加载一样，解决了显存不足导致无法运行大模型的问题。没有高端GPU的开发者或小团队可以用它来快速测试或应用大模型。",
+            "repo": "lyogavin/airllm",
+            "source_description": "AirLLM 70B inference with single 4GB GPU",
+            "summary": "AirLLM 是一个开源项目，通过逐层加载技术大幅降低大语言模型的推理内存需求。它允许在单张4GB显存GPU上运行70B参数模型，甚至支持671B的DeepSeek-V3在约12GB显存下运行。该工具兼容Llama、Qwen等主流模型，无需量化或蒸馏，适用于资源有限的开发者在消费级硬件上实验或部署大模型。",
+            "tags": [
+              "llm",
+              "open-source",
+              "generative-ai",
+              "llama",
+              "qlora",
+              "open-models"
+            ]
+          }
+        },
+        "repo": "lyogavin/airllm"
       },
       "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
       "schema_version": "report-llm:v1",
@@ -582,6 +1022,19 @@
       "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
       "schema_version": "report-llm:v1",
       "stage": "analyze_project"
+    }
+  },
+  "b75739463872b84e41bc4eec3ddfa2e362fc1aa5a13d1af891af4bb89a45c499": {
+    "ts": 1786322332.0485034,
+    "value": {
+      "input_hash": "45e5864cca028ee16d996aa18e0dc036c35992e3a680a7b9bb35b4a9a9e84822",
+      "model": "mimo-v2.5",
+      "output": {
+        "overview": "本期周刊共收录 18 个项目。AI 领域以代理开发框架和模型优化工具为主，涵盖记忆管理、推理加速和多代理协调；安全与运维方向聚焦网络安全技能和身份认证；开发工具与平台涉及项目管理与数据库设计工具。"
+      },
+      "prompt_hash": "8c94cc4b3c412c557dadbf6292f4f890a09342667e559fa0afb8a6060f0e4ed4",
+      "schema_version": "report-llm:v1",
+      "stage": "generate_overview"
     }
   },
   "bdd40638fbe9a2d2694c9249a8bd90bb3ea8da9b2de123cc2f378a358318a93b": {
@@ -633,6 +1086,39 @@
       "stage": "analyze_project"
     }
   },
+  "c2a16fedff93210d2dbfd0a090858f749f05aeba6279b9128e8726dfa2decbcf": {
+    "ts": 1786322238.145177,
+    "value": {
+      "input_hash": "c6365cea0f4720eccc0734037e2387bb794b2abdd991c966f9fa5310abe588e2",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 1,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 1,
+            "plain_explanation": "它就像一个技能包，开发者安装后可以让 AI 代理轻松操作 Google 云服务，比如部署应用或管理数据，从而省去从零编写代码的麻烦。主要面向那些在开发 AI 代理或需要简化 Google Cloud 操作的程序员。",
+            "repo": "google/skills",
+            "source_description": "Agent Skills for Google products and technologies",
+            "summary": "这是 Google 官方维护的 Agent 技能仓库，提供针对 Google 产品和技术的预构建技能模块。技能涵盖 Google Cloud 入门、AI/ML 平台管理、基础设施配置等多个领域，开发者可以通过 npm 命令快速安装。该仓库旨在帮助用户在 AI 代理中高效集成和使用 Google 服务。",
+            "tags": [
+              "google",
+              "googlecloud",
+              "skills",
+              "agent",
+              "cloud",
+              "ai"
+            ]
+          }
+        },
+        "repo": "google/skills"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
   "c448be17bf314a16e516bc33757cd5134e81f01433a1b0f5ac541234d28e9829": {
     "ts": 1785719891.2917857,
     "value": {
@@ -660,6 +1146,382 @@
           }
         },
         "repo": "permissionlesstech/bitchat-android"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
+  "c8e8631aacc9ecb3db60a65b7561964a6c2c9e429180589fb45df1d654316491": {
+    "ts": 1786322222.0133698,
+    "value": {
+      "input_hash": "18faf9a51d653d4baed5f78f16c2bc3b97192f07d3ff2d03606482ecc4d71628",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 1,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 1,
+            "plain_explanation": "这是一个可以在终端里运行的 AI 编程助手，专门帮开发者写代码，就像一个能长时间工作的编程伙伴，能理解上下文并自动执行任务。",
+            "repo": "esengine/DeepSeek-Reasonix",
+            "source_description": "DeepSeek-native AI coding agent for your terminal. Engineered around prefix-cache stability — leave it running.",
+            "summary": "DeepSeek-Reasonix 是一个专为 DeepSeek 设计的 AI 编码代理，可在终端中长时间运行。它采用配置驱动架构，支持多模型和插件扩展，并具有缓存感知的上下文维护功能，以提升运行稳定性。开发者可以通过 CLI、桌面应用或编辑器集成等多种界面来使用，以自动化代码编写和调试任务。",
+            "tags": [
+              "ai-coding",
+              "coding-agent",
+              "deepseek",
+              "cli",
+              "llm",
+              "prompt-caching"
+            ]
+          }
+        },
+        "repo": "esengine/DeepSeek-Reasonix"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
+  "cd7ec0cb396a26ca4f74fe2af02bc23c040665c071f1f9ec00fe65fbd94e8b24": {
+    "ts": 1786322314.1555896,
+    "value": {
+      "input_hash": "cad106b48bb9f765b8b29847c697e4397b1b2b7e52099cc73854ef4b397ead9c",
+      "model": "mimo-v2.5",
+      "output": {
+        "categories": [
+          {
+            "items": [
+              {
+                "plain_explanation": "这个工具帮助开发者快速判断 PDF 是否可以直接提取文本，避免不必要的 OCR 处理，从而节省时间和费用。特别适合处理报告、论文、财务文档等文本 PDF。",
+                "repo": "firecrawl/pdf-inspector",
+                "summary": "pdf-inspector 是一个用 Rust 编写的快速 PDF 处理库，专注于智能分类和文本提取。它能检测 PDF 是文本型还是扫描型，并直接提取文本生成 Markdown，无需 OCR 服务，处理速度通常在 200 毫秒内。支持 Python、Node.js 和 WebAssembly 绑定，适用于需要高效处理大量 PDF 的管道场景。",
+                "tags": [
+                  "pdf",
+                  "pdf-classification",
+                  "pdf-extraction",
+                  "rust",
+                  "markdown",
+                  "text-extraction"
+                ]
+              }
+            ],
+            "name": "文档处理与提取"
+          },
+          {
+            "items": [
+              {
+                "plain_explanation": "这个工具就像给 AI 助手装了一个安全任务导航系统，让它知道面对不同漏洞或逆向问题时该用哪个工具和方法，避免瞎猜。主要用在安全研究、渗透测试或 CTF 比赛中，帮助开发者或安全工程师提高效率。",
+                "repo": "zhaoxuya520/reverse-skill",
+                "summary": "reverse-skill 是一个面向 AI 代理的网络安全技能路由包，专为逆向工程、授权渗透测试和安全研究设计。它通过 AI 自动路由机制，将任务引导至正确的方法论、工具链和工作流，避免 AI 盲目尝试命令。支持 Claude Code、Cursor 等多种 AI 编码客户端，适用于 APK 分析、二进制逆向、CTF 挑战、渗透测试等 20 多种安全场景。",
+                "tags": [
+                  "reverse-engineering",
+                  "penetration-testing",
+                  "security",
+                  "AI-routing",
+                  "tools",
+                  "cybersecurity"
+                ]
+              },
+              {
+                "plain_explanation": "它就像是一个‘登录中心’，让多个应用共享同一个账号系统，用户只需登录一次，适合管理多个服务的公司或团队。",
+                "repo": "goauthentik/authentik",
+                "summary": "authentik 是一个开源身份提供者，专注于单点登录（SSO），支持多种认证协议如 SAML、OAuth2 和 OIDC。它设计用于自托管，从小型测试环境到大规模生产集群都能部署。适用于需要替换现有 IdP 或实现统一认证的团队。",
+                "tags": [
+                  "sso",
+                  "authentication",
+                  "oauth2",
+                  "oidc",
+                  "saml",
+                  "security"
+                ]
+              }
+            ],
+            "name": "安全与运维"
+          },
+          {
+            "items": [
+              {
+                "plain_explanation": "这个项目让 AI Agent 能记住并共享之前的工作经验，避免每次新任务都从头学习，主要用于多人多 Agent 协作的开发场景，比如自动化工作流或智能助手构建。",
+                "repo": "TencentCloud/TencentDB-Agent-Memory",
+                "summary": "TencentDB Agent Memory 是一个面向 AI Agents 的团队级记忆中枢，将对话、文档和代码转化为可重用的记忆资产，包括 Chat Memory、Skill、Wiki 和 CodeGraph。它通过 Memory Hub 实现记忆资产的治理、共享和跨框架装备，支持自动提取、冷启动和精细的权限控制。该项目旨在减少 Agent 重复工作，让团队经验得以积累和传递，适用于需要构建高效、可协作 Agent 团队的开发者和组织。",
+                "tags": [
+                  "agent",
+                  "ai-agent",
+                  "memory",
+                  "llm",
+                  "long-term-memory",
+                  "vector-search"
+                ]
+              },
+              {
+                "plain_explanation": "它让昂贵的大语言模型能在普通电脑的显卡上跑，就像把大文件拆成小块逐个加载一样，解决了显存不足导致无法运行大模型的问题。没有高端 GPU 的开发者或小团队可以用它来快速测试或应用大模型。",
+                "repo": "lyogavin/airllm",
+                "summary": "AirLLM 是一个开源项目，通过逐层加载技术大幅降低大语言模型的推理内存需求。它允许在单张 4GB 显存 GPU 上运行 70B 参数模型，甚至支持 671B 的 DeepSeek-V3 在约 12GB 显存下运行。该工具兼容 Llama、Qwen 等主流模型，无需量化或蒸馏，适用于资源有限的开发者在消费级硬件上实验或部署大模型。",
+                "tags": [
+                  "llm",
+                  "open-source",
+                  "generative-ai",
+                  "llama",
+                  "inference",
+                  "optimization"
+                ]
+              },
+              {
+                "plain_explanation": "这是一个可以在终端里运行的 AI 编程助手，专门帮开发者写代码，就像一个能长时间工作的编程伙伴，能理解上下文并自动执行任务。",
+                "repo": "esengine/DeepSeek-Reasonix",
+                "summary": "DeepSeek-Reasonix 是一个专为 DeepSeek 设计的 AI 编码代理，可在终端中长时间运行。它采用配置驱动架构，支持多模型和插件扩展，并具有缓存感知的上下文维护功能，以提升运行稳定性。开发者可以通过 CLI、桌面应用或编辑器集成等多种界面来使用，以自动化代码编写和调试任务。",
+                "tags": [
+                  "ai-coding",
+                  "coding-agent",
+                  "deepseek",
+                  "cli",
+                  "llm",
+                  "prompt-caching"
+                ]
+              },
+              {
+                "plain_explanation": "这个工具把你的技术书或文档变成 AI 助手可以随时查看的智能摘要，这样你就不用每次都让 AI 从头读整本书或担心它瞎猜了。适合经常需要翻阅技术资料的程序员或团队使用。",
+                "repo": "virgiliojr94/book-to-skill",
+                "summary": "该项目是一个将技术书籍、文档或来源材料转换为 AI 代理技能的工具。它通过提取和生成结构化文件，如 SKILL.md 和章节文件，使 AI 助手能按需加载内容，减少 token 使用并避免幻觉。适用于使用 GitHub Copilot CLI、Amp 或 Claude Code 的开发者，方便在工作中高效参考技术资料。",
+                "tags": [
+                  "Agent Skills",
+                  "PDF",
+                  "AI",
+                  "Documentation",
+                  "Python"
+                ]
+              },
+              {
+                "plain_explanation": "它就像一个技能包，开发者安装后可以让 AI 代理轻松操作 Google 云服务，比如部署应用或管理数据，从而省去从零编写代码的麻烦。主要面向那些在开发 AI 代理或需要简化 Google Cloud 操作的程序员。",
+                "repo": "google/skills",
+                "summary": "这是 Google 官方维护的 Agent 技能仓库，提供针对 Google 产品和技术的预构建技能模块。技能涵盖 Google Cloud 入门、AI/ML 平台管理、基础设施配置等多个领域，开发者可以通过 npm 命令快速安装。该仓库旨在帮助用户在 AI 代理中高效集成和使用 Google 服务。",
+                "tags": [
+                  "google",
+                  "googlecloud",
+                  "skills",
+                  "agent",
+                  "cloud",
+                  "ai"
+                ]
+              },
+              {
+                "plain_explanation": "SwarmForge 让多个 AI 代理能在同一项目中协作开发，通过 tmux 和 git 分离工作，避免互相干扰。它适合使用 AI 工具进行软件开发的程序员，简化多代理协调。",
+                "repo": "unclebob/swarm-forge",
+                "summary": "SwarmForge 是一个基于 tmux 的轻量级协调平台，用于将多个 AI 代理组织成可靠的软件工程团队。它通过配置文件定义角色和工作流，使用 git 工作树隔离工作，并支持 Codex、Claude 等多种 AI 后端。该平台提供从快速编码到完整规范的多种工作流模式，适用于需要多代理协作的本地开发项目。",
+                "tags": [
+                  "AI agents",
+                  "orchestration",
+                  "tmux",
+                  "git",
+                  "software engineering",
+                  "multi-agent"
+                ]
+              },
+              {
+                "plain_explanation": "ComfyUI 让用户通过连接可视化节点来搭建 AI 内容生成流程，就像用积木拼图一样，解决了内容创作中需要自定义参数和工作流的问题，适合设计师、艺术家和开发者使用。",
+                "repo": "Comfy-Org/ComfyUI",
+                "summary": "ComfyUI 是一个模块化的扩散模型 GUI、API 和后端，支持节点式工作流构建。它兼容多种 AI 加速硬件，如 Ascend NPUs 和 Cambricon MLUs，并提供 ComfyUI-Manager 扩展来管理自定义节点。项目支持多种开源和闭源扩散模型，可本地或云端运行，并通过 API 集成到生产流程中，适用于构建图像、视频、3D 和音频生成工作流。",
+                "tags": [
+                  "ai",
+                  "comfyui",
+                  "stable-diffusion",
+                  "image-generation",
+                  "workflow",
+                  "python"
+                ]
+              },
+              {
+                "plain_explanation": "它就像一个智能代码助手，能读懂整个代码库的结构，让你用日常语言提问或修改代码，特别适合管理大型或多语言项目的开发团队。",
+                "repo": "vitali87/code-graph-rag",
+                "summary": "Code-Graph-RAG 是一个基于 AI 的检索增强生成系统，专为多语言 monorepo 设计。它使用 Tree-sitter 解析代码库，将结构关系构建为知识图谱并存储在 Memgraph 中，支持用户通过自然语言查询、编辑和优化代码。系统兼容 Python、TypeScript 等多种语言，并作为 MCP 服务器提供集成，适用于需要高效代码理解和维护的开发者。",
+                "tags": [
+                  "ai",
+                  "rag",
+                  "knowledge-graph",
+                  "code-analysis",
+                  "multi-language",
+                  "mcp"
+                ]
+              },
+              {
+                "plain_explanation": "这个框架让开发者可以轻松创建能通过语音、视频和文本与用户实时交流的 AI 代理，比如智能客服或语音助手。",
+                "repo": "livekit/agents",
+                "summary": "LiveKit Agents 是一个开源的 Python 框架，专为构建能够实时交互的语音 AI 代理而设计。它集成了语音识别、大语言模型和语音合成等技术，支持语音、视频和文本等多模态通信。框架提供灵活的组件配置、内置的任务调度和测试工具，适用于开发者快速搭建智能语音助手或客服系统。",
+                "tags": [
+                  "agents",
+                  "ai",
+                  "real-time",
+                  "voice",
+                  "video",
+                  "openai"
+                ]
+              },
+              {
+                "plain_explanation": "它帮助 Java/Kotlin 开发者更容易构建能自主决策的 AI 应用，例如自动完成任务或智能交互，就像在游戏 AI 中使用的规划算法，但用于企业软件开发。",
+                "repo": "embabel/embabel-agent",
+                "summary": "Embabel Agent Framework 是一个专为 JVM 设计的 AI 代理框架，允许开发者通过注解或 Kotlin DSL 定义代理流程，将大语言模型提示与代码和领域模型无缝集成。它采用基于目标的智能规划算法（如 GOAP），支持动态决策、扩展性和强类型，并构建在 Spring 生态之上，适用于 Java 和 Kotlin 开发者构建企业级代理应用。",
+                "tags": [
+                  "agent",
+                  "ai-agents",
+                  "java",
+                  "kotlin",
+                  "spring",
+                  "llms"
+                ]
+              }
+            ],
+            "name": "AI 大模型应用"
+          },
+          {
+            "items": [
+              {
+                "plain_explanation": "Kaneo 就像一个轻量版的 Jira 或 Linear，让团队不用被复杂工具拖累，而是专心搞开发。开发者可以通过 Docker 或 Kubernetes 自己部署，数据完全自主控制。",
+                "repo": "usekaneo/kaneo",
+                "summary": "Kaneo 是一个开源项目管理工具，旨在通过简洁设计和高效性能帮助团队专注于实际工作。它强调“少即是多”，提供清晰界面、自托管能力和快速部署支持。工具内置 MCP 集成，允许 AI 工具管理任务，适合寻求 Jira 或 Linear 替代品的开发者团队。",
+                "tags": [
+                  "project-management",
+                  "self-hosted",
+                  "typescript",
+                  "react",
+                  "kanban",
+                  "issue-tracker"
+                ]
+              },
+              {
+                "plain_explanation": "DrawDB 让开发者在浏览器中拖拽绘制数据库关系图，并自动生成 SQL 代码，省去手动编写建表语句的麻烦，适合快速设计和团队协作。",
+                "repo": "drawdb-io/drawdb",
+                "summary": "DrawDB 是一个免费、简单、直观的在线数据库模式编辑器和 SQL 生成器。用户可以在浏览器中通过点击创建实体关系图，支持导出 SQL 脚本和生成迁移，无需注册账户。项目基于 JavaScript 和 React 构建，提供本地开发和 Docker 部署选项。",
+                "tags": [
+                  "database-schema",
+                  "diagram-editor",
+                  "sql",
+                  "erd",
+                  "javascript",
+                  "react"
+                ]
+              }
+            ],
+            "name": "开发工具与平台"
+          },
+          {
+            "items": [
+              {
+                "plain_explanation": "这是一个免费的 AI 入门教程，教你从零开始学习人工智能，适合对 AI 感兴趣但不知如何入门的开发者或学生。",
+                "repo": "microsoft/AI-For-Beginners",
+                "summary": "这是微软推出的 AI 初学者课程，设计为 12 周 24 节课的结构化学习路径。课程覆盖 AI 基础、神经网络、计算机视觉、自然语言处理等多个主题，通过 Jupyter Notebook 和 PyTorch、TensorFlow 等框架提供交互式学习。适合初学者，包含实验和测验以巩固知识。",
+                "tags": [
+                  "ai",
+                  "deep-learning",
+                  "machine-learning",
+                  "tutorial",
+                  "microsoft",
+                  "jupyter"
+                ]
+              },
+              {
+                "plain_explanation": "它就像一本系统设计的实战手册，帮助程序员在面试中展示设计大型系统的能力，适合准备技术面试的工程师使用。",
+                "repo": "donnemartin/system-design-primer",
+                "summary": "这是一个专注于大规模系统设计的学习资源库，旨在帮助开发者掌握系统设计原则并准备技术面试。项目整合了丰富的学习材料，包括设计模式、面试问题及解决方案，并提供 Anki 闪卡辅助记忆。它适用于希望提升架构能力或应对系统设计面试的工程师和程序员。",
+                "tags": [
+                  "design",
+                  "interview",
+                  "system",
+                  "distributed-systems",
+                  "learning",
+                  "python"
+                ]
+              }
+            ],
+            "name": "学习资源与示例"
+          },
+          {
+            "items": [
+              {
+                "plain_explanation": "它就像 YouTube 的‘干净版’，让你看视频时不被广告打扰，也不追踪你的行为，适合不想被谷歌监控的人。",
+                "repo": "iv-org/invidious",
+                "summary": "Invidious 是一个开源的 YouTube 替代前端，提供无广告、无跟踪的视频观看体验。它使用 Crystal 语言开发，支持自定义主页和订阅管理，无需 JavaScript 即可运行。适用于希望保护隐私或摆脱 Google 生态的用户。",
+                "tags": [
+                  "youtube",
+                  "video",
+                  "alternative",
+                  "privacy",
+                  "open-source",
+                  "crystal"
+                ]
+              }
+            ],
+            "name": "Web 与客户端应用"
+          }
+        ]
+      },
+      "prompt_hash": "9ab0bceab0cac518b61bfd340f40b9358ae85213b12ba6c7435e1488d5fd8701",
+      "schema_version": "report-llm:v1",
+      "stage": "organize_report"
+    }
+  },
+  "d5c514e254aaecf844973a4153dd8a6d642a5c0d0e642ba27db7a2dc99bd1031": {
+    "ts": 1786322252.486322,
+    "value": {
+      "input_hash": "2ed1d552ef27decdd945ed751107b4126488b98fe38fd21b4a0b63175e8a2c98",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 1,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 1,
+            "plain_explanation": "它就像一个智能代码助手，能读懂整个代码库的结构，让你用日常语言提问或修改代码，特别适合管理大型或多语言项目的开发团队。",
+            "repo": "vitali87/code-graph-rag",
+            "source_description": "The ultimate RAG for your monorepo. Query, understand, and edit multi-language codebases with the power of AI and knowledge graphs",
+            "summary": "Code-Graph-RAG 是一个基于 AI 的检索增强生成系统，专为多语言 monorepo 设计。它使用 Tree-sitter 解析代码库，将结构关系构建为知识图谱并存储在 Memgraph 中，支持用户通过自然语言查询、编辑和优化代码。系统兼容 Python、TypeScript 等多种语言，并作为 MCP 服务器提供集成，适用于需要高效代码理解和维护的开发者。",
+            "tags": [
+              "ai",
+              "rag",
+              "knowledge-graph",
+              "code-analysis",
+              "multi-language",
+              "mcp"
+            ]
+          }
+        },
+        "repo": "vitali87/code-graph-rag"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
+  "d5d53f4adf31d0b62937582c9333e09050fca5266463cd36d8f98a5d8af4cc84": {
+    "ts": 1786322222.7088041,
+    "value": {
+      "input_hash": "c0313f244aea826293ff12f97abd2a3dd76586dae4f676a51700badc21c8b9d5",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 1,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 1,
+            "plain_explanation": "这个项目让 AI Agent 能记住并共享之前的工作经验，避免每次新任务都从头学习，主要用于多人多 Agent 协作的开发场景，比如自动化工作流或智能助手构建。",
+            "repo": "TencentCloud/TencentDB-Agent-Memory",
+            "source_description": "TencentDB Agent Memory is a team-level memory hub for AI Agents — turning conversations, docs, and code into four reusable memory assets (Chat Memory, Skill, LLM-Wiki, Code-Graph) that are governed, shared, and equipped across agents and frameworks.",
+            "summary": "TencentDB Agent Memory 是一个面向 AI Agents 的团队级记忆中枢，将对话、文档和代码转化为可重用的记忆资产，包括 Chat Memory、Skill、Wiki 和 CodeGraph。它通过 Memory Hub 实现记忆资产的治理、共享和跨框架装备，支持自动提取、冷启动和精细的权限控制。该项目旨在减少 Agent 重复工作，让团队经验得以积累和传递，适用于需要构建高效、可协作 Agent 团队的开发者和组织。",
+            "tags": [
+              "agent",
+              "ai-agent",
+              "memory",
+              "llm",
+              "long-term-memory",
+              "vector-search"
+            ]
+          }
+        },
+        "repo": "TencentCloud/TencentDB-Agent-Memory"
       },
       "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
       "schema_version": "report-llm:v1",
@@ -706,6 +1568,39 @@
           }
         },
         "repo": "earthtojake/text-to-cad"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
+  "e9fe7bc452b34e35bc88be43e9adbd1382663c7a5bec4b29e640e34f7f596201": {
+    "ts": 1786322231.2574382,
+    "value": {
+      "input_hash": "fb9fe134c82d07a4f4ff56de721a5276279ac6584639a84fe147486acf9ff244",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 1,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 1,
+            "plain_explanation": "Kaneo 就像一个轻量版的 Jira 或 Linear，让团队不用被复杂工具拖累，而是专心搞开发。开发者可以通过 Docker 或 Kubernetes 自己部署，数据完全自主控制。",
+            "repo": "usekaneo/kaneo",
+            "source_description": "🎯 All you need. Nothing you don't. Open source project management that works for you, not against you.",
+            "summary": "Kaneo 是一个开源项目管理工具，旨在通过简洁设计和高效性能帮助团队专注于实际工作。它强调“少即是多”，提供清晰界面、自托管能力和快速部署支持。工具内置 MCP 集成，允许 AI 工具管理任务，适合寻求 Jira 或 Linear 替代品的开发者团队。",
+            "tags": [
+              "project-management",
+              "self-hosted",
+              "typescript",
+              "react",
+              "kanban",
+              "issue-tracker"
+            ]
+          }
+        },
+        "repo": "usekaneo/kaneo"
       },
       "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
       "schema_version": "report-llm:v1",
