@@ -1,0 +1,514 @@
+{
+  "version": 2,
+  "source": "GitHub Trending（本周）",
+  "categories": [
+    {
+      "name": "AI / 大模型应用",
+      "items": [
+        {
+          "repo": "cathrynlavery/diagram-design",
+          "url": "https://github.com/cathrynlavery/diagram-design",
+          "description": "29 editorial diagram types for Claude Code. Self-contained HTML + SVG. No shadows, no Mermaid-slop.",
+          "language": "HTML",
+          "total_stars": "19,501",
+          "period_stars": "14,735 stars this week",
+          "homepage": "",
+          "topics": [],
+          "image": "assets/cathrynlavery__diagram-design__2.png",
+          "summary": "这是一个为 AI 代理（如 Claude Code）设计的图表生成技能，提供 29 种编辑级别的图表类型。它输出自包含的 HTML 和 SVG 文件，支持自动提取网站品牌颜色和字体进行个性化匹配，允许从 draw.io 或 Mermaid 导入并重绘图表，同时确保可访问性支持。",
+          "plain_explanation": "它解决 AI 生成图表时样式通用、不匹配品牌的问题，让开发者能像设计师一样快速生成美观的图表，适合制作技术文档、演示或博客图表。",
+          "tags": [
+            "diagram generation",
+            "AI agent skill",
+            "HTML SVG",
+            "brand matching",
+            "accessibility",
+            "draw.io import"
+          ]
+        },
+        {
+          "repo": "semantica-agi/semantica",
+          "url": "https://github.com/semantica-agi/semantica",
+          "description": "Graph-Native Infrastructure for Context and Accountable AI Systems",
+          "language": "Python",
+          "total_stars": "8,173",
+          "period_stars": "5,339 stars this week",
+          "homepage": "https://getsemantica.ai",
+          "topics": [
+            "agent-memory",
+            "ai",
+            "ai-governance",
+            "ai-infrastructure",
+            "artificial-intelligence",
+            "context-engineering",
+            "context-graphs",
+            "data-engineering",
+            "decision-intelligence",
+            "developer-tools",
+            "explainable-ai",
+            "generative-ai",
+            "graph-rag",
+            "knowledge-graph",
+            "llm",
+            "ontology",
+            "provenance",
+            "python",
+            "reasoning",
+            "semantic-search"
+          ],
+          "image": "assets/semantica-agi__semantica__0.png",
+          "summary": "Semantica 是一个开源的图原生基础设施，专为构建上下文丰富且可问责的 AI 系统而设计。它通过摄取企业数据构建上下文图谱和知识图谱，提供决策智能和确定性推理能力，并内嵌完整的审计溯源功能，适用于金融、医疗等受监管领域。",
+          "plain_explanation": "它就像给 AI 代理装上了一个可追溯的“记忆本”，让每个决策都有记录和因果链，方便监管人员事后追问，主要用于开发需要审计合规的 AI 应用。",
+          "tags": [
+            "ai",
+            "knowledge-graph",
+            "explainable-ai",
+            "decision-intelligence",
+            "agent-memory",
+            "ontology"
+          ]
+        },
+        {
+          "repo": "PrimeIntellect-ai/prime-agent",
+          "url": "https://github.com/PrimeIntellect-ai/prime-agent",
+          "description": "A self-improving RLM agent for coding workflows and long-running autonomous tasks.",
+          "language": "TypeScript",
+          "total_stars": "16,561",
+          "period_stars": "8,488 stars this week",
+          "homepage": "",
+          "topics": [],
+          "image": "assets/PrimeIntellect-ai__prime-agent__0.png",
+          "summary": "Prime Agent 是一个开源的编码和研究代理，专注于长时间运行的自主任务。它基于递归语言模型（RLM）和 Continual Harness 两个核心抽象，提供持久 REPL 环境和可更新的状态管理，支持内置子代理、可执行技能和后台会话。",
+          "plain_explanation": "它帮助开发者自动化处理编码任务，尤其适合需要连续运行几小时或几天的项目，如代码生成或研究实验，可以类比为一个智能助手。",
+          "tags": [
+            "coding-agent",
+            "autonomous-agent",
+            "rlm",
+            "python",
+            "research"
+          ]
+        },
+        {
+          "repo": "NVIDIA-NeMo/Switchyard",
+          "url": "https://github.com/NVIDIA-NeMo/Switchyard",
+          "description": "Switchyard lets LLM applications route traffic across models and providers while preserving native OpenAI and Anthropic API compatibility - enabling flexible model selection, benchmarking, and cost/performance optimization.",
+          "language": "Rust",
+          "total_stars": "1,682",
+          "period_stars": "1,326 stars this week",
+          "homepage": "",
+          "topics": [],
+          "image": "assets/NVIDIA-NeMo__Switchyard__0.png",
+          "summary": "Switchyard 是一个用 Rust 编写的 LLM 流量路由代理，支持在 OpenAI 和 Anthropic API 之间进行协议翻译。它提供多种路由策略，如随机路由和 LLM 分类器路由，允许灵活选择模型后端，适用于跨提供商流量路由、基准测试或成本性能优化。",
+          "plain_explanation": "它相当于一个智能路由器，让 LLM 应用可以轻松切换不同的模型提供商，同时保持 API 兼容，帮助开发者在不同模型之间做测试或省钱。",
+          "tags": [
+            "llm-proxy",
+            "routing",
+            "rust",
+            "api-translation",
+            "benchmarking"
+          ]
+        },
+        {
+          "repo": "cactus-compute/needle",
+          "url": "https://github.com/cactus-compute/needle",
+          "description": "14MB foundation model for tiny devices; phones, wearables, smart home, and robots.",
+          "language": "Python",
+          "total_stars": "6,551",
+          "period_stars": "2,488 stars this week",
+          "homepage": "https://cactuscompute.com",
+          "topics": [
+            "cactus",
+            "gemini",
+            "gemma",
+            "llm",
+            "on-device-ai"
+          ],
+          "image": "assets/cactus-compute__needle__0.png",
+          "summary": "Needle 2 是一个开源的 45M 参数基础模型，专为工具调用、设备使用和结构化数据提取设计。它压缩至 14MB 的单个二进制文件，在约 28MB 的 RAM 中运行完整会话，适用于手机、可穿戴设备等小型设备，支持 Python 包进行推理、LoRA 微调和导出。",
+          "plain_explanation": "这个项目让开发者能在资源有限的小设备（如手机或智能家居）上运行轻量级 AI 模型，用于自动调用函数和提取结构化数据，就像一个可离线运行的压缩版 AI 助手。",
+          "tags": [
+            "on-device-ai",
+            "llm",
+            "small-model",
+            "python",
+            "edge-computing"
+          ]
+        },
+        {
+          "repo": "vitali87/code-graph-rag",
+          "url": "https://github.com/vitali87/code-graph-rag",
+          "description": "The ultimate RAG for your monorepo. Query, understand, and edit multi-language codebases with the power of AI and knowledge graphs",
+          "language": "Python",
+          "total_stars": "4,428",
+          "period_stars": "1,756 stars this week",
+          "homepage": "https://code-graph-rag.com",
+          "topics": [
+            "ai",
+            "ast",
+            "claude-code",
+            "code-analysis",
+            "code-understanding",
+            "codebase-search",
+            "developer-tools",
+            "graph-database",
+            "knowledge-graph",
+            "llm",
+            "mcp",
+            "mcp-server",
+            "memgraph",
+            "monorepo",
+            "multi-language",
+            "python",
+            "rag",
+            "retrieval-augmented-generation",
+            "semantic-search",
+            "tree-sitter"
+          ],
+          "image": "assets/vitali87__code-graph-rag__0.png",
+          "summary": "Code-Graph-RAG 是一个针对单体仓库的检索增强生成（RAG）系统，使用 Tree-sitter 解析多语言代码并构建知识图谱。它支持自然语言查询、代码编辑和优化，并可通过 MCP 服务器与 AI 代理集成。",
+          "plain_explanation": "它帮助开发者快速理解大型代码库，通过 AI 查询代码结构、进行重构或查找死代码，适用于需要维护复杂项目的开发团队。",
+          "tags": [
+            "rag",
+            "knowledge-graph",
+            "multi-language",
+            "code-analysis",
+            "mcp",
+            "ai"
+          ]
+        },
+        {
+          "repo": "addyosmani/agent-skills",
+          "url": "https://github.com/addyosmani/agent-skills",
+          "description": "Production-grade engineering skills for AI coding agents.",
+          "language": "JavaScript",
+          "total_stars": "87,749",
+          "period_stars": "3,300 stars this week",
+          "homepage": "https://skills.addy.ie",
+          "topics": [
+            "agent-skills",
+            "antigravity",
+            "claude-code",
+            "codex",
+            "cursor",
+            "skills"
+          ],
+          "image": "assets/addyosmani__agent-skills__0.jpg",
+          "summary": "Agent Skills 是一个为 AI 编程代理提供生产级工程技能的项目。它包含 24 个技能，覆盖软件开发的定义、规划、构建、验证、审查和发布全生命周期，通过斜杠命令激活，确保 AI 代理一致地遵循最佳实践和质量门控。",
+          "plain_explanation": "它解决 AI 编程代理生成代码时缺乏工程规范的问题，让 AI 代理像高级工程师一样工作，提升代码质量和可靠性。",
+          "tags": [
+            "agent-skills",
+            "claude-code",
+            "codex",
+            "cursor",
+            "engineering-practices",
+            "ai"
+          ]
+        },
+        {
+          "repo": "unslothai/unsloth",
+          "url": "https://github.com/unslothai/unsloth",
+          "description": "Local UI to run and train LLMs and diffusion models, including Qwen3.8, Kimi K3, MiniMax-H3, Gemma 4, DeepSeek-V4, FLUX and more.",
+          "language": "Python",
+          "total_stars": "72,554",
+          "period_stars": "2,207 stars this week",
+          "homepage": "https://unsloth.ai/docs",
+          "topics": [
+            "agent",
+            "ai",
+            "chatgpt",
+            "deepseek",
+            "fine-tuning",
+            "gemma",
+            "image-generation",
+            "llama",
+            "llm",
+            "llms",
+            "openai",
+            "python",
+            "qwen",
+            "reinforcement-learning",
+            "self-hosted",
+            "stable-diffusion",
+            "text-to-speech",
+            "tts",
+            "ui",
+            "unsloth"
+          ],
+          "image": "assets/unslothai__unsloth__0.png",
+          "summary": "Unsloth 是一个本地桌面应用，用于运行和训练多种 AI 模型，包括大型语言模型和扩散模型，如 Qwen3.8、DeepSeek-V4 和 FLUX。它提供图形界面和代码两种使用方式，支持加速训练并减少内存占用，兼容多种硬件和远程访问。",
+          "plain_explanation": "这个工具让你在自己的电脑上轻松运行和训练 AI 模型，比如聊天机器人或图像生成，适合不想依赖云服务或注重隐私的开发者使用。",
+          "tags": [
+            "llm",
+            "fine-tuning",
+            "ui",
+            "self-hosted",
+            "ai",
+            "image-generation"
+          ]
+        },
+        {
+          "repo": "TencentCloud/TencentDB-Agent-Memory",
+          "url": "https://github.com/TencentCloud/TencentDB-Agent-Memory",
+          "description": "TencentDB Agent Memory is a team-level memory hub for AI Agents — turning conversations, docs, and code into four reusable memory assets (Chat Memory, Skill, LLM-Wiki, Code-Graph) that are governed, shared, and equipped across agents and frameworks.",
+          "language": "TypeScript",
+          "total_stars": "22,227",
+          "period_stars": "3,956 stars this week",
+          "homepage": "",
+          "topics": [
+            "agent",
+            "ai-agent",
+            "embedding",
+            "llm",
+            "local-first",
+            "long-term-memory",
+            "memory",
+            "openclaw-plugin",
+            "vector-search"
+          ],
+          "image": "assets/TencentCloud__TencentDB-Agent-Memory__0.png",
+          "summary": "TencentDB Agent Memory 是一个为 AI Agents 设计的团队级记忆中枢。它将对话、文档、代码转化为四种可复用的记忆资产：对话记忆、技能、LLM-Wiki 和代码图谱，这些资产可被统一管理、共享与装备，旨在减少 Agent 团队的重复工作。",
+          "plain_explanation": "它就像给 AI Agent 团队建了一个共享知识库，解决了“每次和 AI 对话都要从头解释项目背景”这类问题，让团队的经验可以沉淀并复用。",
+          "tags": [
+            "agent",
+            "ai-agent",
+            "llm",
+            "memory",
+            "knowledge-sharing",
+            "vector-search"
+          ]
+        },
+        {
+          "repo": "Lightricks/LTX-2",
+          "url": "https://github.com/Lightricks/LTX-2",
+          "description": "Official Python inference and LoRA trainer package for the LTX-2 audio–video generative model.",
+          "language": "Python",
+          "total_stars": "9,056",
+          "period_stars": "484 stars this week",
+          "homepage": "https://ltx.io",
+          "topics": [
+            "generative-ai",
+            "ltx",
+            "ltx-2"
+          ],
+          "image": "",
+          "summary": "LTX-2 是一个基于 DiT 架构的音频-视频生成基础模型，能够同步生成高保真的音视频内容。项目提供官方的 Python 推理和 LoRA 训练包，支持多种生成管道，如快速推理、高细节渲染和 HDR 输出。",
+          "plain_explanation": "它是一个开源 AI 视频生成工具，可以根据文字提示生成同步音视频，类似于 Sora 但开源，适合视频制作人、研究人员和开发者快速创建内容。",
+          "tags": [
+            "generative-ai",
+            "video-generation",
+            "audio-video",
+            "python",
+            "diT"
+          ]
+        },
+        {
+          "repo": "paperclipai/paperclip",
+          "url": "https://github.com/paperclipai/paperclip",
+          "description": "The open-source app everyone uses to manage agents at work",
+          "language": "TypeScript",
+          "total_stars": "78,503",
+          "period_stars": "2,430 stars this week",
+          "homepage": "https://paperclip.ing",
+          "topics": [],
+          "image": "assets/paperclipai__paperclip__0.jpg",
+          "summary": "Paperclip 是一个开源的 AI 代理编排与管理平台，用于组织代理团队运行业务目标。它提供任务管理、组织架构图、预算控制和治理功能，支持心跳执行和工作空间管理，让用户能像管理公司一样协调多个 AI 代理。",
+          "plain_explanation": "它是一个给 AI 代理团队使用的后台管理工具，把分散的 AI 代理按公司架构组织起来，设定任务、目标和规则，让他们像一个团队一样协作，适合想用 AI 自动化完成工作的个人或小团队。",
+          "tags": [
+            "AI agents",
+            "orchestration",
+            "task management",
+            "governance",
+            "budget control",
+            "open source"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "开发工具与平台",
+      "items": [
+        {
+          "repo": "macro-inc/macro",
+          "url": "https://github.com/macro-inc/macro",
+          "description": "Macro is a unified workspace for teams: email, chat, docs, tasks, agents, calls, and CRM — @-linked together with shared AI memory.",
+          "language": "Rust",
+          "total_stars": "3,404",
+          "period_stars": "2,434 stars this week",
+          "homepage": "https://macro.com",
+          "topics": [
+            "agent",
+            "ai",
+            "ai-agents",
+            "all-in-one",
+            "crm",
+            "crm-system",
+            "email",
+            "linear",
+            "mcp",
+            "messaging",
+            "notes",
+            "notion",
+            "office",
+            "rust",
+            "slack",
+            "slack-alternative",
+            "startup",
+            "startup-tools",
+            "typescript",
+            "workspace"
+          ],
+          "image": "assets/macro-inc__macro__0.png",
+          "summary": "Macro 是一个面向团队的一体化工作平台，集成了邮件、聊天、文档、任务、AI 代理、通话和 CRM 功能。它通过 @ 链接和共享 AI 记忆将这些工具连接在一起，形成双向图网络，旨在为团队提供无缝协作体验。",
+          "plain_explanation": "这个应用把团队常用工具整合在一起，避免在 Slack、Notion 等多个工具间切换，主要帮助初创公司和小型团队简化工作流程，让信息自动关联，提高协作效率。",
+          "tags": [
+            "all-in-one",
+            "ai-agents",
+            "workspace",
+            "crm",
+            "messaging",
+            "rust"
+          ]
+        },
+        {
+          "repo": "ToolJet/ToolJet",
+          "url": "https://github.com/ToolJet/ToolJet",
+          "description": "ToolJet is the open-source foundation of ToolJet AI - the enterprise app generation platform for building internal tools, dashboard, business applications, workflows and AI agents 🚀",
+          "language": "JavaScript",
+          "total_stars": "40,008",
+          "period_stars": "1,047 stars this week",
+          "homepage": "https://tooljet.com",
+          "topics": [
+            "ai-app-builder",
+            "docker",
+            "hacktoberfest",
+            "internal-applications",
+            "internal-project",
+            "internal-tool",
+            "internal-tools",
+            "javascript",
+            "kubernetes",
+            "low-code",
+            "low-code-development-platform",
+            "low-code-framework",
+            "no-code",
+            "nodejs",
+            "reactjs",
+            "self-hosted",
+            "typescript",
+            "web-development-tools",
+            "workflow-automation"
+          ],
+          "image": "assets/ToolJet__ToolJet__1.png",
+          "summary": "ToolJet 是一个开源的低代码平台，专注于快速构建企业内部工具、仪表盘和工作流。它提供可视化拖拽界面、内置数据库，并能连接 80 多种数据源，支持 Docker、Kubernetes 等多种方式自托管，适合需要快速交付内部应用的开发团队。",
+          "plain_explanation": "当公司需要快速搭建一个内部管理后台或数据看板，但又不想从零开始写前端和后端时，可以使用 ToolJet 来可视化构建，就像用积木拼装应用一样。",
+          "tags": [
+            "low-code",
+            "internal-tools",
+            "self-hosted",
+            "ai-app-builder",
+            "web-development"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "安全 / 运维",
+      "items": [
+        {
+          "repo": "megadose/holehe",
+          "url": "https://github.com/megadose/holehe",
+          "description": "holehe allows you to check if the mail is used on different sites like twitter, instagram and will retrieve information on sites with the forgotten password function.",
+          "language": "Python",
+          "total_stars": "13,288",
+          "period_stars": "1,059 stars this week",
+          "homepage": "",
+          "topics": [
+            "ebay",
+            "email",
+            "emails",
+            "information-gathering",
+            "instagram",
+            "open-source-intelligence",
+            "osint",
+            "osint-python",
+            "osint-tools",
+            "pypi",
+            "python",
+            "social-network",
+            "tellonym",
+            "trio",
+            "twitter"
+          ],
+          "image": "assets/megadose__holehe__1.gif",
+          "summary": "Holehe 是一个基于 Python 的开源情报工具，用于检测邮箱在多个网站上的注册状态。它支持超过 120 个平台，如 Twitter 和 Instagram，通过忘记密码功能检索部分恢复信息，设计为不通知目标邮箱，适合安全分析和数字足迹调查。",
+          "plain_explanation": "这个工具能帮你快速查一个邮箱在哪些网站上注册过账号，比如社交媒体和在线服务，安全研究人员或渗透测试人员常用它来收集目标的数字足迹信息。",
+          "tags": [
+            "email",
+            "osint",
+            "python",
+            "social-network",
+            "information-gathering",
+            "osint-tools"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "学习资源 / 示例",
+      "items": [
+        {
+          "repo": "3b1b/manim",
+          "url": "https://github.com/3b1b/manim",
+          "description": "Animation engine for explanatory math videos",
+          "language": "Python",
+          "total_stars": "91,346",
+          "period_stars": "2,008 stars this week",
+          "homepage": "",
+          "topics": [
+            "3b1b-videos",
+            "animation",
+            "explanatory-math-videos",
+            "python"
+          ],
+          "image": "assets/3b1b__manim__0.png",
+          "summary": "Manim 是一个 Python 动画引擎，专门用于创建解释性数学视频。它通过代码生成精确动画，支持 LaTeX 和 OpenGL，源自 3Blue1Brown 频道，适合教育工作者和内容创作者使用。",
+          "plain_explanation": "这是一个软件，让数学老师或科普视频制作者用代码轻松制作动画，像 3Blue1Brown 那样可视化复杂数学概念。",
+          "tags": [
+            "animation",
+            "math-visualization",
+            "python",
+            "educational"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "系统与基础设施",
+      "items": [
+        {
+          "repo": "basecamp/omarchy",
+          "url": "https://github.com/basecamp/omarchy",
+          "description": "Beautiful, Modern & Opinionated Linux",
+          "language": "Shell",
+          "total_stars": "25,359",
+          "period_stars": "591 stars this week",
+          "homepage": "https://omarchy.org",
+          "topics": [],
+          "image": "",
+          "summary": "Omarchy 是一个由 DHH 设计的美观、现代且固执己见的 Linux 发行版。它预配置了开发工具、终端和主题，并提供详细手册指导设置，目标是简化开发者使用 Linux 的体验。",
+          "plain_explanation": "这是一个为程序员优化的 Linux 系统，预装了各种工具和主题，开箱即用，省去自己配置的麻烦。",
+          "tags": [
+            "linux",
+            "desktop",
+            "opinionated",
+            "developer-tools"
+          ]
+        }
+      ]
+    }
+  ],
+  "overview": "本期周刊共收录 16 个项目。AI 领域项目主要围绕AI代理框架和大模型工具展开，涉及图表生成、知识图谱和流量路由等方向。开发工具方面，提供了一体化工作平台和低代码解决方案。安全运维方向则聚焦于开源情报工具，用于安全调查。",
+  "issue": 9,
+  "date": "2026_08_17",
+  "generated_at": "2026-08-17T08:05:59+08:00"
+}
