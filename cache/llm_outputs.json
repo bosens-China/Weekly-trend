@@ -145,6 +145,39 @@
       "stage": "analyze_project"
     }
   },
+  "066531b3590a0ab169afaa580fd545fc58c4a3854f54cb39f02d4cc1a87dba51": {
+    "ts": 1788140378.4751503,
+    "value": {
+      "input_hash": "de452ec4e66caefc6b7fba789df7f17615ab36aa1f903afb61567905736f83d7",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 1,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 1,
+            "plain_explanation": "它帮助用户摆脱罗技官方软件的臃肿和隐私问题，自由配置罗技外设。开发者或普通用户都能使用，尤其是在 Linux 上追求轻量解决方案的用户。",
+            "repo": "AprilNEA/OpenLogi",
+            "source_description": "⚡️A native, local-first alternative to Logitech Options+, written in Rust 🦀 — remap buttons, DPI, and SmartShift over HID++. No account, no telemetry.",
+            "summary": "OpenLogi 是用 Rust 编写的本地优先应用程序，作为 Logitech Options+ 的替代品。它支持通过 HID++ 协议自定义罗技鼠标、键盘和摄像头的按钮、DPI 和 SmartShift 等功能。项目注重隐私，无需账户或遥测，可在 macOS、Linux 和 Windows 上运行。适用于希望轻量级、自定义罗技设备的用户。",
+            "tags": [
+              "logitech",
+              "rust",
+              "local-first",
+              "mouse-remapping",
+              "privacy",
+              "hidpp"
+            ]
+          }
+        },
+        "repo": "AprilNEA/OpenLogi"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
   "0841d0882dbfbcd31d530b3f3f7aef61356f4c4ee8d9f96315f1b93a2060eb75": {
     "ts": 1787529591.291036,
     "value": {
@@ -712,6 +745,137 @@
       "stage": "analyze_project"
     }
   },
+  "27841dc339b7b25a58e5b8e0198992cf768cf1f1ff40fcf6824099cacf6b2d16": {
+    "ts": 1788140384.2619798,
+    "value": {
+      "input_hash": "0c485d982e5bd70240cd07f51fdadf03ff8151290710489cd636d466a2798ecc",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 2,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 2,
+            "plain_explanation": "它用 AI 帮求职者自动定制简历和求职信，节省手动准备时间，适合想优化求职申请的人使用。",
+            "repo": "MadsLorentzen/ai-job-search",
+            "source_description": "The job search that runs on your machine. AI job application framework built on Claude Code: evaluate postings, tailor CVs, write cover letters, prep interviews. Fork it and own it.",
+            "summary": "这是一个基于 Claude Code 的 AI 求职应用框架，运行在本地机器上，旨在自动化求职申请流程。核心功能包括评估职位匹配度、定制简历和求职信、准备面试，通过结构化命令如 /setup、/scrape 和 /apply 工作。框架编码了职业指导最佳实践，适用于需要高效管理求职过程的求职者。",
+            "tags": [
+              "ai-agents",
+              "job-search",
+              "resume",
+              "cover-letter",
+              "interview-preparation",
+              "career"
+            ]
+          },
+          "2": {
+            "part_index": 2,
+            "part_total": 2,
+            "plain_explanation": "这是一个帮你自动写简历和求职信的 AI 工具，运行在你自己的电脑上，能确保材料真实并符合招聘系统要求，节省求职时间。",
+            "repo": "MadsLorentzen/ai-job-search",
+            "source_description": "The job search that runs on your machine. AI job application framework built on Claude Code: evaluate postings, tailor CVs, write cover letters, prep interviews. Fork it and own it.",
+            "summary": "这是一个基于 Claude Code 的 AI 求职框架，运行在本地机器上。它能自动解析职位发布、评估与个人资料的匹配度，并生成定制化的简历和求职信。通过 PDF 验证和 ATS 检查确保输出质量，支持扩展和自定义，适合希望自动化求职流程的开发者。",
+            "tags": [
+              "ai-agents",
+              "job-search",
+              "cv",
+              "cover-letter",
+              "interview-preparation",
+              "latex"
+            ]
+          }
+        },
+        "repo": "MadsLorentzen/ai-job-search"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
+  "2dcb7c74a4a11bdd420a1476f54584936272e460cf61c41c7e12f70e7fc8ffcc": {
+    "ts": 1788140357.3925598,
+    "value": {
+      "input_hash": "cab936531eea130d99dda44302363b7401881f8f188f943e570b92c5c5ac8ac9",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 1,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 1,
+            "plain_explanation": "它帮助开发者快速创建专业的系统图表，用于分享架构设计或分析代码流程，无需手动绘图。",
+            "repo": "tt-a1i/archify",
+            "source_description": "Agent skill for beautiful, verifiable architecture, workflow, sequence, data-flow, and lifecycle diagrams—self-contained HTML with motion and crisp export.",
+            "summary": "Archify 是一个代理技能，用于将代码库或系统描述转换为美观、可验证的交互式图表。它支持架构、工作流、序列、数据流和生命周期五种图表类型，生成独立的 HTML 文件。通过 AI 代理生成类型化 JSON IR，Archify 确定性编译并验证图表，适用于开发者和架构师进行系统设计、文档化和代码可视化。",
+            "tags": [
+              "agent-skills",
+              "architecture-diagram",
+              "code-visualization",
+              "developer-tools",
+              "system-design",
+              "diagram-as-code"
+            ]
+          }
+        },
+        "repo": "tt-a1i/archify"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
+  "329f6068afca038e01c0ef600a37f7d2e7067683946152de6537c5cfc72397fb": {
+    "ts": 1788140441.1149805,
+    "value": {
+      "input_hash": "0fedfaf514d8eca01bbaa2b94fcba095e4d04195475eac1f6f2e800a943a4019",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 2,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 2,
+            "plain_explanation": "这个工具帮助教师或内容创作者快速生成在线互动课程，让学生能像在真实课堂中一样与 AI 交互学习。",
+            "repo": "THU-MAIC/OpenMAIC",
+            "source_description": "Open Multi-Agent Interactive Classroom — Get an immersive, multi-agent learning experience in just one click",
+            "summary": "OpenMAIC 是一个开源 AI 驱动的多智能体互动课堂平台。它能将任何主题或文档一键转化为丰富的课程内容，包括幻灯片、测验和互动模拟。平台支持 AI 教师与学生的实时讨论、白板绘画，并可通过多种 LLM 提供商灵活配置使用。",
+            "tags": [
+              "AI",
+              "教育",
+              "多智能体",
+              "互动课堂",
+              "课程生成",
+              "TypeScript"
+            ]
+          },
+          "2": {
+            "part_index": 2,
+            "part_total": 2,
+            "plain_explanation": "这是一个让教育者轻松创建多代理参与的互动课程的平台，学生可以像在虚拟实验室中动手实验和模拟探索，而不是被动听讲。",
+            "repo": "THU-MAIC/OpenMAIC",
+            "source_description": "Open Multi-Agent Interactive Classroom — Get an immersive, multi-agent learning experience in just one click",
+            "summary": "OpenMAIC 是一个开源的多代理互动课堂平台，提供沉浸式学习体验。它支持基于 PostgreSQL 的服务器后端持久化，用于存储课程文档、用户数据和资产，并可选集成代理工作台、MP4 视频导出、MinerU 文档解析和 VoxCPM2 语音合成。代理工作台通过数据库备份会话，允许代理构建课程并支持多种教学风格。适用于教育者创建互动课程，或学习者探索多代理环境。",
+            "tags": [
+              "multi-agent",
+              "interactive-learning",
+              "education",
+              "typescript",
+              "pluggable-storage",
+              "tts"
+            ]
+          }
+        },
+        "repo": "THU-MAIC/OpenMAIC"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
   "350437b578e26b4a6c025cba6e75b2e05b4bde144bfb604fe43b4d54dbdb1920": {
     "ts": 1785719891.2917857,
     "value": {
@@ -1006,6 +1170,55 @@
       "stage": "analyze_project"
     }
   },
+  "470461c5bdb49fa0c30c61d8923ab8f805d4aaa75827b8ea1ead5e32c90b396b": {
+    "ts": 1788140392.0120206,
+    "value": {
+      "input_hash": "8cb6df483176cf440d147d7a7a7cb90c303029b7d8f576578f0e47a21264e689",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 2,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 2,
+            "plain_explanation": "这个课程通过动手实践帮助开发者全面学习 AI 工程，从理论原理到实际部署，适合想深入理解 AI 内部机制而不只是调用 API 的程序员。",
+            "repo": "rohitg00/ai-engineering-from-scratch",
+            "source_description": "Learn it. Build it. Ship it for others.",
+            "summary": "这是一个从零开始的 AI 工程学习课程，提供 523 节课和 20 个阶段，系统覆盖数学基础、机器学习、深度学习到自主代理工程。课程以实践驱动，每节课都产出可复用的构件如提示、技能或代理，并支持多种编程语言。它集成了 AI 辅导工具，可根据学习者水平个性化指导，帮助构建生产级 AI 应用。",
+            "tags": [
+              "ai",
+              "ai-engineering",
+              "course",
+              "llm",
+              "agents",
+              "python"
+            ]
+          },
+          "2": {
+            "part_index": 2,
+            "part_total": 2,
+            "plain_explanation": "这是一个全面的 AI 学习资源，帮助开发者从零开始掌握 AI 工程技能，并构建可部署的实际工具。适合希望系统学习 AI 并应用于实际项目的工程师。",
+            "repo": "rohitg00/ai-engineering-from-scratch",
+            "source_description": "Learn it. Build it. Ship it for others.",
+            "summary": "这是一个从零开始的 AI 工程学习课程，涵盖数学基础、机器学习、深度学习、NLP、LLM 和 Agent 等完整路径。课程分为 6 卷和 20 个阶段，提供互动实验室、诊断工具和可重用工具，强调实践构建和部署。目标是帮助学习者从基础到生产，积累一个包含 523 个制品的实际项目集。",
+            "tags": [
+              "ai",
+              "ai-engineering",
+              "machine-learning",
+              "deep-learning",
+              "llm",
+              "agents"
+            ]
+          }
+        },
+        "repo": "rohitg00/ai-engineering-from-scratch"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
   "481d92fe5612cdf1131a3ef60831a3643689d78ebc4a3691638bac8e9d1eda7f": {
     "ts": 1785719884.0102813,
     "value": {
@@ -1131,6 +1344,55 @@
           }
         },
         "repo": "andrewyng/aisuite"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
+  "5137a2b0859caba17342030222fe9cd3c42d949f8d2bca18744f082d46dffbbc": {
+    "ts": 1788140420.634898,
+    "value": {
+      "input_hash": "1113ea94c53fa63c9237084cd95bcf27dcaa14e64d63fbfc9ecc8af2451b0ce3",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 2,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 2,
+            "plain_explanation": "这个项目提供了一套工具，让 AI 编程助手能自动完成网页设计、生成演示文稿或图片，主要帮助使用 AI 工具进行开发的程序员节省时间。",
+            "repo": "ConardLi/garden-skills",
+            "source_description": "ConardLi's open-source Skills collection, featuring web design, knowledge retrieval, image generation, and more.",
+            "summary": "Garden Skills 是一个为 AI 编码代理（如 Claude Code、Cursor）设计的开源技能集合。它包含 Web 视频演示、Web 设计和 GPT 图像生成等多个生产就绪的技能，旨在自动化开发任务。适用于需要增强 AI 代理功能的前端和 Web 开发者。",
+            "tags": [
+              "agent",
+              "claude",
+              "gpt-image-2",
+              "rag",
+              "skills",
+              "web-design"
+            ]
+          },
+          "2": {
+            "part_index": 2,
+            "part_total": 2,
+            "plain_explanation": "这就像给 AI 助手安装插件，让它能帮你生成图片、从本地文档中查找信息或把零散素材排版成漂亮的文章。适合使用 Claude 等 AI 工具但希望扩展其功能的开发者。",
+            "repo": "ConardLi/garden-skills",
+            "source_description": "ConardLi's open-source Skills collection, featuring web design, knowledge retrieval, image generation, and more.",
+            "summary": "这是一个面向 AI 代理的开源技能集合，包含图像生成、本地知识库检索和精美文章排版等多个模块。技能以自包含文件夹形式提供，通过 SKILL.md 文件定义指令和参考文档。支持通过 CLI、插件市场或 ZIP 文件等多种方式安装，适配 Claude Code、Cursor 等主流 AI 代理运行时。",
+            "tags": [
+              "agent",
+              "claude",
+              "gpt-image-2",
+              "rag",
+              "skills",
+              "web-design"
+            ]
+          }
+        },
+        "repo": "ConardLi/garden-skills"
       },
       "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
       "schema_version": "report-llm:v1",
@@ -1394,6 +1656,37 @@
       "stage": "analyze_project"
     }
   },
+  "650b8739e2cb11350c797a46ee2bd17e219770ee075e85291937d8a5e2905d37": {
+    "ts": 1788140442.1129093,
+    "value": {
+      "input_hash": "efe87cefb81097f2ecf936507f40730cf13867eace3d251d1a64eb35f0641eed",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 1,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 1,
+            "plain_explanation": "这是一个在命令行里运行的 AI 编程助手，帮你写代码、解决问题，就像在终端里有个智能伙伴一样。",
+            "repo": "openai/codex",
+            "source_description": "Lightweight coding agent that runs in your terminal",
+            "summary": "Codex CLI 是 OpenAI 推出的轻量级编程代理，直接在用户终端运行。它可以通过 ChatGPT 账户或 API 密钥使用，提供命令行界面的 AI 编程辅助。适用于开发者在终端中进行编码、调试和任务执行。",
+            "tags": [
+              "CLI",
+              "编程代理",
+              "AI",
+              "终端工具"
+            ]
+          }
+        },
+        "repo": "openai/codex"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
   "67c90064e80d3df04a3a63689e39fc2bb9d92f109c2076c880a8004ec4969bc3": {
     "ts": 1786322243.5675275,
     "value": {
@@ -1540,6 +1833,55 @@
       "stage": "analyze_project"
     }
   },
+  "74eb8b7a9929ec1f1d766b6513f438659794c9d0bc69eb312305dfa0636bedfa": {
+    "ts": 1788140357.7700868,
+    "value": {
+      "input_hash": "ffe24d9d491d49b425285ce8a906939236d75614ca3d72533e63f11f6f5d988b",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 2,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 2,
+            "plain_explanation": "这个项目相当于一个提示词代码库，帮助开发者在使用 GPT-Image2 时，通过标准化模板快速生成一致的图像，适合需要批量生产或自动化图像生成的场景，比如内容创作或设计工作流。",
+            "repo": "freestylefly/awesome-gpt-image-2",
+            "source_description": "Prompt as Code | GPT-Image2 工业级提示词引擎与模板库，530+ 个案例逆向工程，20+ 套工业级模板，并提炼出Skills，持续更新中",
+            "summary": "这是一个针对 GPT-Image2 的工业级提示词工程项目，通过逆向分析 500 多个案例，提供了 20 多套结构化模板，将提示词压缩为可复用的协议。项目旨在提升 AI 图像生成的稳定性和可控性，适用于代理和自动化工作流。核心内容包括案例画廊、模板库和代理技能，覆盖 UI、图表、海报等多种场景。",
+            "tags": [
+              "ai-image-generation",
+              "gpt-image-2",
+              "image-prompts",
+              "prompt-engineering",
+              "workflow-automation",
+              "agents"
+            ]
+          },
+          "2": {
+            "part_index": 2,
+            "part_total": 2,
+            "plain_explanation": "这是一个帮助开发者快速搭建和使用专业级 AI 图像生成提示词服务的完整代码库，你可以直接部署它来创建一个自己的提示词分享和生成平台，或者只参考其中的案例和模板来提升自己编写提示词的效果。",
+            "repo": "freestylefly/awesome-gpt-image-2",
+            "source_description": "Prompt as Code | GPT-Image2 工业级提示词引擎与模板库，530+ 个案例逆向工程，20+ 套工业级模板，并提炼出Skills，持续更新中",
+            "summary": "本项目是一个完整的、可部署的 Web 应用平台，核心是名为“Prompt as Code”的 GPT-Image2 提示词引擎。其 README 的此部分详细说明了基于 Supabase、Stripe 等服务的后端设置清单，集成了用户信用、会员订阅、付费社区等功能。项目同时提供了一个丰富的展示案例画廊和工业级提示词模板库，涵盖信息图、社交媒体截图、插画艺术等多种图像生成场景。",
+            "tags": [
+              "ai-image-generation",
+              "prompt-engineering",
+              "workflow-automation",
+              "supabase",
+              "chatgpt",
+              "skills"
+            ]
+          }
+        },
+        "repo": "freestylefly/awesome-gpt-image-2"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
   "7602bce16865bdccc041597c92318cf233e8f77ed657934407aa6269c71a3676": {
     "ts": 1786322258.6495204,
     "value": {
@@ -1654,6 +1996,38 @@
       "stage": "analyze_project"
     }
   },
+  "887021773ac7270127f00638750e1b938c1eec5f9c0228f5f7f90dc59b0a6ea4": {
+    "ts": 1788140359.195838,
+    "value": {
+      "input_hash": "e05fc82f770d56186f7c22f7c8b213ac793cce84b7dfe8dcb2f4b3fb65bdcbce",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 1,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 1,
+            "plain_explanation": "这是一个预装了常用开发工具和配置的 Linux 系统，让你不用花时间折腾，直接开始工作。",
+            "repo": "omacom/omarchy",
+            "source_description": "Beautiful, Modern & Opinionated Linux",
+            "summary": "Omarchy 是由 DHH 创建的现代、美观且个人化的 Linux 发行版。它通过详细手册和 CLI 工具，覆盖从基础导航、主题、热键到开发环境、虚拟机等全面配置。适用于追求开箱即用且高度定制化桌面体验的开发者。",
+            "tags": [
+              "linux",
+              "distribution",
+              "cli",
+              "desktop",
+              "development"
+            ]
+          }
+        },
+        "repo": "omacom/omarchy"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
   "8dbc6fad4a4425608d4d32eae0513f7a17eb8461b54a25887c0da2a36ff6946f": {
     "ts": 1785719866.4455936,
     "value": {
@@ -1736,6 +2110,39 @@
       "stage": "analyze_project"
     }
   },
+  "950bbc82c035d516adee16b6bacb7aa6f685007e429059a8653605dd4dcfb0f2": {
+    "ts": 1788140391.3206854,
+    "value": {
+      "input_hash": "67d3ce3afff56e385a651d010e89c95a6903e8c5c306551c0a9298ff7946bf7d",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 1,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 1,
+            "plain_explanation": "你可以把它想象成 Cursor 编辑器的“官方应用商店”，让你在写代码时就能直接操作 GitHub、日历、邮件等外部工具，把编码和日常工作任务串起来。",
+            "repo": "cursor/plugins",
+            "source_description": "Cursor plugin specification and official plugins",
+            "summary": "这是 Cursor 代码编辑器的官方插件仓库，包含其插件规范和大量预置插件。它提供了从代码开发辅助、团队工作流到第三方服务集成的广泛能力，帮助 Cursor 用户扩展编辑器功能。",
+            "tags": [
+              "cursor-plugins",
+              "developer-tools",
+              "productivity",
+              "integrations",
+              "mcp",
+              "agent-workflows"
+            ]
+          }
+        },
+        "repo": "cursor/plugins"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
   "9975053737964ef7019bd7c141552354190665f7e2e3e284d029a065dc41f4ce": {
     "ts": 1786322277.6418457,
     "value": {
@@ -1776,6 +2183,39 @@
           }
         },
         "repo": "donnemartin/system-design-primer"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
+  "a3e3b5ba848dd588cdd9394cca45ef880805f5f735231cfb2fac6079122725ab": {
+    "ts": 1788140359.195838,
+    "value": {
+      "input_hash": "757503ff70e00aea7613a240fe1543d35112223e5a3b978c779315648555933e",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 1,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 1,
+            "plain_explanation": "这是一个在本地运行 AI 代理的平台，所有操作都有记录，方便调试和重复使用，适合 AI 开发者构建和测试代理应用。",
+            "repo": "apache/maka",
+            "source_description": "Apache Maka (Incubating) is a local-first AI agent workspace. Model messages, tool calls, tool results, permission decisions, and termination events are recorded as an append-only log.",
+            "summary": "Apache Maka 是一个本地优先的 AI 代理工作空间，将模型消息、工具调用等事件记录为追加日志。它提供桌面应用、CLI 和评估框架，支持多种模型连接和沙箱工具执行，核心是运行时主机处理代理的执行与恢复。",
+            "tags": [
+              "ai-agent",
+              "local-first",
+              "cli",
+              "desktop",
+              "event-sourcing",
+              "llm"
+            ]
+          }
+        },
+        "repo": "apache/maka"
       },
       "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
       "schema_version": "report-llm:v1",
@@ -1946,6 +2386,361 @@
       "prompt_hash": "9ab0bceab0cac518b61bfd340f40b9358ae85213b12ba6c7435e1488d5fd8701",
       "schema_version": "report-llm:v1",
       "stage": "organize_report"
+    }
+  },
+  "a9d93beb6d24995ca44f62f303e64f139b95282316a975ebef17dcdad8766451": {
+    "ts": 1788140533.13376,
+    "value": {
+      "input_hash": "ed56a48b7137c4d8a6758a095af60d202fd643901a5a7e15ce20a7a3d531df61",
+      "model": "mimo-v2.5",
+      "output": {
+        "categories": [
+          {
+            "items": [
+              {
+                "plain_explanation": "它是一个提示词代码库，帮助开发者通过标准化模板快速生成一致的图像，适合批量或自动化图像生成场景。",
+                "repo": "freestylefly/awesome-gpt-image-2",
+                "summary": "这是一个针对 GPT-Image2 的工业级提示词工程项目，通过逆向分析 500 多个案例，提供了 20 多套结构化模板。项目旨在提升 AI 图像生成的稳定性和可控性，适用于代理和自动化工作流，覆盖 UI、图表、海报等多种场景。",
+                "tags": [
+                  "ai-image-generation",
+                  "gpt-image-2",
+                  "image-prompts",
+                  "prompt-engineering",
+                  "workflow-automation",
+                  "agents"
+                ]
+              },
+              {
+                "plain_explanation": "这是一个在本地运行 AI 代理的平台，所有操作都有记录，方便调试和重复使用，适合 AI 开发者构建和测试代理应用。",
+                "repo": "apache/maka",
+                "summary": "Apache Maka 是一个本地优先的 AI 代理工作空间，将模型消息、工具调用等事件记录为追加日志。它提供桌面应用、CLI 和评估框架，支持多种模型连接和沙箱工具执行，核心是运行时主机处理代理的执行与恢复。",
+                "tags": [
+                  "ai-agent",
+                  "local-first",
+                  "cli",
+                  "desktop",
+                  "event-sourcing",
+                  "llm"
+                ]
+              },
+              {
+                "plain_explanation": "它就像一个免费的 LLM 聚合器，让你用一个 API 访问多个免费模型，避免分别注册的麻烦，适合开发者快速测试 AI 应用。",
+                "repo": "tashfeenahmed/freellmapi",
+                "summary": "FreeLLMAPI 是一个开源 LLM API 聚合器，它聚合了 34 个免费提供商的 635 个模型端点，提供一个统一的 OpenAI 兼容 API 端点。通过智能路由、自动故障转移和加密密钥，简化多提供商管理，每月提供约 7.4 亿 token 的免费推理容量。",
+                "tags": [
+                  "llm",
+                  "api-gateway",
+                  "free-tiers",
+                  "openai-compatible",
+                  "routing",
+                  "typescript"
+                ]
+              },
+              {
+                "plain_explanation": "它用 AI 帮求职者自动定制简历和求职信，节省手动准备时间，适合想优化求职申请的人使用。",
+                "repo": "MadsLorentzen/ai-job-search",
+                "summary": "这是一个基于 Claude Code 的 AI 求职应用框架，运行在本地机器上，旨在自动化求职申请流程。核心功能包括评估职位匹配度、定制简历和求职信、准备面试，通过结构化命令工作。框架编码了职业指导最佳实践，适用于高效管理求职过程。",
+                "tags": [
+                  "ai-agents",
+                  "job-search",
+                  "resume",
+                  "cover-letter",
+                  "interview-preparation",
+                  "career"
+                ]
+              },
+              {
+                "plain_explanation": "它帮助科学家和研究人员用 AI 自动处理实验数据、文献检索和复杂计算，就像给 AI 装上一套科学工具箱。",
+                "repo": "K-Dense-AI/scientific-agent-skills",
+                "summary": "这是一个科学代理技能库，旨在将任何 AI 代理转变为研究助手。它包含 165 个验证过的技能和 100 多个科学数据库，覆盖生物学、化学、医学和药物发现等多个领域。兼容 Cursor、Claude Code 等多种 AI 代理平台，适用于自动化科学计算和数据分析。",
+                "tags": [
+                  "agent-skills",
+                  "ai-scientist",
+                  "bioinformatics",
+                  "drug-discovery",
+                  "scientific-computing",
+                  "data-analysis"
+                ]
+              },
+              {
+                "plain_explanation": "这相当于一个免费的 AI 编码助手聚合器，开发者可以用它在 VS Code 或终端里免费获得编程帮助，节省开发成本。",
+                "repo": "Alishahryar1/free-claude-code",
+                "summary": "Free Claude Code 是一个独立的开源工具，允许用户免费使用 Claude Code、Codex 等 10 种编码代理。它聚合了 50 个提供商，提供每月超过 13 亿免费 tokens，支持从终端、桌面、IDE 或手机访问，具备自动故障转移和语音输入功能。",
+                "tags": [
+                  "coding",
+                  "AI",
+                  "free",
+                  "terminal",
+                  "IDE",
+                  "voice"
+                ]
+              },
+              {
+                "plain_explanation": "它就像一个智能管家，能记住你的所有信息并自动帮你处理任务和研究，适合想拥有私人 AI 的开发者和高级用户。",
+                "repo": "tinyhumansai/openhuman",
+                "summary": "OpenHuman 是一个开源的个人 AI 超级智能平台，本地优先设计，旨在为用户提供持久记忆和智能编排能力。它通过记忆树和 Obsidian Wiki 构建用户数据的结构化存储，支持自动同步和集成多种工具。项目能编排代理舰队和可视化工作流，实现复杂任务自动化，并内置深度研究功能。",
+                "tags": [
+                  "AI",
+                  "local-first",
+                  "memory-system",
+                  "agent-orchestration",
+                  "workflow",
+                  "deep-research"
+                ]
+              }
+            ],
+            "name": "AI / 大模型应用"
+          },
+          {
+            "items": [
+              {
+                "plain_explanation": "这是一个插件商店，专门给使用 Claude AI 编程工具的用户提供额外功能插件，都是社区开发并经过安全检查的。",
+                "repo": "anthropics/claude-plugins-community",
+                "summary": "这是 Claude Cowork 和 Claude Code 的社区插件市场只读镜像，包含经过安全审核和批准的社区贡献插件。用户可以通过命令行安装插件来扩展功能，插件通过官方流程提交和审核，确保安全性和可用性。",
+                "tags": [
+                  "plugins",
+                  "claude-cowork",
+                  "claude-code",
+                  "marketplace",
+                  "community"
+                ]
+              },
+              {
+                "plain_explanation": "它帮助开发者快速创建专业的系统图表，用于分享架构设计或分析代码流程，无需手动绘图。",
+                "repo": "tt-a1i/archify",
+                "summary": "Archify 是一个代理技能，用于将代码库或系统描述转换为美观、可验证的交互式图表。它支持架构、工作流、序列、数据流和生命周期五种图表类型，生成独立的 HTML 文件。通过 AI 代理生成类型化 JSON IR，确定性编译并验证图表，适用于系统设计和代码可视化。",
+                "tags": [
+                  "agent-skills",
+                  "architecture-diagram",
+                  "code-visualization",
+                  "developer-tools",
+                  "system-design",
+                  "diagram-as-code"
+                ]
+              },
+              {
+                "plain_explanation": "这是一个官方插件商店，让你能轻松找到并安装增强 Claude Code 功能的工具，也方便开发者分享自己的插件。",
+                "repo": "anthropics/claude-plugins-official",
+                "summary": "这是 Anthropic 官方管理的 Claude Code 插件目录，提供高质量插件的集合。用户可以通过插件系统直接安装，插件开发者可以提交内部或外部插件。目录结构标准化，支持插件元数据、MCP 配置等，确保命名不可变以维护兼容性。",
+                "tags": [
+                  "claude-code",
+                  "plugins",
+                  "mcp",
+                  "skills",
+                  "marketplace"
+                ]
+              },
+              {
+                "plain_explanation": "你可以把它想象成 Cursor 编辑器的“官方应用商店”，让你在写代码时就能直接操作 GitHub、日历、邮件等外部工具。",
+                "repo": "cursor/plugins",
+                "summary": "这是 Cursor 代码编辑器的官方插件仓库，包含其插件规范和大量预置插件。它提供了从代码开发辅助、团队工作流到第三方服务集成的广泛能力，帮助 Cursor 用户扩展编辑器功能。",
+                "tags": [
+                  "cursor-plugins",
+                  "developer-tools",
+                  "productivity",
+                  "integrations",
+                  "mcp",
+                  "agent-workflows"
+                ]
+              },
+              {
+                "plain_explanation": "这个项目提供了一套工具，让 AI 编程助手能自动完成网页设计、生成演示文稿或图片，主要帮助使用 AI 工具进行开发的程序员节省时间。",
+                "repo": "ConardLi/garden-skills",
+                "summary": "Garden Skills 是一个为 AI 编码代理（如 Claude Code、Cursor）设计的开源技能集合。它包含 Web 视频演示、Web 设计和 GPT 图像生成等多个生产就绪的技能，旨在自动化开发任务，适用于增强 AI 代理功能的前端和 Web 开发者。",
+                "tags": [
+                  "agent",
+                  "claude",
+                  "gpt-image-2",
+                  "rag",
+                  "skills",
+                  "web-design"
+                ]
+              },
+              {
+                "plain_explanation": "这是一个帮助 C++ 程序员编写和运行自动化测试的工具，就像 JUnit 为 Java 做的那样，能快速验证代码正确性。",
+                "repo": "google/googletest",
+                "summary": "GoogleTest 是 Google 开源的 C++ 测试框架，集成了测试和模拟功能。它基于 xUnit 架构，支持自动测试发现、丰富断言和参数化测试等特性。适用于 C++ 开发者进行单元测试，被 Chromium、LLVM 等知名项目广泛使用。",
+                "tags": [
+                  "C++",
+                  "testing",
+                  "unit-testing",
+                  "mocking",
+                  "xunit"
+                ]
+              },
+              {
+                "plain_explanation": "这个工具可以让你把网页截图直接变成可用的代码，比如 HTML 或 React 组件，节省了从头写代码的时间。",
+                "repo": "abi/screenshot-to-code",
+                "summary": "screenshot-to-code 是一个使用 AI 将截图、设计稿或屏幕录像转换为前端代码的工具。它支持多种技术栈，包括 HTML、Tailwind、React 和 Vue，并利用 Gemini、GPT 等模型进行代码生成。用户可以通过上传视觉内容快速获得可工作的代码，适用于前端开发和原型设计。",
+                "tags": [
+                  "AI",
+                  "代码生成",
+                  "前端开发",
+                  "截图转换"
+                ]
+              },
+              {
+                "plain_explanation": "这是一个在命令行里运行的 AI 编程助手，帮你写代码、解决问题，就像在终端里有个智能伙伴一样。",
+                "repo": "openai/codex",
+                "summary": "Codex CLI 是 OpenAI 推出的轻量级编程代理，直接在用户终端运行。它可以通过 ChatGPT 账户或 API 密钥使用，提供命令行界面的 AI 编程辅助，适用于开发者在终端中进行编码、调试和任务执行。",
+                "tags": [
+                  "CLI",
+                  "编程代理",
+                  "AI",
+                  "终端工具"
+                ]
+              }
+            ],
+            "name": "开发工具与平台"
+          },
+          {
+            "items": [
+              {
+                "plain_explanation": "这是一个预装了常用开发工具和配置的 Linux 系统，让你不用花时间折腾，直接开始工作。",
+                "repo": "ocom/omarchy",
+                "summary": "Omarchy 是由 DHH 创建的现代、美观且个人化的 Linux 发行版。它通过详细手册和 CLI 工具，覆盖从基础导航、主题、热键到开发环境、虚拟机等全面配置，适用于追求开箱即用且高度定制化桌面体验的开发者。",
+                "tags": [
+                  "linux",
+                  "distribution",
+                  "cli",
+                  "desktop",
+                  "development"
+                ]
+              },
+              {
+                "plain_explanation": "它帮助用户摆脱罗技官方软件的臃肿和隐私问题，自由配置罗技外设，尤其是在 Linux 上追求轻量解决方案的用户。",
+                "repo": "AprilNEA/OpenLogi",
+                "summary": "OpenLogi 是用 Rust 编写的本地优先应用程序，作为 Logitech Options+ 的替代品。它支持通过 HID++ 协议自定义罗技鼠标、键盘和摄像头的按钮、DPI 和 SmartShift 等功能，注重隐私，无需账户或遥测，可在 macOS、Linux 和 Windows 上运行。",
+                "tags": [
+                  "logitech",
+                  "rust",
+                  "local-first",
+                  "mouse-remapping",
+                  "privacy",
+                  "hidpp"
+                ]
+              }
+            ],
+            "name": "系统与基础设施"
+          },
+          {
+            "items": [
+              {
+                "plain_explanation": "这个课程通过动手实践帮助开发者全面学习 AI 工程，从理论原理到实际部署，适合想深入理解 AI 内部机制的程序员。",
+                "repo": "rohitg00/ai-engineering-from-scratch",
+                "summary": "这是一个从零开始的 AI 工程学习课程，提供 523 节课和 20 个阶段，系统覆盖数学基础、机器学习、深度学习到自主代理工程。课程以实践驱动，每节课都产出可复用的构件，集成了 AI 辅导工具进行个性化指导，帮助构建生产级 AI 应用。",
+                "tags": [
+                  "ai",
+                  "ai-engineering",
+                  "course",
+                  "llm",
+                  "agents",
+                  "python"
+                ]
+              },
+              {
+                "plain_explanation": "这个工具帮助教师或内容创作者快速生成在线互动课程，让学生能像在真实课堂中一样与 AI 交互学习。",
+                "repo": "THU-MAIC/OpenMAIC",
+                "summary": "OpenMAIC 是一个开源 AI 驱动的多智能体互动课堂平台，能将任何主题或文档一键转化为丰富的课程内容，包括幻灯片、测验和互动模拟。平台支持 AI 教师与学生的实时讨论、白板绘画，并可通过多种 LLM 提供商灵活配置使用。",
+                "tags": [
+                  "AI",
+                  "教育",
+                  "多智能体",
+                  "互动课堂",
+                  "课程生成",
+                  "TypeScript"
+                ]
+              }
+            ],
+            "name": "教育与学习"
+          }
+        ]
+      },
+      "prompt_hash": "9ab0bceab0cac518b61bfd340f40b9358ae85213b12ba6c7435e1488d5fd8701",
+      "schema_version": "report-llm:v1",
+      "stage": "organize_report"
+    }
+  },
+  "ace92671b6fdca583a8a63fb9efedf736944aa07fbad46f7bd4adf61312a6d81": {
+    "ts": 1788140406.898473,
+    "value": {
+      "input_hash": "68571d7eb84cdd01398b36fbdaa426a7aa449f73c5a3a312ed3a2b34e75f78f7",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 2,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 2,
+            "plain_explanation": "它帮助科学家和研究人员用 AI 自动处理实验数据、文献检索和复杂计算，就像给 AI 装上一套科学工具箱，省去手动编写代码的麻烦。",
+            "repo": "K-Dense-AI/scientific-agent-skills",
+            "source_description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 190,000+ scientists worldwide. 165 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
+            "summary": "这是一个科学代理技能库，旨在将任何 AI 代理转变为研究助手。它包含 165 个验证过的技能和 100 多个科学数据库，覆盖生物学、化学、医学和药物发现等多个领域。兼容 Cursor、Claude Code 等多种 AI 代理平台，使用 Agent Skills 标准进行集成。适用于需要自动化科学计算和数据分析的科研人员。",
+            "tags": [
+              "agent-skills",
+              "ai-scientist",
+              "bioinformatics",
+              "drug-discovery",
+              "scientific-computing",
+              "data-analysis"
+            ]
+          },
+          "2": {
+            "part_index": 2,
+            "part_total": 2,
+            "plain_explanation": "这个项目相当于给 AI 代理配备了一个科学工具箱，让研究人员能用自然语言快速执行复杂分析，比如药物筛选或基因组数据处理。它主要帮助生物信息学家、化学信息学家等科研人员加速研究工作。",
+            "repo": "K-Dense-AI/scientific-agent-skills",
+            "source_description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 190,000+ scientists worldwide. 165 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
+            "summary": "科学代理技能库是一个将 AI 代理转变为 AI 科学家的工具集，提供 165 个预置技能和 100 多个科学数据库，覆盖生物学、化学、医学和药物发现等领域。它支持 Cursor、Claude Code 等多种 AI 客户端，技能文件需按 YAML 格式验证，并推荐按需安装子集以避免上下文过载。项目强调安全性，建议用户审查技能内容，并提供了从虚拟筛选到多组学分析的丰富科研工作流程示例和用例。",
+            "tags": [
+              "agent-skills",
+              "ai-scientist",
+              "bioinformatics",
+              "drug-discovery",
+              "scientific-computing",
+              "data-analysis"
+            ]
+          }
+        },
+        "repo": "K-Dense-AI/scientific-agent-skills"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
+  "adb863a862411af91bb4e374588618ae1655b641d995c0fbdee256b9f9d8299a": {
+    "ts": 1788140456.1032975,
+    "value": {
+      "input_hash": "88b5e4c603818286c70d09b11218bd739315b0b492f304dffef66881e3b06ede",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 1,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 1,
+            "plain_explanation": "它就像一个智能管家，能记住你的所有信息（如邮件、日历、代码库），自动帮你处理任务和研究，适合想拥有私人 AI 的开发者和高级用户提高效率。",
+            "repo": "tinyhumansai/openhuman",
+            "source_description": "Your Personal AI super intelligence. A brain that builds a local-first memory of your life, a fantastic orchestrator of agent fleets and workflows, and a deep researcher.",
+            "summary": "OpenHuman 是一个开源的个人 AI 超级智能平台，本地优先设计，旨在为用户提供持久记忆和智能编排能力。它通过记忆树和 Obsidian Wiki 构建用户数据的结构化存储，并支持自动同步和集成多种工具。项目能编排代理舰队和可视化工作流，实现复杂任务的自动化执行。同时，它内置深度研究功能，可自动搜索和分析信息，适合需要个性化 AI 助手的开发者和用户。",
+            "tags": [
+              "AI",
+              "本地优先",
+              "记忆系统",
+              "代理编排",
+              "工作流",
+              "深度研究"
+            ]
+          }
+        },
+        "repo": "tinyhumansai/openhuman"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
     }
   },
   "b22c5fbf0c37fd2630b4f2b81360480e0c4b0130aaadbde086d79114714c8e7f": {
@@ -2265,6 +3060,38 @@
       "stage": "generate_overview"
     }
   },
+  "b75dfc88ef17b8484559133952149ea70613165944744ee68c7442a6d84a0335": {
+    "ts": 1788140414.7778797,
+    "value": {
+      "input_hash": "023caaaa435bba0166bcfd13912c822266d46c4da5f32f30d1f6993f08e1b0ac",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 1,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 1,
+            "plain_explanation": "这是一个帮助 C++ 程序员编写和运行自动化测试的工具，就像 JUnit 为 Java 做的那样，能快速验证代码正确性，提升项目质量。",
+            "repo": "google/googletest",
+            "source_description": "GoogleTest - Google Testing and Mocking Framework",
+            "summary": "GoogleTest 是 Google 开源的 C++ 测试框架，集成了测试和模拟功能。它基于 xUnit 架构，支持自动测试发现、丰富断言和参数化测试等特性。适用于 C++ 开发者进行单元测试，被 Chromium、LLVM 等知名项目广泛使用。",
+            "tags": [
+              "C++",
+              "testing",
+              "unit-testing",
+              "mocking",
+              "xunit"
+            ]
+          }
+        },
+        "repo": "google/googletest"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
   "bdd40638fbe9a2d2694c9249a8bd90bb3ea8da9b2de123cc2f378a358318a93b": {
     "ts": 1785719885.3594508,
     "value": {
@@ -2308,6 +3135,55 @@
           }
         },
         "repo": "diegosouzapw/OmniRoute"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
+  "bff186485416cdb496edb9a2ed4de8af8e64ed34a787c5259e4e870f6aaf664b": {
+    "ts": 1788140370.6164136,
+    "value": {
+      "input_hash": "f3bb7d24e39452125a5b5c42df5e072b6c7671476cbb76529013dfd4ae4aa3e8",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 2,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 2,
+            "plain_explanation": "它就像一个聚合器，把多家公司的免费 AI 模型服务合并成一个接口，让你不用单独管理每个提供商的账号和限制，适合想免费尝试各种 AI 模型的人。",
+            "repo": "tashfeenahmed/freellmapi",
+            "source_description": "7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom OpenAI-compatible endpoint. Smart routing, automatic failover, encrypted keys. Personal experimentation only.",
+            "summary": "FreeLLMAPI 是一个开源项目，它聚合了 34 个免费 LLM 提供商的 635 个模型端点，提供一个统一的 OpenAI 兼容 API 端点。通过智能路由、自动故障转移和加密密钥，它简化了多提供商管理，每月可提供约 7.4 亿 token 的免费推理容量，适用于个人实验和开发。",
+            "tags": [
+              "llm",
+              "api-gateway",
+              "free-tiers",
+              "openai-compatible",
+              "routing",
+              "typescript"
+            ]
+          },
+          "2": {
+            "part_index": 2,
+            "part_total": 2,
+            "plain_explanation": "它就像一个免费的 LLM 聚合器，让你用一个 API 访问多个免费模型，避免分别注册的麻烦，适合开发者用来快速测试 AI 应用。",
+            "repo": "tashfeenahmed/freellmapi",
+            "source_description": "7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom OpenAI-compatible endpoint. Smart routing, automatic failover, encrypted keys. Personal experimentation only.",
+            "summary": "FreeLLMAPI 是一个开源的 LLM API 代理，聚合了 34 个免费提供商的 635 个模型端点，提供每月约 74 亿 token 的免费容量。它支持智能路由和自动故障转移，兼容 OpenAI API，适用于个人实验和开发。路由器会自动选择最佳可用模型，并处理提供商故障。",
+            "tags": [
+              "llm",
+              "api",
+              "free-tier",
+              "routing",
+              "proxy",
+              "typescript"
+            ]
+          }
+        },
+        "repo": "tashfeenahmed/freellmapi"
       },
       "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
       "schema_version": "report-llm:v1",
@@ -2735,6 +3611,19 @@
       "stage": "organize_report"
     }
   },
+  "cf12c9f6905ff7a892566ce13690a30ce1630049b58fd46f84f73566db5a922a": {
+    "ts": 1788140562.026921,
+    "value": {
+      "input_hash": "23daec3babb4b86bcb3f4bf822e822468bad8662e2cfa49fe7259ceb766f8690",
+      "model": "mimo-v2.5",
+      "output": {
+        "overview": "本期周刊共收录 19 个项目。开发工具领域聚焦于插件生态与代码可视化，例如 Claude 插件市场和 Archify 工具。AI 领域以代理工作空间和模型聚合器为主，如 FreeLLMAPI 提供统一 API 访问。教育方向涵盖 AI 工程课程与互动课堂平台。"
+      },
+      "prompt_hash": "8c94cc4b3c412c557dadbf6292f4f890a09342667e559fa0afb8a6060f0e4ed4",
+      "schema_version": "report-llm:v1",
+      "stage": "generate_overview"
+    }
+  },
   "d276b59490f61e8a09309ab79814f74d87067191ff94828560c09ca3f4a18b6b": {
     "ts": 1786924779.5999148,
     "value": {
@@ -2960,6 +3849,37 @@
       "stage": "analyze_project"
     }
   },
+  "de30cfa91664a3e4a28bb9ff6ac4dcebf9e84c67b283da3696327a348983d16d": {
+    "ts": 1788140442.1129093,
+    "value": {
+      "input_hash": "d7694a2e438d7360828b48ec86a515e6dd7b22080266819bcc9c0a6c72019f62",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 1,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 1,
+            "plain_explanation": "这个工具可以让你把网页截图直接变成可用的代码，比如 HTML 或 React 组件，节省了从头写代码的时间，适合开发者和设计师快速实现想法。",
+            "repo": "abi/screenshot-to-code",
+            "source_description": "Drop in a screenshot and convert it to clean code (HTML/Tailwind/React/Vue)",
+            "summary": "screenshot-to-code 是一个使用 AI 将截图、设计稿或屏幕录像转换为前端代码的工具。它支持多种技术栈，包括 HTML、Tailwind、React 和 Vue，并利用 Gemini、GPT 等模型进行代码生成。用户可以通过上传视觉内容快速获得可工作的代码，适用于前端开发和原型设计。",
+            "tags": [
+              "AI",
+              "代码生成",
+              "前端开发",
+              "截图转换"
+            ]
+          }
+        },
+        "repo": "abi/screenshot-to-code"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
   "e0bafbaa7cc36a539940b37c072136628d09f08edf95d31861ee7e2b1b548243": {
     "ts": 1787529639.3024433,
     "value": {
@@ -3003,6 +3923,55 @@
           }
         },
         "repo": "akitaonrails/ai-memory"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
+  "e71ddf30d1956cb197eb2d73f24a0c8a6a8014b448438ba0e7b092719a2d6994": {
+    "ts": 1788140433.7632568,
+    "value": {
+      "input_hash": "a17bd4bf4bebc6e3fff8df6d6446c70d8982e19172151e5ff17d794a3c621185",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 2,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 2,
+            "plain_explanation": "这相当于一个免费的 AI 编码助手聚合器，开发者可以用它在 VS Code 或终端里免费获得编程帮助，就像一个省钱又多功能的编码伙伴。",
+            "repo": "Alishahryar1/free-claude-code",
+            "source_description": "Use Claude Code, Codex, Pi, and OpenCode and more for free (1.3B+ free tokens) from your terminal, app, IDE, or phone like OpenClaw (voice supported + ToS friendly)",
+            "summary": "Free Claude Code 是一个独立的开源工具，允许用户免费使用 Claude Code、Codex 等 10 种编码代理。它聚合了 50 个提供商，提供每月超过 13 亿 免费 tokens，支持从终端、桌面、IDE 或手机访问。项目通过管理界面配置模型，并具备自动故障转移和语音输入功能。",
+            "tags": [
+              "coding",
+              "AI",
+              "free",
+              "terminal",
+              "IDE",
+              "voice"
+            ]
+          },
+          "2": {
+            "part_index": 2,
+            "part_total": 2,
+            "plain_explanation": "它搭建一个本地代理，让开发者免费使用高级 AI 编程工具，适合个人或小团队节省开发成本。",
+            "repo": "Alishahryar1/free-claude-code",
+            "source_description": "Use Claude Code, Codex, Pi, and OpenCode and more for free (1.3B+ free tokens) from your terminal, app, IDE, or phone like OpenClaw (voice supported + ToS friendly)",
+            "summary": "Free Claude Code 是一个开源工具，通过本地代理服务器让开发者在终端、IDE 或手机上免费使用 Claude Code、Codex 等 AI 编码助手。它支持配置多种模型，提供大量免费 tokens，并集成了 Discord 和 Telegram 机器人等交互功能，还包含语音笔记选项。项目主要面向需要低成本 AI 编程辅助的开发者，帮助绕过官方付费限制。",
+            "tags": [
+              "ai-coding",
+              "free-tokens",
+              "proxy",
+              "ide-integration",
+              "voice-assistant",
+              "chatbots"
+            ]
+          }
+        },
+        "repo": "Alishahryar1/free-claude-code"
       },
       "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
       "schema_version": "report-llm:v1",
@@ -3068,6 +4037,38 @@
           }
         },
         "repo": "usekaneo/kaneo"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
+  "ee6d489247c73124580490f4244d6b767bbe210ce6aece2a2ba1fc02ec581f2a": {
+    "ts": 1788140384.2619798,
+    "value": {
+      "input_hash": "0f3ee6ca9a341be065bdece32e2585f6a44d4f172f00b51ea1cdd41488b36dcf",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 1,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 1,
+            "plain_explanation": "这是一个官方插件商店，让你能轻松找到并安装增强 Claude Code 功能的工具，也方便开发者分享自己的插件。",
+            "repo": "anthropics/claude-plugins-official",
+            "source_description": "Official, Anthropic-managed directory of high quality Claude Code Plugins.",
+            "summary": "这是 Anthropic 官方管理的 Claude Code 插件目录，提供高质量插件的集合。用户可以通过插件系统直接安装，插件开发者可以提交内部或外部插件。目录结构标准化，支持插件元数据、MCP 配置等，并确保命名不可变以维护兼容性。",
+            "tags": [
+              "claude-code",
+              "plugins",
+              "mcp",
+              "skills",
+              "marketplace"
+            ]
+          }
+        },
+        "repo": "anthropics/claude-plugins-official"
       },
       "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
       "schema_version": "report-llm:v1",
