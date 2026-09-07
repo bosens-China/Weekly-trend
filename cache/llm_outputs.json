@@ -145,6 +145,52 @@
       "stage": "analyze_project"
     }
   },
+  "0343a1904a74cfc2766137b5cb1aff826e77b0f6a7ffe817a2b3017c3e36ce32": {
+    "ts": 1788744097.1887598,
+    "value": {
+      "input_hash": "a643f995989eafdbf9e10c56296b61e6d4ac89f71a069bd55b85fcaba76a8a71",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 2,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 2,
+            "plain_explanation": "ECC 就像给 AI 编程助手装上了“工作习惯”和“记忆”，让它们能自己规划、测试和改进代码，适合经常用 AI 辅助开发的程序员。",
+            "repo": "affaan-m/ECC",
+            "source_description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+            "summary": "ECC 是一个为 AI 代理工具提供性能优化的系统，支持 Claude Code、Codex 和 Cursor 等平台。它集成了技能、记忆、安全等功能，通过规划、测试、实现和审查的工程流程，帮助开发者提升代理的工作效率。项目旨在将重复的开发经验转化为可重用的技能和工作流，适用于使用 AI 辅助编程的场景。",
+            "tags": [
+              "ai-agents",
+              "claude-code",
+              "developer-tools",
+              "llm",
+              "productivity"
+            ]
+          },
+          "2": {
+            "part_index": 2,
+            "part_total": 2,
+            "plain_explanation": "这个项目帮助开发者轻松设置和定制各种 AI 编程助手工具，让它们能在不同环境下工作，特别是那些需要使用自己的模型或特殊配置的开发者。",
+            "repo": "affaan-m/ECC",
+            "source_description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+            "summary": "ECC 项目提供了针对多种 AI 编程工具（如 Cursor、OpenCode、Kimi Code CLI）的灵活安装选项，支持自托管模型和自定义 API 端点。它允许用户根据需要选择安装组件，并配置项目本地规则，以适应不同的开发环境。此外，项目集成了 Itô 计算服务，便于获取 GPU 资源用于模型部署。",
+            "tags": [
+              "ai-agents",
+              "developer-tools",
+              "llm",
+              "productivity"
+            ]
+          }
+        },
+        "repo": "affaan-m/ECC"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
   "066531b3590a0ab169afaa580fd545fc58c4a3854f54cb39f02d4cc1a87dba51": {
     "ts": 1788140378.4751503,
     "value": {
@@ -275,10 +321,10 @@
       "stage": "analyze_project"
     }
   },
-  "0ddcca0e8ce4949984c96308a5126f51b88458fed7e5e85abf2d01e648405983": {
-    "ts": 1785719847.5488024,
+  "0ec46a0908918ccd9f498e2db1ddfb84780923695ff22984dda14cd204d79c60": {
+    "ts": 1788744157.078496,
     "value": {
-      "input_hash": "ffa06cb1a60201a23a5bca5630e691045debe83566020112aeb482b15ebbbaac",
+      "input_hash": "92f2134f72c711154a4c7baade9556c8b6db607973874c2b6830492a08eb0831",
       "model": "mimo-v2.5",
       "output": {
         "complete": true,
@@ -287,35 +333,85 @@
           "1": {
             "part_index": 1,
             "part_total": 2,
-            "plain_explanation": "这个工具把技术书变成 AI 能理解的结构化笔记，让你在写代码时直接问 AI 相关内容，不用每次都翻书或担心 AI 胡说八道。适合经常需要参考技术文档的开发者使用。",
-            "repo": "virgiliojr94/book-to-skill",
-            "source_description": "Turn any technical book PDF into a Claude Code skill — ready to study, reference, and use while you work.",
-            "summary": "book-to-skill 是一个 Python 工具，能将技术书籍、文档或文件夹转换为 AI 代理技能，支持 PDF、EPUB 等多种格式。它提取内容并生成结构化文件，如 SKILL.md 和章节文件，以便代理在 GitHub Copilot CLI、Amp 或 Claude Code 中按需加载。开发者可以借此在编码时快速引用书籍知识，避免直接注入整本书带来的 token 浪费和幻觉问题。该工具遵循开放代理技能标准，适用于需要频繁参考技术资料的场景。",
+            "plain_explanation": "这个工具像智能研究助手，用 AI 自动化论文写作中的繁琐步骤，比如找参考文献、校对格式和检查错误，但关键决策和创意部分仍由人类完成，避免 AI 犯错。",
+            "repo": "Imbad0202/academic-research-skills",
+            "source_description": "Academic Research Skills for Claude Code: research → write → review → revise → finalize",
+            "summary": "这是一个专为 Claude Code 设计的学术研究技能套件，覆盖从文献调研到论文发表的完整管道。它通过多代理团队辅助研究、写作、评审和修订，强调人类在循环中监督以避免 AI 自主研究的失败模式。项目适用于学术研究者，帮助处理查资料、格式引用、检查逻辑等重复性任务，让研究者专注于核心创新。",
             "tags": [
-              "ai-agent",
-              "knowledge-management",
-              "technical-books",
-              "documentation",
-              "python",
-              "skills"
+              "academic-writing",
+              "ai-research",
+              "literature-review",
+              "peer-review",
+              "prompt-engineering",
+              "academic-pipeline"
             ]
           },
           "2": {
             "part_index": 2,
             "part_total": 2,
-            "plain_explanation": "它帮助开发者将技术书籍转化为 AI 代理可直接使用的技能，节省整理时间，适合使用 Claude Code 或类似工具的开发者。",
-            "repo": "virgiliojr94/book-to-skill",
-            "source_description": "Turn any technical book PDF into a Claude Code skill — ready to study, reference, and use while you work.",
-            "summary": "这是一个将技术书籍 PDF 等格式转换为 Claude Code 技能的工具，便于开发者在工作中参考和使用。它通过本地提取文本并生成结构化笔记，避免复制原始内容，适用于个人学习和工作流。",
+            "plain_explanation": "这就像一个智能学术助手，能指导你如何做研究、写论文、审稿，特别适合需要 AI 辅助完成学术工作的人，帮你节省时间并提高论文质量。",
+            "repo": "Imbad0202/academic-research-skills",
+            "source_description": "Academic Research Skills for Claude Code: research → write → review → revise → finalize",
+            "summary": "该项目为 Claude Code 提供一套模块化的学术研究技能，覆盖从深度研究、论文写作、评审到全流程管理的完整管道。每个技能模块支持多种模式，如系统性文献综述、格式转换、反谄媚机制等，并优化了 AI 交互中的框架锁定和意图误检测问题。它采用阶段性关口和协作质量评估，确保研究过程的严谨性，适用于学术研究人员高效完成从研究到出版的各个环节。",
             "tags": [
-              "pdf 转换",
-              "claude-code",
-              "技能生成",
-              "本地工具"
+              "academic-pipeline",
+              "academic-writing",
+              "ai-research",
+              "claude",
+              "prompt-engineering",
+              "literature-review"
             ]
           }
         },
-        "repo": "virgiliojr94/book-to-skill"
+        "repo": "Imbad0202/academic-research-skills"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
+  "1011684e91efc379bc97f92c195ebb09e4e6faa54d3d320516ebe8d9a9422590": {
+    "ts": 1788744191.6437674,
+    "value": {
+      "input_hash": "50a2eef8d797a4e202ae10bd9fd1d06206d28aaf26c22dec3039d2823395d64e",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 2,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 2,
+            "plain_explanation": "它解决 AI 代理容易生成过多不必要代码的问题，让开发者节省时间和成本。就像有一个资深开发者在旁边，只写最必要的代码，确保安全且高效。",
+            "repo": "DietrichGebert/ponytail",
+            "source_description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+            "summary": "Ponytail 是一个 AI 代理技能插件，旨在让 AI 编程代理生成更精简、必要的代码，避免过度工程。它通过一个七层规则梯子指导代理在编码前评估任务必要性、复用现有代码、利用标准库或原生特性等，以最小化不必要的实现。基准测试显示，使用 Ponytail 后代码行数平均减少 54%，成本降低 20%，运行速度提升 27%，且完全保持安全性。该工具适用于使用 Claude Code、Cursor、Copilot 等 AI 编程代理的开发者，帮助提升代码质量和效率。",
+            "tags": [
+              "ai-agents",
+              "developer-tools",
+              "llm",
+              "prompt-engineering",
+              "yagni"
+            ]
+          },
+          "2": {
+            "part_index": 2,
+            "part_total": 2,
+            "plain_explanation": "它让 AI 代理像资深开发一样避免生成冗余代码，解决 AI 可能产生不必要功能的问题，主要供使用 AI 编程工具的开发者使用。",
+            "repo": "DietrichGebert/ponytail",
+            "source_description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+            "summary": "Ponytail 是一个为 AI 代理设计的技能包，旨在让 AI 生成更简洁的代码。它支持多种 AI 代理主机和适配器，如 Claude Code 和 Cursor，通过预设规则和命令来优化代码生成过程。适用于追求代码最小化和效率的开发者，强调“你从不写的代码是最好的”理念。",
+            "tags": [
+              "ai-agents",
+              "developer-tools",
+              "llm",
+              "prompt-engineering",
+              "yagni",
+              "claude"
+            ]
+          }
+        },
+        "repo": "DietrichGebert/ponytail"
       },
       "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
       "schema_version": "report-llm:v1",
@@ -467,55 +563,6 @@
       "stage": "analyze_project"
     }
   },
-  "1a53a02f97362009f9f42244c3e26523b3bb26627c013f21eb9908ccbd66bcc3": {
-    "ts": 1785719870.3566966,
-    "value": {
-      "input_hash": "c479f959688b0f4072609dd8bb1e5393a3c33c3ed27df2fc374d9e387ec2c25c",
-      "model": "mimo-v2.5",
-      "output": {
-        "complete": true,
-        "part_total": 2,
-        "parts": {
-          "1": {
-            "part_index": 1,
-            "part_total": 2,
-            "plain_explanation": "它就像一个可以陪你聊天、玩游戏的虚拟朋友，让你拥有自己的数字生命。AI爱好者和开发者可以用它来创建和交互虚拟角色，类似一个自定义的VTuber伴侣。",
-            "repo": "moeru-ai/airi",
-            "source_description": "💖🧸 Self hosted, you-owned Grok Companion, a container of souls of waifu, cyber livings to bring them into our worlds, wishing to achieve Neuro-sama's altitude. Capable of realtime voice chat, Minecraft, Factorio playing. Web / macOS / Windows supported.",
-            "summary": "Project AIRI 是一个自托管的AI伴侣项目，旨在重现类似 Neuro-sama 的虚拟角色，提供实时语音聊天和游戏交互能力。它支持在 Web、macOS 和 Windows 平台上运行，基于 Web 技术如 WebGPU、WebAudio 构建，允许用户拥有并定制自己的数字生命。项目核心功能包括玩 Minecraft、Factorio 等游戏，以及通过 Discord 和 Telegram 聊天，适用于AI爱好者和开发者。",
-            "tags": [
-              "ai-companion",
-              "ai-vtuber",
-              "digital-life",
-              "live2d",
-              "vrm",
-              "vtuber"
-            ]
-          },
-          "2": {
-            "part_index": 2,
-            "part_total": 2,
-            "plain_explanation": "这个项目让开发者可以搭建自己的 AI 虚拟伴侣，像 Neuro-sama 那样能聊天、玩游戏，适合用于直播娱乐或个人助手开发。",
-            "repo": "moeru-ai/airi",
-            "source_description": "💖🧸 Self hosted, you-owned Grok Companion, a container of souls of waifu, cyber livings to bring them into our worlds, wishing to achieve Neuro-sama's altitude. Capable of realtime voice chat, Minecraft, Factorio playing. Web / macOS / Windows supported.",
-            "summary": "Project AIRI 是一个开源的 AI 伴侣平台，旨在创建用户自有的虚拟生命，具有实时语音交互和游戏能力。它集成了多种 AI 提供商后端，支持玩 Minecraft 和 Factorio 等游戏，覆盖 Web、macOS 和 Windows 平台。项目采用模块化架构，适用于构建 VTuber 或数字伴侣的开发者。",
-            "tags": [
-              "ai-companion",
-              "ai-vtuber",
-              "digital-life",
-              "live2d",
-              "neuro-sama",
-              "open-source"
-            ]
-          }
-        },
-        "repo": "moeru-ai/airi"
-      },
-      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
-      "schema_version": "report-llm:v1",
-      "stage": "analyze_project"
-    }
-  },
   "1bb2109491b7db395efd1b48b8b22d435018c03bf1c8e035d90c57d2f70075e1": {
     "ts": 1786925036.0843978,
     "value": {
@@ -592,38 +639,6 @@
           }
         },
         "repo": "jundot/omlx"
-      },
-      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
-      "schema_version": "report-llm:v1",
-      "stage": "analyze_project"
-    }
-  },
-  "1cf35a859ce4e0af651bf1b22917b9481c1bf0221f093cf4893aa676136cf3bd": {
-    "ts": 1785719880.0517275,
-    "value": {
-      "input_hash": "1c89f73e80d353bb333a5918489e4aa193cd29b542cbfbab0d00eb63fb38ed52",
-      "model": "mimo-v2.5",
-      "output": {
-        "complete": true,
-        "part_total": 1,
-        "parts": {
-          "1": {
-            "part_index": 1,
-            "part_total": 1,
-            "plain_explanation": "GeoLibre 让开发者能像使用在线地图工具一样，在浏览器里直接处理复杂的地理数据分析，数据不离开本地电脑。适合需要地图数据可视化的开发者和研究人员使用。",
-            "repo": "opengeos/GeoLibre",
-            "source_description": "A lightweight, cloud-native GIS platform for visualizing, exploring, and analyzing geospatial data. It runs in the web browser, on the desktop, on mobile, and inside Jupyter notebooks.",
-            "summary": "GeoLibre 是一个轻量级、云原生的 GIS 平台，用于可视化、探索和分析地理空间数据。它内置超过 1000 个地理处理工具，全部在浏览器中通过 WebAssembly 运行，无需安装或服务器。平台基于 Tauri v2、React 等技术构建，支持 Web、桌面、移动和 Jupyter 环境，数据始终本地化以确保隐私。",
-            "tags": [
-              "geospatial",
-              "gis",
-              "maplibre",
-              "tauri-app",
-              "data-science"
-            ]
-          }
-        },
-        "repo": "opengeos/GeoLibre"
       },
       "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
       "schema_version": "report-llm:v1",
@@ -712,39 +727,6 @@
       "stage": "analyze_project"
     }
   },
-  "2325b6501be7ad47093b5ec0467d9f0ebeed2d1d9d0074e76014bda5e94bc02d": {
-    "ts": 1785719841.125298,
-    "value": {
-      "input_hash": "9db4ec89de9428b57ebd89cc4c9d33535718d807303207cd802989b65ddf2774",
-      "model": "mimo-v2.5",
-      "output": {
-        "complete": true,
-        "part_total": 1,
-        "parts": {
-          "1": {
-            "part_index": 1,
-            "part_total": 1,
-            "plain_explanation": "Buzz 是一个让团队和 AI 代理在同一空间工作的协作平台，解决了工具分散的问题，主要用于软件开发团队进行日常协作和自动化任务。",
-            "repo": "block/buzz",
-            "source_description": "A hive mind communication platform",
-            "summary": "Buzz 是一个基于 Nostr 协议的自托管工作区，允许人类和 AI 代理在同一个环境中协作。它提供频道、线程、媒体评论和 Git 事件集成，所有交互都通过签名事件记录在单一日志中，确保可审计性。平台支持工作流自动化和代理操作，适用于开发者团队进行代码审查、问题跟踪和发布管理。",
-            "tags": [
-              "nostr",
-              "rust",
-              "self-hosted",
-              "ai-agents",
-              "collaboration",
-              "git"
-            ]
-          }
-        },
-        "repo": "block/buzz"
-      },
-      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
-      "schema_version": "report-llm:v1",
-      "stage": "analyze_project"
-    }
-  },
   "27841dc339b7b25a58e5b8e0198992cf768cf1f1ff40fcf6824099cacf6b2d16": {
     "ts": 1788140384.2619798,
     "value": {
@@ -827,6 +809,118 @@
       "stage": "analyze_project"
     }
   },
+  "2fe0dfd96656743b1919019be7a6dd78fa03be940db5ea577a4ee83edab93963": {
+    "ts": 1788744087.3083026,
+    "value": {
+      "input_hash": "4a25e8f1aac4d3603e8fec221d3093cd773f552a2134fc1c2ea60d3555813d18",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 2,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 2,
+            "plain_explanation": "Tailcat 就像是一个加密版的 netcat，让你不用设置复杂 VPN 就能在两台电脑之间安全传输数据或命令。它适合需要快速、安全地连接远程服务器的开发者和系统管理员。",
+            "repo": "tailscale/tailcat",
+            "source_description": "like netcat, but over Tailscale's data plane, without Tailscale's control plane",
+            "summary": "Tailcat 是一个开源工具，类似于 netcat，但利用 Tailscale 的数据平面实现端到端 WireGuard 加密通信，无需依赖 Tailscale 的控制平面。它通过 DERP 服务器引导连接，然后尝试建立直接的点对点 UDP 通信，支持端口转发、SSH 服务器和文件传输等功能。用户无需 Tailscale 账户或管理员权限，只需运行服务器和客户端即可安全交互。",
+            "tags": [
+              "netcat",
+              "wireguard",
+              "tailscale",
+              "cli-tool",
+              "vpn",
+              "p2p"
+            ]
+          },
+          "2": {
+            "part_index": 2,
+            "part_total": 2,
+            "plain_explanation": "它让你可以通过一个加密的地址，安全地把本地电脑的某个端口暴露给其他人访问，类似于给 netcat 加上了内网穿透和加密能力。",
+            "repo": "tailscale/tailcat",
+            "source_description": "like netcat, but over Tailscale's data plane, without Tailscale's control plane",
+            "summary": "Tailcat 是一个类似 netcat 的点对点网络工具，但构建在 Tailscale 的数据平面上，不依赖其控制平面。它通过 DERP 中继服务器进行连接发现与数据转发，并利用 WireGuard 实现加密隧道。项目支持用户自建 DERP 服务器，并提供了 Go 语言的库和 CLI 工具，用于安全地暴露和连接特定端口。",
+            "tags": [
+              "p2p",
+              "networking",
+              "vpn",
+              "derp",
+              "tunneling"
+            ]
+          }
+        },
+        "repo": "tailscale/tailcat"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
+  "31a165e3fb2485c516ccad89547863ab46d4010540cb07988acf41e05764b037": {
+    "ts": 1788744087.3083026,
+    "value": {
+      "input_hash": "529e1fb8c2d8e4714514505281df2a73428ca689df67c57ed2406f7001a137ef",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 1,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 1,
+            "plain_explanation": "它是一个让 AI 编程助手能像人类开发者一样打开浏览器、检查元素、分析性能和执行操作的“桥梁”工具。",
+            "repo": "ChromeDevTools/chrome-devtools-mcp",
+            "source_description": "Chrome DevTools for coding agents",
+            "summary": "Chrome DevTools for agents (`chrome-devtools-mcp`) 是一个 MCP 服务器，旨在让 AI 编码助手（如 Cursor、Copilot）能够控制和检查一个实时的 Chrome 浏览器。它利用 Chrome DevTools 和 Puppeteer，为 AI 提供了性能追踪录制、网络分析、截图和自动化浏览器操作等能力，适用于深度调试和自动化任务。",
+            "tags": [
+              "browser",
+              "debugging",
+              "devtools",
+              "mcp-server",
+              "puppeteer"
+            ]
+          }
+        },
+        "repo": "ChromeDevTools/chrome-devtools-mcp"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
+  "321c3bfa131beca0539cb7ed640f2fc6ecb654e2bfdebbec5b68d59e9cf81075": {
+    "ts": 1788744053.71528,
+    "value": {
+      "input_hash": "33b8642d78494f651adb63849dece3d32806c7ed07ad0296909b3db2448384b8",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 1,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 1,
+            "plain_explanation": "这个工具帮你把技术成果写成专利交底书，还能看懂别人的专利，适合经常要写专利的工程师。",
+            "repo": "handsomestWei/patent-disclosure-skill",
+            "source_description": "中国专利.skill：专利点挖掘与交底书（发明/实用/外观）编写，通俗解读专利，嗅探政策动向，辅助审查答复。",
+            "summary": "这是一个针对中国专利的技能工具，帮助研发人员挖掘专利点、编写交底书和申请文件。它支持发明、实用新型和外观设计，并能通俗解读专利、跟踪政策变化，通过 Obsidian 构建私有知识库。",
+            "tags": [
+              "patent",
+              "obsidian",
+              "chinese",
+              "disclosure",
+              "skill"
+            ]
+          }
+        },
+        "repo": "handsomestWei/patent-disclosure-skill"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
   "329f6068afca038e01c0ef600a37f7d2e7067683946152de6537c5cfc72397fb": {
     "ts": 1788140441.1149805,
     "value": {
@@ -876,38 +970,6 @@
       "stage": "analyze_project"
     }
   },
-  "350437b578e26b4a6c025cba6e75b2e05b4bde144bfb604fe43b4d54dbdb1920": {
-    "ts": 1785719891.2917857,
-    "value": {
-      "input_hash": "93f41a9bf1d60b4702e8a98f10c3074c43b635901ddf9176bcb43725843fa442",
-      "model": "mimo-v2.5",
-      "output": {
-        "complete": true,
-        "part_total": 1,
-        "parts": {
-          "1": {
-            "part_index": 1,
-            "part_total": 1,
-            "plain_explanation": "它解决的核心问题是如何在不同的 AI 开发工具之间，方便地共享和复用一套已经配置好的技能或工作流。就像一个“技能包”可以安装到各种工具里，让团队成员都能使用。",
-            "repo": "different-ai/openwork",
-            "source_description": "The open-source alternative to Claude Cowork (powered by opencode)",
-            "summary": "OpenWork 是一款免费、开源的桌面应用，旨在分享和复用 AI 工作流，是 Claude Cowork 的开源替代品，支持 macOS、Windows 和 Linux。它通过 MCP 协议，允许用户在 Codex、Claude Code、Cursor 等不同的 AI 智能体之间共享技能、插件和已连接的服务（如 Google Workspace、Microsoft 365）。对于组织，它提供管理界面，用于发布功能、控制访问权限和配置共享连接。桌面应用不是必须的，用户可以从现有智能体直接接入 OpenWork。",
-            "tags": [
-              "AI",
-              "MCP",
-              "desktop-app",
-              "workflow-sharing",
-              "open-source"
-            ]
-          }
-        },
-        "repo": "different-ai/openwork"
-      },
-      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
-      "schema_version": "report-llm:v1",
-      "stage": "analyze_project"
-    }
-  },
   "37286bec4964180c818dec5dae2c9deace3e5508da3d1a4c616ec022b870bd7e": {
     "ts": 1786924766.0484602,
     "value": {
@@ -934,39 +996,6 @@
           }
         },
         "repo": "cactus-compute/needle"
-      },
-      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
-      "schema_version": "report-llm:v1",
-      "stage": "analyze_project"
-    }
-  },
-  "3a9f836b75d3cb57fbccef23c2fabf7587427153d3c427dc5103c06feff32919": {
-    "ts": 1785719863.0585446,
-    "value": {
-      "input_hash": "d86595cdc91d3ed7fa490111f64e538a29ad96eebcf7d4f5b50bd3b49ffd3a62",
-      "model": "mimo-v2.5",
-      "output": {
-        "complete": true,
-        "part_total": 1,
-        "parts": {
-          "1": {
-            "part_index": 1,
-            "part_total": 1,
-            "plain_explanation": "它实际上解决的是在没有网络或需要私密聊天时仍能通信的问题，类似于一个无服务器的群聊工具，适合活动家、开发者或隐私敏感用户使用。",
-            "repo": "permissionlesstech/bitchat",
-            "source_description": "bluetooth mesh chat, IRC vibes",
-            "summary": "BitChat 是一款去中心化点对点消息应用，采用双传输架构，结合蓝牙网格网络进行离线通信和 Nostr 协议实现全球覆盖。它支持端到端加密、基于位置的地理频道和 IRC 风格命令，无需账户、手机号或中央服务器。适用于离线场景、抗议活动、灾难救援以及全球位置社区聊天。",
-            "tags": [
-              "bluetooth",
-              "decentralized",
-              "e2e-encryption",
-              "messaging",
-              "mesh-network",
-              "nostr"
-            ]
-          }
-        },
-        "repo": "permissionlesstech/bitchat"
       },
       "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
       "schema_version": "report-llm:v1",
@@ -1000,39 +1029,6 @@
           }
         },
         "repo": "volcengine/OpenViking"
-      },
-      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
-      "schema_version": "report-llm:v1",
-      "stage": "analyze_project"
-    }
-  },
-  "3c4a98f77841d96a8a1ae5c88d365db7e087c0343119698acac6661173046de5": {
-    "ts": 1785719836.381248,
-    "value": {
-      "input_hash": "13e8919ef394b99619156cc6fb97b2a9dc40cf67cadadacfe31849074e3cea0b",
-      "model": "mimo-v2.5",
-      "output": {
-        "complete": true,
-        "part_total": 1,
-        "parts": {
-          "1": {
-            "part_index": 1,
-            "part_total": 1,
-            "plain_explanation": "这其实是一本带完整实验代码的 AI Agent 教科书，专门给想要深入理解并动手实践如何构建 AI Agent 的开发者和研究者使用。就像一个包含了从理论到“手把手”实验指导的全套学习包。",
-            "repo": "bojieli/ai-agent-book",
-            "source_description": "《深入理解 AI Agent：设计原理与工程实践》（李博杰 著）开源主仓库：全书正文、编译版 PDF 与按章配套代码",
-            "summary": "这是一本名为《深入理解 AI Agent：设计原理与工程实践》的开源书籍的主仓库，提供全书正文、编译版 PDF 及按章配套代码。全书围绕“Agent = LLM + 上下文 + 工具”这一核心公式展开，共 10 章，系统性地讲解了从基础原理到生产实践的 AI Agent 设计。项目包含 95 个配套实验，并支持 13 种语言的翻译与阅读。",
-            "tags": [
-              "ai-agent",
-              "book",
-              "context-engineering",
-              "mcp",
-              "rag",
-              "coding-agent"
-            ]
-          }
-        },
-        "repo": "bojieli/ai-agent-book"
       },
       "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
       "schema_version": "report-llm:v1",
@@ -1088,53 +1084,17 @@
       "stage": "analyze_project"
     }
   },
-  "3fc71f23669ba293d5fe65ec43e7d5ef6b4270d5cb6974982387d948b28fd71e": {
-    "ts": 1785719852.2931607,
+  "3ffc7f9200cb7666cd84a49d60be85991736b32a17f9f33c42fcf9c86e94eea8": {
+    "ts": 1788744344.2050297,
     "value": {
-      "input_hash": "05c6f8f089d75eefa0d22f2e7c0f42dcab6c7a9aac8154b80b8d42e1107b7c78",
+      "input_hash": "2d9061e82b448981f1b2fc56aa22a46eb0345ecb0d25f01613d90e208f7f048d",
       "model": "mimo-v2.5",
       "output": {
-        "complete": true,
-        "part_total": 2,
-        "parts": {
-          "1": {
-            "part_index": 1,
-            "part_total": 2,
-            "plain_explanation": "jcode 就像一个更轻量、更快的 AI 编码助手终端，让你可以同时开多个会话而不拖慢电脑，还能自动记住之前对话的内容。适合经常使用命令行编码的开发者。",
-            "repo": "1jehuang/jcode",
-            "source_description": "The most RAM efficient harness",
-            "summary": "jcode 是一个用 Rust 编写的高性能 AI 编码代理框架，以极低的内存占用和快速启动著称。它支持自动记忆系统、多代理协作（Swarm）以及丰富的终端 UI 功能，如侧边栏和图表渲染。适用于需要在资源受限环境中并行使用 AI 编码助手的开发者，尤其注重多会话管理。",
-            "tags": [
-              "ai",
-              "cli",
-              "terminal",
-              "tui",
-              "rust",
-              "llm"
-            ]
-          },
-          "2": {
-            "part_index": 2,
-            "part_total": 2,
-            "plain_explanation": "jcode 是一个功能丰富的命令行 AI 编程工具箱，让你能方便地连接和使用各种本地或远程的 AI 模型进行编码工作。它特别适合那些需要管理多个 AI 模型服务、希望在终端内深度集成 AI 辅助，甚至想让 AI 帮助优化其自身代码的开发者。",
-            "repo": "1jehuang/jcode",
-            "source_description": "The most RAM efficient harness",
-            "summary": "jcode 是一个用 Rust 编写的高效 AI 编程代理框架，旨在以最少的内存占用集成多种大语言模型和服务商。当前材料详细说明了其对本地模型（如 Ollama、LM Studio）的支持、与 OpenAI 兼容接口的配置方法，以及强大的 MCP 服务器管理能力。项目还展示了高度可定制的脚本化登录流程、可扩展的浏览器自动化工具，以及独特的“自发展”模式，允许 AI 代理修改和优化自身代码。它支持多种认证方式与多账户切换，兼容并可以恢复其他工具（如 Claude Code）的会话。",
-            "tags": [
-              "ai",
-              "coding-agent",
-              "rust",
-              "cli",
-              "terminal",
-              "mcp"
-            ]
-          }
-        },
-        "repo": "1jehuang/jcode"
+        "overview": "本期周刊共收录 21 个项目。开发工具与库方面，项目多围绕 AI 编码代理工具和通用开发库，涉及代码可视化与工作流自动化。AI 平台与框架提供模型训练、推理部署及特定领域应用支持。AI 应用与工具则覆盖语音处理、科学研究和网页调试等实际场景。"
       },
-      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "prompt_hash": "8c94cc4b3c412c557dadbf6292f4f890a09342667e559fa0afb8a6060f0e4ed4",
       "schema_version": "report-llm:v1",
-      "stage": "analyze_project"
+      "stage": "generate_overview"
     }
   },
   "4017ad1d8a71aabd83cc2b802d7f6c009f904beb8656f0bf63d1f28561a71d81": {
@@ -1219,137 +1179,6 @@
       "stage": "analyze_project"
     }
   },
-  "481d92fe5612cdf1131a3ef60831a3643689d78ebc4a3691638bac8e9d1eda7f": {
-    "ts": 1785719884.0102813,
-    "value": {
-      "input_hash": "911f6d24d2a674d7b2147c189efcf7e43d88aff820c4b2a3ea4422383dbbe317",
-      "model": "mimo-v2.5",
-      "output": {
-        "complete": true,
-        "part_total": 1,
-        "parts": {
-          "1": {
-            "part_index": 1,
-            "part_total": 1,
-            "plain_explanation": "它解决 AI 代理操作浏览器时与用户争抢标签页的问题，让开发者能用同一个浏览器让代理自动执行网页任务，自己继续正常使用。",
-            "repo": "citrolabs/ego-lite",
-            "source_description": "The fastest browser for AI agents to run browser automation, built for sharing your logged-in browser state with your AI agents, like Codex or Claude Code, without disturbing you. Zero cost, zero config.",
-            "summary": "ego lite 是专为 AI 代理设计的浏览器自动化工具，允许用户与 AI 代理如 Codex 或 Claude Code 共享登录状态，并行工作而不互相干扰。它通过独立空间实现任务隔离，提供高质量页面快照，并支持多代理并行运行，减少令牌消耗。",
-            "tags": [
-              "ai-agent",
-              "browser",
-              "automation",
-              "browser-automation",
-              "codex",
-              "claude-code"
-            ]
-          }
-        },
-        "repo": "citrolabs/ego-lite"
-      },
-      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
-      "schema_version": "report-llm:v1",
-      "stage": "analyze_project"
-    }
-  },
-  "489f2d129da5d8011e8fa9493f8f5557a4f1d484a23b00d4f19a3ad68e9dfc65": {
-    "ts": 1785719866.1528609,
-    "value": {
-      "input_hash": "20c29354d0f93eaed91c0aa2bae24a31fc6c23700febe29ca1440c722332ec9f",
-      "model": "mimo-v2.5",
-      "output": {
-        "complete": true,
-        "part_total": 1,
-        "parts": {
-          "1": {
-            "part_index": 1,
-            "part_total": 1,
-            "plain_explanation": "这个项目让开发者和设计师能在网页上直接构建和编辑 3D 建筑模型，类似在线建筑工具，适合需要定制化建筑编辑功能的团队。",
-            "repo": "pascalorg/editor",
-            "source_description": "Create and share 3D architectural projects.",
-            "summary": "Pascal Editor 是一个基于 React Three Fiber 和 WebGPU 的 3D 建筑编辑器，用于在浏览器中创建和分享建筑项目。它采用 Turborepo 单体仓库架构，包含核心、查看器和编辑器等多个模块，使用 Zustand 管理场景状态并支持插件扩展。通过节点系统和渲染器，编辑器能高效处理墙壁、地板等建筑元素的几何生成和交互操作。",
-            "tags": [
-              "3D",
-              "architecture",
-              "webgpu",
-              "react-three-fiber",
-              "editor",
-              "plugin"
-            ]
-          }
-        },
-        "repo": "pascalorg/editor"
-      },
-      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
-      "schema_version": "report-llm:v1",
-      "stage": "analyze_project"
-    }
-  },
-  "4f590823f3a53f5a1876f46aeb1c28fa7b56165261e5828e8ded6efc4af6c950": {
-    "ts": 1785719847.5488024,
-    "value": {
-      "input_hash": "516130daff806ffb6db0fc5ef41b164555eb6aa985a2d253cf6eb2cd08e6963d",
-      "model": "mimo-v2.5",
-      "output": {
-        "complete": true,
-        "part_total": 1,
-        "parts": {
-          "1": {
-            "part_index": 1,
-            "part_total": 1,
-            "plain_explanation": "它解决编码代理输出冗长、不直接的问题，帮助开发者快速获取关键信息，尤其适合注意力容易分散的用户。",
-            "repo": "ayghri/i-have-adhd",
-            "source_description": "A skill to stop your coding agent from burying the answer. ADHD-friendly output.",
-            "summary": "这是一个 Claude Code 插件，通过 10 条规则使编码代理输出更直接、行动优先，适合 ADHD 友好风格。它避免冗长回答，直接给出解决方案和下一步操作。",
-            "tags": [
-              "adhd",
-              "claude-code",
-              "claude-skills",
-              "developer-tools",
-              "productivity"
-            ]
-          }
-        },
-        "repo": "ayghri/i-have-adhd"
-      },
-      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
-      "schema_version": "report-llm:v1",
-      "stage": "analyze_project"
-    }
-  },
-  "4f77134a28a5101203d2db6a167136ec5c5f97d0ff5a0dc025594915c35f5b29": {
-    "ts": 1785719879.5479221,
-    "value": {
-      "input_hash": "72164911856dd1fa8617df534c9ad4a5adb20cd639135354687e59c161197ccd",
-      "model": "mimo-v2.5",
-      "output": {
-        "complete": true,
-        "part_total": 1,
-        "parts": {
-          "1": {
-            "part_index": 1,
-            "part_total": 1,
-            "plain_explanation": "aisuite 解决了开发者需要同时使用多个 AI 服务提供商时接口不统一的问题，通过一个通用库简化代码编写。它主要面向 Python 开发者，用于构建聊天机器人、代理应用等需要调用 LLM 的场景。",
-            "repo": "andrewyng/aisuite",
-            "source_description": "Simple, unified interface to multiple Generative AI providers",
-            "summary": "aisuite 是一个轻量级 Python 库，旨在为多种生成式 AI 提供商提供统一的接口。它支持跨 OpenAI、Anthropic、Google 等提供商的聊天补全功能，并提供高级 Agents API 用于构建工具调用和代理系统。该库原生集成 MCP 协议，并可用于开发 OpenWorker 等桌面 AI 助手。",
-            "tags": [
-              "llm",
-              "python",
-              "chat-completions",
-              "agents",
-              "mcp",
-              "toolkits"
-            ]
-          }
-        },
-        "repo": "andrewyng/aisuite"
-      },
-      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
-      "schema_version": "report-llm:v1",
-      "stage": "analyze_project"
-    }
-  },
   "5137a2b0859caba17342030222fe9cd3c42d949f8d2bca18744f082d46dffbbc": {
     "ts": 1788140420.634898,
     "value": {
@@ -1399,6 +1228,39 @@
       "stage": "analyze_project"
     }
   },
+  "520c9636a80a0ef6b5047a9022b85d8d8c3b3dc446b305cb59eb22203325ff96": {
+    "ts": 1788744108.232047,
+    "value": {
+      "input_hash": "57c0cd8d18fb0c01c7663408cf79ad4e03a028aa58498f9bf40d2e9a54bee28e",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 1,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 1,
+            "plain_explanation": "它是一个更便宜、更灵活的 SEO 工具，你可以自己搭建使用，还能让 AI 帮你自动处理 SEO 任务。适合需要 SEO 分析但不想付高额订阅费的人。",
+            "repo": "every-app/open-seo",
+            "source_description": "Open source alternative to Semrush and Ahrefs",
+            "summary": "OpenSEO 是一个开源的 SEO 工具，提供关键词研究、排名跟踪、反向链接分析等功能，旨在替代 Semrush 和 Ahrefs。它集成 MCP 服务器，允许 AI 代理直接使用 SEO 数据，并支持自托管和按需付费，适用于个人开发者或团队进行 SEO 优化。",
+            "tags": [
+              "seo",
+              "mcp",
+              "seo-tools",
+              "keyword-research",
+              "site-audit",
+              "ai-agent"
+            ]
+          }
+        },
+        "repo": "every-app/open-seo"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
   "548de9ea6c77236ad150874e405a35b5f73cbb032bebc82ddbcab5ef46c9d1fb": {
     "ts": 1786924820.7051177,
     "value": {
@@ -1423,86 +1285,6 @@
           }
         },
         "repo": "Lightricks/LTX-2"
-      },
-      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
-      "schema_version": "report-llm:v1",
-      "stage": "analyze_project"
-    }
-  },
-  "5cce329dd3fec39641c7a4189fb7737d964bc1b79d8153e61dbdf7ae857fcb59": {
-    "ts": 1785719884.0102813,
-    "value": {
-      "input_hash": "f070a93ae6b9fa85016761ad64deff17deed3a8244e49f5ed3602a31a0dcf049",
-      "model": "mimo-v2.5",
-      "output": {
-        "complete": true,
-        "part_total": 1,
-        "parts": {
-          "1": {
-            "part_index": 1,
-            "part_total": 1,
-            "plain_explanation": "它让开发者可以用手机或另一台电脑远程控制和管理多个 AI 编程代理，集中操作不同的编程工具。",
-            "repo": "pingdotgg/t3code",
-            "source_description": "",
-            "summary": "T3 Code 是一个 AI 代理控制面，通过移动、web 和桌面应用提供对 Claude Code、Codex 等代理的统一控制，支持远程访问和多代理管理。项目处于早期阶段，旨在为开发者提供更好的代理开发体验。",
-            "tags": [
-              "ai-agent",
-              "control-surface",
-              "development-tools",
-              "remote-access"
-            ]
-          }
-        },
-        "repo": "pingdotgg/t3code"
-      },
-      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
-      "schema_version": "report-llm:v1",
-      "stage": "analyze_project"
-    }
-  },
-  "5cdac0a46a6ce348099db43a1a502ea4e86de7e95cf48a20a65d5e88d98772fe": {
-    "ts": 1785719851.1182306,
-    "value": {
-      "input_hash": "54a67edc141dce32a53bf90b6bb7e5065fb6a1de72e6f541f498c532151c6bfc",
-      "model": "mimo-v2.5",
-      "output": {
-        "complete": true,
-        "part_total": 2,
-        "parts": {
-          "1": {
-            "part_index": 1,
-            "part_total": 2,
-            "plain_explanation": "它提供从零开始的 AI 系统课程，适合想学习 AI 基础的开发者和学生，帮助入门人工智能领域。",
-            "repo": "microsoft/AI-For-Beginners",
-            "source_description": "12 Weeks, 24 Lessons, AI for All!",
-            "summary": "这是一个由微软提供的 12 周、24 课 AI 入门课程，涵盖神经网络、深度学习和 AI 伦理等内容。它通过实践课程和实验室帮助初学者学习 AI，支持多语言。",
-            "tags": [
-              "ai",
-              "deep-learning",
-              "machine-learning",
-              "nlp",
-              "computer-vision",
-              "microsoft-for-beginners"
-            ]
-          },
-          "2": {
-            "part_index": 2,
-            "part_total": 2,
-            "plain_explanation": "这是一个免费的 AI 入门教程，教你从零开始学习人工智能，适合对 AI 感兴趣但不知如何入门的开发者或学生。",
-            "repo": "microsoft/AI-For-Beginners",
-            "source_description": "12 Weeks, 24 Lessons, AI for All!",
-            "summary": "这是微软推出的 AI 初学者课程，设计为 12 周 24 节课的结构化学习路径。课程覆盖 AI 基础、神经网络、计算机视觉、自然语言处理等多个主题，通过 Jupyter Notebook 和 PyTorch、TensorFlow 等框架提供交互式学习。适合初学者，包含实验和测验以巩固知识。",
-            "tags": [
-              "ai",
-              "machine-learning",
-              "deep-learning",
-              "computer-vision",
-              "nlp",
-              "tutorial"
-            ]
-          }
-        },
-        "repo": "microsoft/AI-For-Beginners"
       },
       "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
       "schema_version": "report-llm:v1",
@@ -1687,6 +1469,39 @@
       "stage": "analyze_project"
     }
   },
+  "65547a0789d44c56b88854348b444069142873b7909230e6eb1f426dd6cc462c": {
+    "ts": 1788744033.800188,
+    "value": {
+      "input_hash": "ee983d3f3e48dc1335d0ceeb828a4221edb816d834de118903acbf65e25b626b",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 1,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 1,
+            "plain_explanation": "它就像一个更快、更安全的 printf，让 C++ 程序员在格式化字符串和输出时，不用担心缓冲区溢出等问题，而且运行速度更快，很多大型软件项目（如 ClickHouse、PyTorch）都在使用它。",
+            "repo": "fmtlib/fmt",
+            "source_description": "A modern formatting library",
+            "summary": "{fmt} 是一个现代的 C++ 格式化库，旨在提供比 C stdio 和 C++ iostreams 更快、更安全的替代方案。它实现了 C++20 的 std::format 和 C++23 的 std::print，提供了简单且类型安全的 API。该库以高性能著称，在处理数值和字符串格式化时，速度远超传统方法，同时保持了代码的可读性和可维护性。",
+            "tags": [
+              "C++",
+              "格式化",
+              "高性能",
+              "字符串处理",
+              "标准库",
+              "跨平台"
+            ]
+          }
+        },
+        "repo": "fmtlib/fmt"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
   "67c90064e80d3df04a3a63689e39fc2bb9d92f109c2076c880a8004ec4969bc3": {
     "ts": 1786322243.5675275,
     "value": {
@@ -1833,6 +1648,53 @@
       "stage": "analyze_project"
     }
   },
+  "7343afa3447398643b4d8fdfa44c412fc43104970d66943fd0a4481b45962c3f": {
+    "ts": 1788744012.9690983,
+    "value": {
+      "input_hash": "9a8e1f415c799cad59f3798db4e081a1bba9773f14bd40a7318176fc81832813",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 2,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 2,
+            "plain_explanation": "OpenClaude 让开发者能在终端里方便地调用各种 AI 模型来辅助写代码，不管是用云上的还是本地跑的模型，都用一个工具搞定，适合想提升编码效率的程序员。",
+            "repo": "Gitlawb/openclaude",
+            "source_description": "runs anywhere. uses anything",
+            "summary": "OpenClaude 是一个开源编码代理命令行工具，支持多种云和本地大语言模型提供者，如 OpenAI、Gemini 和 Ollama。它提供统一的终端工作流，集成提示、工具调用、代理和流式输出，旨在帮助开发者高效地使用 AI 辅助编码。",
+            "tags": [
+              "ai",
+              "ai-agent",
+              "ai-tools",
+              "cli",
+              "coding"
+            ]
+          },
+          "2": {
+            "part_index": 2,
+            "part_total": 2,
+            "plain_explanation": "它就像是一个 AI 编码助手，可以在你的终端里运行，支持各种 AI 服务（如 OpenAI、Anthropic 等），让你选择最合适的模型和提供商，还能添加动画效果和扩展功能。",
+            "repo": "Gitlawb/openclaude",
+            "source_description": "runs anywhere. uses anything",
+            "summary": "OpenClaude 是一个支持多种 AI 提供商的命令行代理工具，允许用户在终端中灵活运行 AI 代理。它提供了动画伴侣、代理路由以优化成本、集成网页搜索（如 DuckDuckGo 或 Firecrawl）以及无头 gRPC 服务器功能。项目还包括 VS Code 扩展，适用于需要在开发环境中使用 AI 辅助的开发者。",
+            "tags": [
+              "ai",
+              "ai-agent",
+              "ai-tools",
+              "cli",
+              "coding"
+            ]
+          }
+        },
+        "repo": "Gitlawb/openclaude"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
   "74eb8b7a9929ec1f1d766b6513f438659794c9d0bc69eb312305dfa0636bedfa": {
     "ts": 1788140357.7700868,
     "value": {
@@ -1882,6 +1744,39 @@
       "stage": "analyze_project"
     }
   },
+  "75fc3be95381160b27cf26277ed7e71c7010dbdc1c90b60a0f66bfb0cb296b2b": {
+    "ts": 1788744045.9310555,
+    "value": {
+      "input_hash": "9c561f1bfb45b52a1b985c55ebf3d9f6b82b35daf6b7fcc3bad04295e8280fa1",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 1,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 1,
+            "plain_explanation": "它帮助机器人开发者在电脑模拟中训练机器人走路和做动作，然后让真实的小机器人也能做到。类似于先教虚拟机器人技能，再移植到物理机器人上，减少了调试真实硬件的麻烦。",
+            "repo": "pollen-robotics/microduck_rl",
+            "source_description": "RL training environments for Microduck (mjlab)",
+            "summary": "Microduck RL 是一个为 ~800 g、~25 cm 高的双足机器人 Microduck 提供强化学习训练环境的项目。它基于 mjlab（MuJoCo Warp）和 PPO 算法，支持在仿真中训练策略并导出到 ONNX 格式，最终部署到真实机器人上。项目涵盖了多种任务，如行走、摔倒恢复和翻滚，并提供了完整的 sim2real 配方，包括执行器物理建模和域随机化。适用于机器人开发者和研究人员，用于快速开发和测试双足机器人控制策略。",
+            "tags": [
+              "reinforcement-learning",
+              "robotics",
+              "mujoCo",
+              "sim2real",
+              "bipedal-robot",
+              "policy-deployment"
+            ]
+          }
+        },
+        "repo": "pollen-robotics/microduck_rl"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
   "7602bce16865bdccc041597c92318cf233e8f77ed657934407aa6269c71a3676": {
     "ts": 1786322258.6495204,
     "value": {
@@ -1915,6 +1810,116 @@
       "stage": "analyze_project"
     }
   },
+  "77c5f1a53eed04fc5c615231a9df8eeaa7625592d66648fc6aa718d919fa4146": {
+    "ts": 1788744191.6437674,
+    "value": {
+      "input_hash": "e43b32468a4c116a45f5796b05a9ff32cb412e0705636df07ae72edfcc046ed1",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 3,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 3,
+            "plain_explanation": "它是一个 MCP 服务器的目录，帮你找到能增强 AI 工具功能的各类服务，主要供开发或使用 AI 模型的开发者参考。",
+            "repo": "punkpeye/awesome-mcp-servers",
+            "source_description": "A collection of MCP servers.",
+            "summary": "awesome-mcp-servers 是一个收集 Model Context Protocol (MCP) 服务器实现的策展列表。MCP 是一个开放协议，允许 AI 模型通过标准化服务器与本地或远程资源安全交互。这个列表包括各种服务器实现，涵盖文件系统、数据库、API 集成等功能，帮助开发者扩展 AI 能力。",
+            "tags": [
+              "ai",
+              "mcp",
+              "model-context-protocol",
+              "tool-integration",
+              "resource-list"
+            ]
+          },
+          "2": {
+            "part_index": 2,
+            "part_total": 3,
+            "plain_explanation": "它就像一个“MCP 服务器大全”或应用商店目录，帮助 AI 开发者快速找到能增强其代理（agent）能力的各种工具或服务，从代码搜索到数据查询再到模型调用，应有尽有。",
+            "repo": "punkpeye/awesome-mcp-servers",
+            "source_description": "A collection of MCP servers.",
+            "summary": "这是一个收录多种 MCP（Model Context Protocol）服务器的集合仓库，旨在为用户提供通过单一 MCP 服务器访问各种应用和工具的途径。当前部分列出了众多独立的 MCP 服务器项目，涵盖了从工具集成、API 网关、微支付到数据服务的多种功能，许多项目基于 x402 协议实现了基于 USDC 的按次付费机制。",
+            "tags": [
+              "ai",
+              "mcp",
+              "awesome-list",
+              "mcp-servers"
+            ]
+          },
+          "3": {
+            "part_index": 3,
+            "part_total": 3,
+            "plain_explanation": "它实际上是一个资源列表，帮助开发者快速找到和集成各种MCP服务器，以便为AI代理添加新功能。AI开发者或构建工具链的团队会用到这个。",
+            "repo": "punkpeye/awesome-mcp-servers",
+            "source_description": "A collection of MCP servers.",
+            "summary": "这是一个MCP服务器合集仓库，汇总了多种独立的MCP服务器项目，涵盖AI工具发现、数据集成、代理协调等功能。每个项目提供特定的MCP工具，用于连接AI模型、处理数据或管理代理。适用于需要扩展AI代理能力的开发者，特别是关注工具链集成和本地优先解决方案的用户。",
+            "tags": [
+              "ai",
+              "mcp",
+              "工具集",
+              "AI代理",
+              "本地优先"
+            ]
+          }
+        },
+        "repo": "punkpeye/awesome-mcp-servers"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
+  "799f3c035b933d5a7e8cd18d070032421d285649eb26f81d573c19572da65dbb": {
+    "ts": 1788744078.1210084,
+    "value": {
+      "input_hash": "0f0c068d70d59625b932b1e18c8e98cc2ec8ceb57f222194756480d1027295da",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 2,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 2,
+            "plain_explanation": "它帮助科学家和研究人员快速将普通 AI 代理升级为能处理科学任务的工具，比如查询数据库或分析数据，省去自己集成各种科学库和工具的时间。",
+            "repo": "K-Dense-AI/scientific-agent-skills",
+            "source_description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 190,000+ scientists worldwide. 165 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
+            "summary": "这是一个全面的科学代理技能库，提供 163 个即用型技能和 100 多个科学数据库访问，覆盖生物学、化学、医学和药物发现等领域。通过开放的 Agent Skills 标准，它兼容 Cursor、Claude Code 等多种 AI 代理平台，旨在将代理转化为能执行复杂多步骤科学工作流的研究助手。",
+            "tags": [
+              "ai-scientist",
+              "bioinformatics",
+              "chemoinformatics",
+              "drug-discovery",
+              "scientific-computing",
+              "agent-skills"
+            ]
+          },
+          "2": {
+            "part_index": 2,
+            "part_total": 2,
+            "plain_explanation": "它让科学家用 AI 工具自动处理实验数据和模拟分析，就像给 AI 配了科学实验助手，适用于需要高效进行科研数据处理的研究人员。",
+            "repo": "K-Dense-AI/scientific-agent-skills",
+            "source_description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 190,000+ scientists worldwide. 165 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
+            "summary": "该技能库为 AI 代理提供科学计算能力，通过预构建技能和数据库接口，使其能执行复杂工作流。readme 部分详细说明了安装配置、安全审查指南和开源项目支持，并提供了药物发现、单细胞分析等多个领域的应用示例。它覆盖生物、化学、医学等科学方向，旨在帮助研究人员自动化数据分析和模拟任务。",
+            "tags": [
+              "agent-skills",
+              "ai-scientist",
+              "bioinformatics",
+              "drug-discovery",
+              "scientific-computing",
+              "data-analysis"
+            ]
+          }
+        },
+        "repo": "K-Dense-AI/scientific-agent-skills"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
   "7ac004cb52708d3ee47ceb703414f0dd6333b77acc77dbd6c54f63b0480cb1ee": {
     "ts": 1787529639.3024433,
     "value": {
@@ -1941,6 +1946,137 @@
           }
         },
         "repo": "anthropics/claude-plugins-community"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
+  "7cb9730f7bf73812b5e5459baf85b2acadf882649226bb83df6aa047ba8a2bc6": {
+    "ts": 1788744087.3083026,
+    "value": {
+      "input_hash": "e07b06390419d438ff73dd7149a0195b73b6543d4ab5faec09d9fc534202750a",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 1,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 1,
+            "plain_explanation": "它帮你确保从 API 或用户输入等外部源收到的数据格式是正确的，就像给 JavaScript 动态的数据套上了一个类型严格检查的“模具”。",
+            "repo": "colinhacks/zod",
+            "source_description": "TypeScript-first schema validation with static type inference",
+            "summary": "Zod 是一个以 TypeScript 为核心的运行时数据验证库。它允许开发者使用简洁的语法定义数据结构的 schema，并能自动推断出对应的 TypeScript 静态类型，从而同时提供运行时类型检查和编译时的类型安全。",
+            "tags": [
+              "runtime-validation",
+              "schema-validation",
+              "static-types",
+              "type-inference",
+              "typescript"
+            ]
+          }
+        },
+        "repo": "colinhacks/zod"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
+  "7cfe7e12401330f329eb66140b042b13d77b3c6e6f07925a32300a65687f3c27": {
+    "ts": 1788744108.232047,
+    "value": {
+      "input_hash": "2b2558ad6c80da5112fb013b541b7995fd3e177bb3a78f1c8047137b2426bdad",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 1,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 1,
+            "plain_explanation": "它让你在 Mac 上运行虚拟 iPhone，就像用虚拟机运行其他操作系统一样。适合需要测试 iOS 应用或进行越狱研究的人使用。",
+            "repo": "Lakr233/vphone-cli",
+            "source_description": "",
+            "summary": "vphone-cli 是一个命令行工具，用于在 Apple Silicon Mac 上通过 Virtualization.framework 启动和管理虚拟 iPhone。它自动化了从下载固件、应用补丁到越狱的整个流程，支持多种安全绕过级别，适用于开发者进行 iOS 测试、自动化或安全研究。",
+            "tags": [
+              "virtualization",
+              "iphone",
+              "vm",
+              "cli",
+              "macos",
+              "automation"
+            ]
+          }
+        },
+        "repo": "Lakr233/vphone-cli"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
+  "81361316c2d6d20f7295d8907264103d9357b064edf211d06d83f94c5e63fea6": {
+    "ts": 1788744191.6437674,
+    "value": {
+      "input_hash": "e5e8d0d113aaf69dac1a519c48a966e2978a377d768df22af444f09d9d24a551",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 1,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 1,
+            "plain_explanation": "它就像命令行版的 App Store，让你能直接下载应用的安装包文件，主要供安全研究人员、开发者或想离线获取应用包的人使用。",
+            "repo": "majd/ipatool",
+            "source_description": "Command-line tool that allows searching and downloading app packages (known as ipa files) for iOS, iPadOS, tvOS, and visionOS from the App Store.",
+            "summary": "ipatool 是一个用 Go 编写的命令行工具，允许用户从 App Store 搜索、下载和管理 iOS、iPadOS、tvOS、visionOS 和 macOS 应用的安装包（.ipa 文件）。它提供认证、搜索、购买许可、下载和版本信息查询等功能，适用于需要获取应用包进行安全研究或开发测试的用户。",
+            "tags": [
+              "cli",
+              "ios",
+              "appstore",
+              "reverse-engineering",
+              "security",
+              "go"
+            ]
+          }
+        },
+        "repo": "majd/ipatool"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
+  "814c08ef7d53eca39cc56ca254668d679376a519af149a7ad2616b80d9aa620f": {
+    "ts": 1788744021.213688,
+    "value": {
+      "input_hash": "350c49c31f42d4b82fff1e95c445ef5b1de5fc95a639db3706cf6dbe13488ed9",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 1,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 1,
+            "plain_explanation": "这是一个由 Google 开发的时间序列预测模型，让开发者能直接使用预训练模型来预测未来趋势，而不用自己训练复杂模型，类似于时间序列数据的“智能预测工具”。",
+            "repo": "google-research/timesfm",
+            "source_description": "TimesFM (Time Series Foundation Model) is a pretrained time-series foundation model developed by Google Research for time-series forecasting.",
+            "summary": "TimesFM 是 Google Research 开发的预训练时间序列基础模型，专注于时间序列预测任务。最新版本 3.0 支持多变量和单变量预测，并灵活处理协变量，在多个基准测试中表现最佳。模型通过 PyTorch 等框架提供，开发者可以轻松集成到项目中。适用于需要高效、准确时间序列预测的应用场景。",
+            "tags": [
+              "time-series-forecasting",
+              "foundation-model",
+              "multivariate",
+              "covariates",
+              "pytorch",
+              "google-research"
+            ]
+          }
+        },
+        "repo": "google-research/timesfm"
       },
       "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
       "schema_version": "report-llm:v1",
@@ -2022,39 +2158,6 @@
           }
         },
         "repo": "omacom/omarchy"
-      },
-      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
-      "schema_version": "report-llm:v1",
-      "stage": "analyze_project"
-    }
-  },
-  "8dbc6fad4a4425608d4d32eae0513f7a17eb8461b54a25887c0da2a36ff6946f": {
-    "ts": 1785719866.4455936,
-    "value": {
-      "input_hash": "5da913f8c150d28352ac0a06925a749c87ec89f347edf12a857d9c01f44218d4",
-      "model": "mimo-v2.5",
-      "output": {
-        "complete": true,
-        "part_total": 1,
-        "parts": {
-          "1": {
-            "part_index": 1,
-            "part_total": 1,
-            "plain_explanation": "这个工具通过 AI 自动分析代码变更，检查潜在缺陷和安全问题，就像一个智能代码审查助手。开发者可以在提交代码前运行它，以节省手动审查时间并提升代码质量。",
-            "repo": "alibaba/open-code-review",
-            "source_description": "Open-source & free — Battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
-            "summary": "OpenCodeReview 是阿里巴巴开源的一款免费代码审查工具，经过大规模生产环境实战验证。它采用确定性工程流程与大语言模型代理相结合的混合架构，能够生成精确到行级的审查评论。工具内置多语言安全规则集，支持 OpenAI 和 Anthropic 等主流 LLM 提供者，适用于开发者在本地或 CI/CD 流程中进行高效代码审查。",
-            "tags": [
-              "agent",
-              "agent-skills",
-              "code-review",
-              "code-review-assistant",
-              "harness",
-              "repository-level-context"
-            ]
-          }
-        },
-        "repo": "alibaba/open-code-review"
       },
       "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
       "schema_version": "report-llm:v1",
@@ -2776,39 +2879,6 @@
       "stage": "analyze_project"
     }
   },
-  "b2b03cd485454636a754acbad85a15d2e421aa68bf1031dac909e46171b119b2": {
-    "ts": 1785719892.611818,
-    "value": {
-      "input_hash": "ad1907ac3662a24370a9e89d241295cd79904c20b5fab93665c4e256c946775b",
-      "model": "mimo-v2.5",
-      "output": {
-        "complete": true,
-        "part_total": 1,
-        "parts": {
-          "1": {
-            "part_index": 1,
-            "part_total": 1,
-            "plain_explanation": "这个项目就像一个智能的 3D 建模助手，你给它一张图片，它就能自动生成对应的 3D 模型，适合游戏开发者、3D 艺术家或研究人员快速创建数字资产。",
-            "repo": "microsoft/TRELLIS.2",
-            "source_description": "Native and Compact Structured Latents for 3D Generation",
-            "summary": "TRELLIS.2 是微软开发的一个参数量达 40 亿的大型 3D 生成模型，专注于从图像生成高保真 3D 资产。它采用创新的 O-Voxel 稀疏体素结构，能够处理复杂拓扑和完整 PBR 材理，支持高达 1536³ 的分辨率。模型基于扩散架构，通过高效的稀疏 3D VAE 实现紧凑的潜空间表示，适用于游戏开发、虚拟现实等需要高质量 3D 内容的场景。",
-            "tags": [
-              "3D生成",
-              "图像到3D",
-              "PBR材料",
-              "稀疏体素",
-              "大型模型",
-              "计算机视觉"
-            ]
-          }
-        },
-        "repo": "microsoft/TRELLIS.2"
-      },
-      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
-      "schema_version": "report-llm:v1",
-      "stage": "analyze_project"
-    }
-  },
   "b494e464ca3663790c59acb47c48141ff6480717cb8740784021470aa0d63111": {
     "ts": 1786925119.674637,
     "value": {
@@ -3092,55 +3162,6 @@
       "stage": "analyze_project"
     }
   },
-  "bdd40638fbe9a2d2694c9249a8bd90bb3ea8da9b2de123cc2f378a358318a93b": {
-    "ts": 1785719885.3594508,
-    "value": {
-      "input_hash": "9533804d34d1dd001791ec1083d7f8fd225ff1f8322a7446965a50ef7704a72c",
-      "model": "mimo-v2.5",
-      "output": {
-        "complete": true,
-        "part_total": 2,
-        "parts": {
-          "1": {
-            "part_index": 1,
-            "part_total": 2,
-            "plain_explanation": "这个项目帮助开发者用一个接口访问多个 AI 服务，自动选择最便宜或免费的选项，避免超出限额，特别适合经常使用 AI 编码工具但不想支付高额费用的程序员。",
-            "repo": "diegosouzapw/OmniRoute",
-            "source_description": "Never stop coding. Free MIT AI gateway: one endpoint, 290+ providers (90+ free), 500+ models — Kimi, Claude, GPT, OpenAI, Gemini, GLM, DeepSeek, MiniMax. Works with Claude Code, Codex, Cursor, OpenCode, Cline & Copilot. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A, Desktop/PWA. Built by 500+ contributors",
-            "summary": "OmniRoute 是一个免费的 AI 网关项目，通过单一端点整合了 290 多个 AI 服务提供商（其中 90 多个提供免费层），支持 500 多个模型，如 Kimi、Claude 和 GPT。它具备配额感知自动回退功能以避免限额耗尽，并使用 RTK 与 Caveman 压缩技术节省 15-95% 的令牌成本。项目强调零配置启动，安装后即可立即使用，适用于使用 AI 编码工具如 Claude Code 和 Cursor 的开发者。",
-            "tags": [
-              "ai-gateway",
-              "free-ai",
-              "llm-gateway",
-              "claude",
-              "openai",
-              "token-saver"
-            ]
-          },
-          "2": {
-            "part_index": 2,
-            "part_total": 2,
-            "plain_explanation": "它就像一个智能路由器，当你的 AI 编码工具遇到某个服务额度用完或故障时，会自动切换到其他可用模型，让你不用中断工作。主要给需要频繁调用 AI 模型的程序员使用。",
-            "repo": "diegosouzapw/OmniRoute",
-            "source_description": "Never stop coding. Free MIT AI gateway: one endpoint, 290+ providers (90+ free), 500+ models — Kimi, Claude, GPT, OpenAI, Gemini, GLM, DeepSeek, MiniMax. Works with Claude Code, Codex, Cursor, OpenCode, Cline & Copilot. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A, Desktop/PWA. Built by 500+ contributors",
-            "summary": "OmniRoute 是一个开源 MIT 许可的 AI 网关，通过单一端点整合了 290 多个 AI 提供者和 500 多个模型。它的核心能力是 combo 路由，能基于配额、成本和延迟等因素自动在模型间切换，确保服务高可用。项目内置 19 种路由策略和多层容错机制，并支持 token 压缩以节省成本。适用于使用 Claude Code、Cursor 等编码工具的开发者。",
-            "tags": [
-              "ai-gateway",
-              "llm-gateway",
-              "claude-code",
-              "openai-proxy",
-              "token-saver",
-              "a2a"
-            ]
-          }
-        },
-        "repo": "diegosouzapw/OmniRoute"
-      },
-      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
-      "schema_version": "report-llm:v1",
-      "stage": "analyze_project"
-    }
-  },
   "bff186485416cdb496edb9a2ed4de8af8e64ed34a787c5259e4e870f6aaf664b": {
     "ts": 1788140370.6164136,
     "value": {
@@ -3203,6 +3224,39 @@
       "stage": "generate_overview"
     }
   },
+  "c13fe8f8860df183a1c29012e357a682ae175380937de1d54244c0b3039f1665": {
+    "ts": 1788743987.2989829,
+    "value": {
+      "input_hash": "eeec19ed9da74284fc2fb80d2adffb4ac324a18f328842b25dc9330ef791de7b",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 1,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 1,
+            "plain_explanation": "它实际上解决的是将复杂的代码结构和系统设计快速转换成专业图表的问题，方便开发者进行架构审查、文档编写或团队沟通。主要面向使用 AI 编码代理的技术人员和架构师。",
+            "repo": "tt-a1i/archify",
+            "source_description": "Agent skill for beautiful, verifiable architecture, workflow, sequence, data-flow, and lifecycle diagrams—self-contained HTML with motion and crisp export.",
+            "summary": "Archify 是一个 Node.js 渲染和验证系统，专为 AI 编码代理设计，能将代码库或系统描述转换为美观、可验证的架构、工作流、序列、数据流和生命周期图表。它支持代理生成类型化 JSON 中间表示，并确定性地编译为自包含的 HTML 文件，带有动画和多种导出格式。适用于使用 Cursor、Claude Code 等工具的开发者，用于在聊天中直接可视化和沟通技术设计。",
+            "tags": [
+              "agent-skills",
+              "architecture-diagram",
+              "code-visualization",
+              "developer-tools",
+              "diagram-as-code",
+              "text-to-diagram"
+            ]
+          }
+        },
+        "repo": "tt-a1i/archify"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
   "c2a16fedff93210d2dbfd0a090858f749f05aeba6279b9128e8726dfa2decbcf": {
     "ts": 1786322238.145177,
     "value": {
@@ -3230,39 +3284,6 @@
           }
         },
         "repo": "google/skills"
-      },
-      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
-      "schema_version": "report-llm:v1",
-      "stage": "analyze_project"
-    }
-  },
-  "c448be17bf314a16e516bc33757cd5134e81f01433a1b0f5ac541234d28e9829": {
-    "ts": 1785719891.2917857,
-    "value": {
-      "input_hash": "b13b9dc8632ffc527aa217be535a4a4ea9156c4ed1502ede3ef5997dd9829ab9",
-      "model": "mimo-v2.5",
-      "output": {
-        "complete": true,
-        "part_total": 1,
-        "parts": {
-          "1": {
-            "part_index": 1,
-            "part_total": 1,
-            "plain_explanation": "这是一个在没有互联网或信号不好的情况下，依靠设备之间蓝牙就能互相发消息的加密聊天工具，同时也能连接到全球网络。可以理解为自带网络的、注重隐私的对讲机或群聊应用。",
-            "repo": "permissionlesstech/bitchat-android",
-            "source_description": "decentralized mesh chat",
-            "summary": "bitchat for Android 是一个去中心化的点对点通信应用，采用蓝牙 Mesh 和 Nostr 协议双传输架构，无需账号或中心服务器。它在离线状态下通过蓝牙 Mesh 网络实现多设备间聊天，支持多跳中继；在线时通过 Nostr 中继器进行全球通信，并提供基于地理坐标的频道。应用采用端到端加密，支持紧急数据擦除，并以 Kotlin 和 Jetpack Compose 构建。",
-            "tags": [
-              "decentralized",
-              "peer-to-peer",
-              "messaging",
-              "Nostr",
-              "Bluetooth-mesh",
-              "encryption"
-            ]
-          }
-        },
-        "repo": "permissionlesstech/bitchat-android"
       },
       "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
       "schema_version": "report-llm:v1",
@@ -3328,6 +3349,55 @@
           }
         },
         "repo": "PrimeIntellect-ai/prime-agent"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
+  "cb19fb18257d04a0ba64858e029b88a1ef9a75ca1eacb8c2aabbc22214147218": {
+    "ts": 1788743993.4752169,
+    "value": {
+      "input_hash": "0722a8e4b7fd7d5fa3d1f7dfb91fb4b531f38ee465ea5b3cddf03148467f014b",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 2,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 2,
+            "plain_explanation": "这个项目让任何人都能快速用 AI 创建互动学习课程，就像有个虚拟教师团队自动生成教学内容，适合老师、内容创作者或想自学的人使用。",
+            "repo": "THU-MAIC/OpenMAIC",
+            "source_description": "Open Multi-Agent Interactive Classroom — Get an immersive, multi-agent learning experience in just one click",
+            "summary": "OpenMAIC 是一个开源 AI 平台，通过多代理系统将任意主题或文档转化为沉浸式互动课堂。它支持一键生成课程，自动创建幻灯片、测验、模拟和项目式学习活动，并由 AI 教师和同学进行实时讲解、白板绘制与讨论。用户可通过代理工作台集成或直接使用生成工具，导出为 .pptx 或 .html 格式，适用于教育者、开发者和学习者。",
+            "tags": [
+              "education",
+              "AI",
+              "multi-agent",
+              "interactive-learning",
+              "TypeScript",
+              "open-source"
+            ]
+          },
+          "2": {
+            "part_index": 2,
+            "part_total": 2,
+            "plain_explanation": "它就像一个用 AI 智能体辅助设计课程的工具，老师和教育科技开发者会用到，让学生能获得个性化的互动学习体验。",
+            "repo": "THU-MAIC/OpenMAIC",
+            "source_description": "Open Multi-Agent Interactive Classroom — Get an immersive, multi-agent learning experience in just one click",
+            "summary": "OpenMAIC 是一个支持多智能体交互的课堂平台，提供沉浸式学习体验。通过服务器端持久化，课程文档和运行时数据可存储在 PostgreSQL 中，支持回放和会话恢复。代理工作台允许用户通过对话构建课程，集成多媒体生成、文档解析和语音合成等功能。适用于教育场景，帮助开发者快速创建互动式教学内容。",
+            "tags": [
+              "多智能体",
+              "交互式学习",
+              "TypeScript",
+              "PostgreSQL",
+              "课程构建",
+              "多媒体处理"
+            ]
+          }
+        },
+        "repo": "THU-MAIC/OpenMAIC"
       },
       "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
       "schema_version": "report-llm:v1",
@@ -3771,23 +3841,59 @@
       "stage": "analyze_project"
     }
   },
-  "d6f5e03c7ceaa2a240348e59de771a28ea4c85cd1178188b6bc41c9922024d2c": {
-    "ts": 1785719939.7079704,
+  "d6266d79e88e0790e3bf69c04366f7fb3148130961910b3663000a85237c8fa6": {
+    "ts": 1788744056.5747323,
     "value": {
-      "input_hash": "73c65a5bb8c675009ec03b1df1a0f1166909ba45f035046686d13fc2faca3952",
+      "input_hash": "e7e5e04ef4d43dc3819264074a721302648608e342657583520705013f06938b",
       "model": "mimo-v2.5",
       "output": {
-        "overview": "本期周刊共收录 19 个项目。AI 领域以 AI 代理开发框架和编码工具为主，涉及自动化代码审查与技能生成；开发工具方面，涉及自托管协作平台与地理空间分析工具；通信基础设施则关注基于蓝牙网格和 Nostr 协议的去中心化消息应用。"
+        "complete": true,
+        "part_total": 2,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 2,
+            "plain_explanation": "它让你在自己电脑上就能完成声音克隆、视频配音或有声书制作，不用依赖云服务或付费，适合重视隐私或需要大量处理音频的开发者和创作者。",
+            "repo": "debpalash/VoiceStudio",
+            "source_description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
+            "summary": "VoiceStudio 是一款开源的本地语音处理平台，作为 ElevenLabs 的替代方案。它支持语音克隆、设计、视频配音、转录和有声书制作，覆盖 646 种语言，并提供桌面应用和本地 API。项目完全在本地运行，无需账户或订阅，确保数据隐私和离线使用。",
+            "tags": [
+              "ai",
+              "voice-cloning",
+              "text-to-speech",
+              "local-first",
+              "dubbing",
+              "audiobook"
+            ]
+          },
+          "2": {
+            "part_index": 2,
+            "part_total": 2,
+            "plain_explanation": "这是一个在自己电脑上运行的语音工具，可以克隆声音、转录音频，不用联网，保护隐私。适合想自己搞语音项目的开发者。",
+            "repo": "debpalash/VoiceStudio",
+            "source_description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
+            "summary": "VoiceStudio 是一个开源的本地语音处理平台，作为 ElevenLabs 的替代方案，提供语音克隆、转写、翻译等功能。它通过本地后端运行，支持 OpenAI 兼容 API，可与 AI 代理和 MCP 协议集成，适用于需要隐私保护、离线语音处理的开发者。",
+            "tags": [
+              "ai",
+              "text-to-speech",
+              "speech-to-text",
+              "voice-cloning",
+              "local-first",
+              "openai"
+            ]
+          }
+        },
+        "repo": "debpalash/VoiceStudio"
       },
-      "prompt_hash": "8c94cc4b3c412c557dadbf6292f4f890a09342667e559fa0afb8a6060f0e4ed4",
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
       "schema_version": "report-llm:v1",
-      "stage": "generate_overview"
+      "stage": "analyze_project"
     }
   },
-  "da542fee22f66939ddbe96087b5a4ed711143d5303eab82d841245d4e2c24097": {
-    "ts": 1785719892.9698029,
+  "d65f0f16ba6fea43a05c87900b83e14921ee156efa6768ab262640f0cf5f9219": {
+    "ts": 1788743998.195177,
     "value": {
-      "input_hash": "148792ed5e9b81979c5cdac2188292c8127b8bba4d9c108eec2f7e5ed4d309d0",
+      "input_hash": "92f7f11f656b11b40ee8e5f177682b28918017a48496ec6f7aba60d9be4197ac",
       "model": "mimo-v2.5",
       "output": {
         "complete": true,
@@ -3796,21 +3902,20 @@
           "1": {
             "part_index": 1,
             "part_total": 1,
-            "plain_explanation": "它让 AI 代理能用文字命令创建 3D 模型，就像给设计师配了个智能助手，帮助快速将想法变成工程文件，避免手动操作繁琐步骤。",
-            "repo": "earthtojake/text-to-cad",
-            "source_description": "A library of agent skills for CAD, CAE and CAM",
-            "summary": "这是一个面向 CAD、CAE 和 CAM 的代理技能库，旨在通过 AI 代理自动化硬件设计流程。它支持从自然语言或图像请求生成 CAD 模型，提供 STEP、STL 等格式导出，并集成机器人描述文件处理能力。适用于工程师和开发者，用于加速产品设计和制造工作流。",
+            "plain_explanation": "它实际上解决了开发者想在本地运行 AI 模型但不想手动配置硬件和模型的难题，特别适合需要隐私保护和离线工作的场景，类似于一个自动化的本地 AI 模型管家。",
+            "repo": "magnitudedev/magnitude",
+            "source_description": "Open source inference server that runs the best local models for your hardware, plugged into the agent you already use. Works with Pi, OpenCode, Hermes, OpenClaw, Codex, Claude Code, Oh My Pi, and Cline.",
+            "summary": "Magnitude 是一个开源推理服务器，专注于为本地硬件运行最优的 AI 模型。它通过自动分析机器配置，推荐并下载适合的模型，同时支持与 Pi、OpenCode 等多种代理工具集成。项目强调免费、私有和离线运行，让开发者无需依赖云服务即可高效使用本地模型。",
             "tags": [
-              "cad",
+              "inference-server",
+              "local-models",
               "ai-agents",
-              "robotics",
-              "step",
-              "text-to-cad",
-              "mechanical-engineering"
+              "hardware-optimization",
+              "open-source"
             ]
           }
         },
-        "repo": "earthtojake/text-to-cad"
+        "repo": "magnitudedev/magnitude"
       },
       "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
       "schema_version": "report-llm:v1",
@@ -3929,6 +4034,280 @@
       "stage": "analyze_project"
     }
   },
+  "e19ff5842ac8d5d88b1182a332aa3437251994d3a4c00b9dddd736167441ec42": {
+    "ts": 1788744262.656832,
+    "value": {
+      "input_hash": "25f698df6590580cbd7d0fce792ed51f3e833a10c92e0a03fffeba4bb13c8d25",
+      "model": "mimo-v2.5",
+      "output": {
+        "categories": [
+          {
+            "items": [
+              {
+                "plain_explanation": "它就像一个智能管家，自动帮你配置和运行最适合你电脑的本地 AI 模型，省去手动选择和下载的麻烦，特别适合注重隐私和离线使用的开发者。",
+                "repo": "magnitudedev/magnitude",
+                "summary": "Magnitude 是一个开源推理服务器，能自动分析硬件并推荐运行最优的本地 AI 模型。它支持与 Pi、OpenCode、Claude Code 等多种 AI 代理工具集成，提供免费、私有且可离线运行的解决方案。",
+                "tags": [
+                  "inference-server",
+                  "local-models",
+                  "ai-agents",
+                  "hardware-optimization",
+                  "open-source"
+                ]
+              },
+              {
+                "plain_explanation": "这是一个低成本的语言模型“训练套件”，让个人开发者和学生也能在自己的普通显卡上快速上手，动手实践大语言模型的训练全过程。",
+                "repo": "jingyaogong/minimind",
+                "summary": "MiniMind 是一个开源项目，旨在让开发者以极低成本（约 2 小时，几元人民币）从零训练一个 64M 参数的微型语言模型。它覆盖了从数据处理、预训练、微调到强化学习的完整 LLM 训练链路，并提供了高级功能如知识蒸馏和工具调用。",
+                "tags": [
+                  "large-language-model",
+                  "training",
+                  "tutorial",
+                  "pytorch",
+                  "low-cost"
+                ]
+              },
+              {
+                "plain_explanation": "这是由 Google 开发的“时间序列预测专家”，提供了预训练模型，开发者可以直接用它来预测趋势、销量等时序数据，而不用从头训练。",
+                "repo": "google-research/timesfm",
+                "summary": "TimesFM 是 Google Research 开发的预训练时间序列基础模型。最新 3.0 版本支持多变量和单变量预测，能灵活处理协变量，在多个基准测试中表现最佳，可通过 PyTorch 等框架轻松集成。",
+                "tags": [
+                  "time-series-forecasting",
+                  "foundation-model",
+                  "multivariate",
+                  "pytorch",
+                  "google-research"
+                ]
+              },
+              {
+                "plain_explanation": "它帮助机器人开发者先在电脑模拟中训练机器人学习走路、翻滚等技能，再将训练好的“大脑”移植到实体机器人上，减少了真实硬件调试的麻烦。",
+                "repo": "pollen-robotics/microduck_rl",
+                "summary": "Microduck RL 为双足机器人 Microduck 提供强化学习训练环境，基于 mjlab 和 PPO 算法，支持在仿真中训练策略并导出到 ONNX 格式，最终部署到真实机器人，涵盖行走、摔倒恢复等任务。",
+                "tags": [
+                  "reinforcement-learning",
+                  "robotics",
+                  "sim2real",
+                  "bipedal-robot"
+                ]
+              },
+              {
+                "plain_explanation": "它就像一个由 AI 智能体组成的“虚拟教学团队”，能帮你快速创建一门有讲解、有互动的在线课程，适合教育者和内容创作者。",
+                "repo": "THU-MAIC/OpenMAIC",
+                "summary": "OpenMAIC 是一个开源 AI 平台，能通过多代理系统将任意主题或文档一键转化为沉浸式互动课堂。它自动生成幻灯片、测验、模拟等，并由 AI 教师和同学进行实时讲解与讨论。",
+                "tags": [
+                  "education",
+                  "multi-agent",
+                  "interactive-learning",
+                  "open-source"
+                ]
+              }
+            ],
+            "name": "AI 平台与框架"
+          },
+          {
+            "items": [
+              {
+                "plain_explanation": "这是一个在你自己电脑上运行的“全能语音工作室”，可以克隆声音、制作有声书，无需联网，保护隐私，适合需要大量处理音频的创作者。",
+                "repo": "debpalash/VoiceStudio",
+                "summary": "VoiceStudio 是一款开源的本地语音处理平台，作为 ElevenLabs 的替代方案。它支持语音克隆、设计、视频配音、转录和有声书制作，覆盖 646 种语言，完全在本地运行以确保隐私和离线使用。",
+                "tags": [
+                  "voice-cloning",
+                  "text-to-speech",
+                  "local-first",
+                  "dubbing"
+                ]
+              },
+              {
+                "plain_explanation": "它相当于给 AI 代理安装了“科学实验插件”，让 AI 能帮你查询数据库、分析数据、进行模拟，特别适合需要自动化科研数据处理的研究人员。",
+                "repo": "K-Dense-AI/scientific-agent-skills",
+                "summary": "这是一个全面的科学代理技能库，提供 163 个即用型技能和 100 多个科学数据库访问接口，覆盖生物学、化学、医学等领域。它兼容多种 AI 代理平台，旨在将通用代理转化为能执行复杂多步骤科学工作流的研究助手。",
+                "tags": [
+                  "ai-scientist",
+                  "bioinformatics",
+                  "drug-discovery",
+                  "agent-skills"
+                ]
+              },
+              {
+                "plain_explanation": "这个工具能帮你把技术成果快速写成专利申请文件，还能帮你理解和跟踪专利动态，是工程师处理专利事务的得力助手。",
+                "repo": "handsomestWei/patent-disclosure-skill",
+                "summary": "这是一个针对中国专利的技能工具，帮助研发人员挖掘专利点、编写各类专利交底书和申请文件，支持通俗解读专利和跟踪政策变化，并可通过 Obsidian 构建私有知识库。",
+                "tags": [
+                  "patent",
+                  "obsidian",
+                  "chinese",
+                  "disclosure"
+                ]
+              },
+              {
+                "plain_explanation": "这是一个开源、可自建的“SEO 分析平台”，功能类似 Semrush，还能让 AI 帮你自动执行 SEO 任务，适合需要低成本 SEO 工具的个人或团队。",
+                "repo": "every-app/open-seo",
+                "summary": "OpenSEO 是一个开源的 SEO 工具，提供关键词研究、排名跟踪、反向链接分析等功能，旨在替代 Semrush 和 Ahrefs。它集成 MCP 服务器，允许 AI 代理直接使用 SEO 数据，并支持自托管。",
+                "tags": [
+                  "seo",
+                  "mcp",
+                  "site-audit",
+                  "ai-agent"
+                ]
+              },
+              {
+                "plain_explanation": "它是一个“桥梁”，让 AI 编程助手能像人类开发者一样打开浏览器、检查网页、分析性能和执行操作，主要用于调试和自动化。",
+                "repo": "ChromeDevTools/chrome-devtools-mcp",
+                "summary": "Chrome DevTools for agents (`chrome-devtools-mcp`) 是一个 MCP 服务器，让 AI 编码助手（如 Cursor、Copilot）能够控制和检查实时的 Chrome 浏览器，提供性能追踪、网络分析、截图和自动化操作等能力。",
+                "tags": [
+                  "browser",
+                  "debugging",
+                  "devtools",
+                  "mcp-server"
+                ]
+              }
+            ],
+            "name": "AI 应用与工具"
+          },
+          {
+            "items": [
+              {
+                "plain_explanation": "它能将复杂的代码结构或设计图快速转换成专业、好看的架构图表，方便开发者进行设计评审和团队沟通，尤其适合使用 AI 编程工具的团队。",
+                "repo": "tt-a1i/archify",
+                "summary": "Archify 是一个为 AI 编码代理设计的图表渲染系统，能将代码库或系统描述转换为美观、可验证的架构、工作流、序列、数据流等图表。它生成带有动画的自包含 HTML 文件，并支持多种导出格式。",
+                "tags": [
+                  "architecture-diagram",
+                  "code-visualization",
+                  "agent-skills",
+                  "diagram-as-code"
+                ]
+              },
+              {
+                "plain_explanation": "它是一个让你在终端里方便调用各种 AI 模型来辅助写代码的工具，无论模型在云端还是本地，都能统一管理，提升编码效率。",
+                "repo": "Gitlawb/openclaude",
+                "summary": "OpenClaude 是一个开源编码代理命令行工具，支持多种云和本地大语言模型提供者。它提供统一的终端工作流，集成提示、工具调用、代理和流式输出，并包含 VS Code 扩展。",
+                "tags": [
+                  "ai-agent",
+                  "cli",
+                  "coding",
+                  "terminal"
+                ]
+              },
+              {
+                "plain_explanation": "它就像给你的 AI 编程助手安装了“工作习惯”和“记忆”，让它能更自主、高效地规划和编写代码，解决 AI 工具配置和使用中的痛点。",
+                "repo": "affaan-m/ECC",
+                "summary": "ECC 是一个为 AI 代理工具（如 Claude Code, Cursor）提供性能优化的系统，集成了技能、记忆、安全等功能。它通过规划、测试、实现和审查的工程流程，帮助开发者提升代理的工作效率，并支持多种安装和配置选项。",
+                "tags": [
+                  "ai-agents",
+                  "developer-tools",
+                  "productivity",
+                  "configuration"
+                ]
+              },
+              {
+                "plain_explanation": "它就像一个“代码优化教练”，教会 AI 代理避免写多余代码，只生成最核心、最高效的实现，帮你省钱省时间。",
+                "repo": "DietrichGebert/ponytail",
+                "summary": "Ponytail 是一个 AI 代理技能插件，旨在指导 AI 生成更精简、必要的代码。它通过一套规则梯子，让代理在编码前评估必要性、复用现有代码，从而减少代码量、降低成本并提升运行速度。",
+                "tags": [
+                  "ai-agents",
+                  "developer-tools",
+                  "prompt-engineering",
+                  "yagni"
+                ]
+              },
+              {
+                "plain_explanation": "这是一个更快、更安全的“printf”，让 C++ 程序员在格式化字符串时不用担心缓冲区溢出，并且运行速度极快，被很多大型项目采用。",
+                "repo": "fmtlib/fmt",
+                "summary": "{fmt} 是一个现代的 C++ 格式化库，提供了比 C stdio 和 C++ iostreams 更快、更安全的替代方案。它实现了 C++20 的 std::format，API 简单且类型安全，以高性能著称。",
+                "tags": [
+                  "C++",
+                  "formatting",
+                  "high-performance",
+                  "library"
+                ]
+              },
+              {
+                "plain_explanation": "它就像一个“数据模具”，帮你确保从 API 或用户输入等外部源收到的数据格式完全正确，同时自动生成对应的 TypeScript 类型，一举两得。",
+                "repo": "colinhacks/zod",
+                "summary": "Zod 是一个以 TypeScript 为核心的运行时数据验证库，允许开发者用简洁语法定义数据 schema，并能自动推断出对应的 TypeScript 静态类型，提供运行时和编译时的双重类型安全。",
+                "tags": [
+                  "typescript",
+                  "schema-validation",
+                  "runtime-validation",
+                  "static-types"
+                ]
+              },
+              {
+                "plain_explanation": "它能让你在 Mac 上运行一个虚拟的 iPhone，就像用虚拟机运行 Windows 一样，方便进行 iOS 应用测试或安全研究。",
+                "repo": "Lakr233/vphone-cli",
+                "summary": "vphone-cli 是一个命令行工具，用于在 Apple Silicon Mac 上通过 Virtualization.framework 启动和管理虚拟 iPhone。它自动化了固件下载、补丁应用和越狱流程，支持多种安全绕过级别。",
+                "tags": [
+                  "virtualization",
+                  "iphone",
+                  "vm",
+                  "cli",
+                  "macos"
+                ]
+              },
+              {
+                "plain_explanation": "这是一个命令行版的“App Store 下载器”，让你能直接下载应用的安装包文件，主要用于安全研究或开发测试。",
+                "repo": "majd/ipatool",
+                "summary": "ipatool 是一个 Go 编写的命令行工具，允许用户从 App Store 搜索、下载和管理 iOS、iPadOS 等设备的应用安装包（.ipa 文件），支持认证、搜索和版本查询。",
+                "tags": [
+                  "cli",
+                  "ios",
+                  "appstore",
+                  "reverse-engineering"
+                ]
+              },
+              {
+                "plain_explanation": "它就像一个“加密版的 netcat”，让你不用配置复杂 VPN 就能在两台电脑之间安全地传输数据或命令，适合快速、安全的远程连接。",
+                "repo": "tailscale/tailcat",
+                "summary": "Tailcat 是一个类似 netcat 的点对点网络工具，但构建在 Tailscale 的数据平面上，利用 WireGuard 实现加密隧道。它无需 Tailscale 账户，通过 DERP 服务器进行连接发现，并支持端口转发和文件传输。",
+                "tags": [
+                  "wireguard",
+                  "p2p",
+                  "cli-tool",
+                  "networking"
+                ]
+              }
+            ],
+            "name": "开发工具与库"
+          },
+          {
+            "items": [
+              {
+                "plain_explanation": "它是一个“MCP 服务器应用商店目录”，帮你快速找到能增强 AI 代理能力的各种工具和服务，是构建 AI 工具链的参考资源。",
+                "repo": "punkpeye/awesome-mcp-servers",
+                "summary": "awesome-mcp-servers 是一个收集 Model Context Protocol (MCP) 服务器实现的策展列表。MCP 是一个开放协议，允许 AI 模型通过标准化服务器与资源安全交互，该列表涵盖文件系统、数据库、API 集成等多种功能服务器。",
+                "tags": [
+                  "mcp",
+                  "ai",
+                  "tool-integration",
+                  "resource-list"
+                ]
+              }
+            ],
+            "name": "网络与安全工具"
+          },
+          {
+            "items": [
+              {
+                "plain_explanation": "这就像一个智能学术助手，能指导你完成从找资料、写论文到审稿的全过程，帮你自动化繁琐步骤，但关键决策仍由你做主。",
+                "repo": "Imbad0202/academic-research-skills",
+                "summary": "这是一个为 Claude Code 设计的学术研究技能套件，覆盖从文献调研到论文发表的完整管道。它通过多代理团队辅助研究、写作、评审和修订，并强调人类在循环中监督以避免 AI 错误。",
+                "tags": [
+                  "academic-writing",
+                  "ai-research",
+                  "literature-review",
+                  "academic-pipeline"
+                ]
+              }
+            ],
+            "name": "学习资源与指南"
+          }
+        ]
+      },
+      "prompt_hash": "9ab0bceab0cac518b61bfd340f40b9358ae85213b12ba6c7435e1488d5fd8701",
+      "schema_version": "report-llm:v1",
+      "stage": "organize_report"
+    }
+  },
   "e71ddf30d1956cb197eb2d73f24a0c8a6a8014b448438ba0e7b092719a2d6994": {
     "ts": 1788140433.7632568,
     "value": {
@@ -4043,6 +4422,55 @@
       "stage": "analyze_project"
     }
   },
+  "ee02f9051fad3404f831d0c1f8f70534b6ce6f18b18032783f362c88d2789507": {
+    "ts": 1788744038.1159806,
+    "value": {
+      "input_hash": "29630d151c86f189f2a80db069379daf01e69be4132eb0db513e8e4e390f5e2b",
+      "model": "mimo-v2.5",
+      "output": {
+        "complete": true,
+        "part_total": 2,
+        "parts": {
+          "1": {
+            "part_index": 1,
+            "part_total": 2,
+            "plain_explanation": "它解决了开发者想从零理解和训练语言模型但受限于成本和资源的问题，适合个人开发者或学生用普通 GPU 快速上手 LLM 开发实践。",
+            "repo": "jingyaogong/minimind",
+            "source_description": "🧠 Train a 64M-parameter LLM from scratch in just 2h!",
+            "summary": "MiniMind 是一个开源项目，旨在让普通开发者以极低成本从零训练一个 64M 参数的极小语言模型，仅需约 3 块钱和 2 小时。项目覆盖了从数据处理、预训练、微调到强化学习的完整 LLM 训练链路，所有核心算法均使用 PyTorch 原生实现，不依赖第三方框架抽象。它不仅是一个可复现的训练项目，也是一套面向 LLM 初学者的实践教程。",
+            "tags": [
+              "artificial-intelligence",
+              "large-language-model",
+              "PyTorch",
+              "training",
+              "tutorial",
+              "open-source"
+            ]
+          },
+          "2": {
+            "part_index": 2,
+            "part_total": 2,
+            "plain_explanation": "它就像一个低成本的 LLM 训练套件，让个人开发者也能在自己的电脑上从头训练一个能对话的小模型，而无需昂贵的 GPU 集群，适合想学习大模型训练原理或快速做原型的 AI 爱好者。",
+            "repo": "jingyaogong/minimind",
+            "source_description": "🧠 Train a 64M-parameter LLM from scratch in just 2h!",
+            "summary": "MiniMind 是一个旨在降低大语言模型训练门槛的开源项目，支持从预训练到强化学习的完整训练流程。它允许用户在单张消费级显卡（如 NVIDIA 3090）上以极低成本（约 2 小时、几元人民币）训练 64M 参数模型。项目提供了详细的脚本和步骤，涵盖知识蒸馏、LoRA 微调、工具调用和自适应思考等高级功能，适合研究人员和开发者快速实验与学习。",
+            "tags": [
+              "artificial-intelligence",
+              "large-language-model",
+              "PyTorch",
+              "RLHF",
+              "LoRA",
+              "tool-calling"
+            ]
+          }
+        },
+        "repo": "jingyaogong/minimind"
+      },
+      "prompt_hash": "3977f4cadbed34e222d1cb1241ac71f092eb462d5d051cc982f577f73680bf51",
+      "schema_version": "report-llm:v1",
+      "stage": "analyze_project"
+    }
+  },
   "ee6d489247c73124580490f4244d6b767bbe210ce6aece2a2ba1fc02ec581f2a": {
     "ts": 1788140384.2619798,
     "value": {
@@ -4086,278 +4514,6 @@
       "prompt_hash": "8c94cc4b3c412c557dadbf6292f4f890a09342667e559fa0afb8a6060f0e4ed4",
       "schema_version": "report-llm:v1",
       "stage": "generate_overview"
-    }
-  },
-  "fc3e938b1fbb9c3604c725f27c7078179eec90e9d16fe8ef82fb2e650bcdbf0a": {
-    "ts": 1785719923.1664138,
-    "value": {
-      "input_hash": "f8324cc5a32c4dc3f255b2b9eaea2e3624533d1da727c946d1668dcd38197c36",
-      "model": "mimo-v2.5",
-      "output": {
-        "categories": [
-          {
-            "items": [
-              {
-                "plain_explanation": "它就像一个智能“笔记整理器”，把技术书变成 AI 能快速理解和调用的卡片，让你在写代码时能直接问 AI 相关内容，而不用担心它胡说八道。",
-                "repo": "virgiliojr94/book-to-skill",
-                "summary": "一个 Python 工具，能将技术书籍、文档或文件夹（如 PDF、EPUB）转换为结构化的 AI 代理技能。它提取内容并生成如 SKILL.md 的结构化文件，以便在 GitHub Copilot CLI、Amp 或 Claude Code 中按需加载，避免直接注入整本书带来的 token 浪费和幻觉问题。",
-                "tags": [
-                  "ai-agent",
-                  "knowledge-management",
-                  "technical-books",
-                  "python",
-                  "skills"
-                ]
-              },
-              {
-                "plain_explanation": "它解决的是 AI 编码助手回答太啰嗦、不直接的问题，让开发者能快速获取关键信息，特别适合需要集中注意力的开发者使用。",
-                "repo": "ayghri/i-have-adhd",
-                "summary": "一个 Claude Code 插件，通过 10 条规则使编码代理的输出更直接、行动优先，采用 ADHD 友好的风格。它致力于避免冗长的回答，直接给出解决方案和下一步操作。",
-                "tags": [
-                  "adhd",
-                  "claude-code",
-                  "claude-skills",
-                  "developer-tools",
-                  "productivity"
-                ]
-              },
-              {
-                "plain_explanation": "jcode 就像一个更轻、更快的 AI 编程助手终端，让你能同时开多个会话而不拖慢电脑，还能自动记住之前的对话内容。",
-                "repo": "1jehuang/jcode",
-                "summary": "一个用 Rust 编写的高性能 AI 编码代理框架，以极低的内存占用和快速启动著称。它支持自动记忆系统、多代理协作（Swarm）、丰富的终端 UI 功能，并能连接本地（如 Ollama）或远程的 LLM 服务。",
-                "tags": [
-                  "ai",
-                  "cli",
-                  "terminal",
-                  "rust",
-                  "llm",
-                  "multi-agent"
-                ]
-              },
-              {
-                "plain_explanation": "这个工具通过 AI 自动分析代码变更，检查潜在缺陷和安全问题，就像一个智能代码审查助手，帮助开发者在提交代码前发现问题。",
-                "repo": "alibaba/open-code-review",
-                "summary": "阿里巴巴开源的免费代码审查工具，经过大规模生产环境验证。它采用确定性工程流程与大语言模型代理相结合的混合架构，能够生成精确到行级的审查评论，并内置了多语言安全规则集。",
-                "tags": [
-                  "code-review",
-                  "agent",
-                  "security",
-                  "go",
-                  "developer-tools"
-                ]
-              },
-              {
-                "plain_explanation": "它让开发者可以搭建自己的 AI 虚拟伴侣，像 Neuro-sama 那样能聊天、玩游戏，适合用于直播娱乐或个人助手开发。",
-                "repo": "moeru-ai/airi",
-                "summary": "一个自托管的 AI 伴侣平台，旨在创建用户自有的数字生命，提供实时语音交互和玩 Minecraft、Factorio 等游戏的能力。它集成了多种 AI 提供商后端，支持 Web、macOS 和 Windows 平台。",
-                "tags": [
-                  "ai-companion",
-                  "digital-life",
-                  "vtuber",
-                  "typescript",
-                  "webgpu"
-                ]
-              },
-              {
-                "plain_explanation": "aisuite 解决了开发者需要同时使用多个 AI 服务提供商时接口不统一的问题，通过一个通用库简化代码编写。",
-                "repo": "andrewyng/aisuite",
-                "summary": "一个轻量级 Python 库，旨在为多种生成式 AI 提供商（如 OpenAI、Anthropic、Google）提供统一的聊天补全接口。它原生集成了 MCP 协议，并提供高级 Agents API 用于构建工具调用和代理系统。",
-                "tags": [
-                  "llm",
-                  "python",
-                  "chat-completions",
-                  "agents",
-                  "mcp"
-                ]
-              },
-              {
-                "plain_explanation": "它解决了 AI 代理操作浏览器时与用户争抢标签页的问题，让开发者能用同一个浏览器让代理自动执行网页任务，自己继续正常使用。",
-                "repo": "citrolabs/ego-lite",
-                "summary": "专为 AI 代理设计的浏览器自动化工具，允许用户与 AI 代理（如 Codex 或 Claude Code）共享登录状态，并行工作而不互相干扰。它通过独立空间实现任务隔离，并提供高质量页面快照。",
-                "tags": [
-                  "ai-agent",
-                  "browser",
-                  "automation",
-                  "codex",
-                  "claude-code"
-                ]
-              },
-              {
-                "plain_explanation": "它让开发者可以用手机或另一台电脑远程控制和管理多个 AI 编程代理，集中操作不同的编程工具。",
-                "repo": "pingdotgg/t3code",
-                "summary": "一个 AI 代理控制面，通过移动、Web 和桌面应用提供对 Claude Code、Codex 等代理的统一控制，支持远程访问和多代理管理。项目处于早期阶段，旨在为开发者提供更好的代理开发体验。",
-                "tags": [
-                  "ai-agent",
-                  "control-surface",
-                  "remote-access",
-                  "development-tools"
-                ]
-              },
-              {
-                "plain_explanation": "这个项目就像一个智能路由器，当你的 AI 编码工具遇到某个服务额度用完或故障时，会自动切换到其他可用模型，让你不用中断工作。",
-                "repo": "diegosouzapw/OmniRoute",
-                "summary": "一个免费的 MIT 许可 AI 网关，通过单一端点整合了 290 多个 AI 服务提供商和 500 多个模型。它具备配额感知自动回退功能以避免限额耗尽，并使用压缩技术节省令牌成本。",
-                "tags": [
-                  "ai-gateway",
-                  "llm-gateway",
-                  "token-saver",
-                  "claude",
-                  "openai"
-                ]
-              },
-              {
-                "plain_explanation": "它解决的核心问题是如何在不同的 AI 开发工具之间，方便地共享和复用一套已经配置好的技能或工作流，就像一个“技能包”可以安装到各种工具里。",
-                "repo": "different-ai/openwork",
-                "summary": "一款免费、开源的桌面应用，旨在分享和复用 AI 工作流，是 Claude Cowork 的开源替代品。它通过 MCP 协议，允许用户在 Codex、Claude Code、Cursor 等不同的 AI 智能体之间共享技能、插件和已连接的服务。",
-                "tags": [
-                  "AI",
-                  "MCP",
-                  "desktop-app",
-                  "workflow-sharing",
-                  "open-source"
-                ]
-              },
-              {
-                "plain_explanation": "它让 AI 代理能用文字命令创建 3D 模型，就像给设计师配了个智能助手，帮助快速将想法变成工程文件。",
-                "repo": "earthtojake/text-to-cad",
-                "summary": "一个面向 CAD、CAE 和 CAM 的代理技能库，旨在通过 AI 代理自动化硬件设计流程。它支持从自然语言或图像请求生成 CAD 模型，并提供 STEP、STL 等格式导出。",
-                "tags": [
-                  "cad",
-                  "ai-agents",
-                  "robotics",
-                  "text-to-cad",
-                  "mechanical-engineering"
-                ]
-              }
-            ],
-            "name": "AI 大模型应用与框架"
-          },
-          {
-            "items": [
-              {
-                "plain_explanation": "Buzz 是一个让团队和 AI 代理在同一空间工作的协作平台，解决了工具分散的问题，主要用于软件开发团队进行日常协作和自动化任务。",
-                "repo": "block/buzz",
-                "summary": "一个基于 Nostr 协议的自托管工作区，允许人类和 AI 代理在同一个环境中协作。它提供频道、线程、媒体评论和 Git 事件集成，所有交互通过签名事件记录在单一日志中，确保可审计性。",
-                "tags": [
-                  "nostr",
-                  "rust",
-                  "self-hosted",
-                  "ai-agents",
-                  "collaboration",
-                  "git"
-                ]
-              },
-              {
-                "plain_explanation": "GeoLibre 让开发者能像使用在线地图工具一样，在浏览器里直接处理复杂的地理数据分析，数据不离开本地电脑。",
-                "repo": "opengeos/GeoLibre",
-                "summary": "一个轻量级、云原生的 GIS 平台，用于可视化、探索和分析地理空间数据。它内置超过 1000 个地理处理工具，全部在浏览器中通过 WebAssembly 运行，支持 Web、桌面、移动和 Jupyter 环境。",
-                "tags": [
-                  "geospatial",
-                  "gis",
-                  "webassembly",
-                  "tauri-app",
-                  "data-science"
-                ]
-              },
-              {
-                "plain_explanation": "这个项目让开发者和设计师能在网页上直接构建和编辑 3D 建筑模型，类似一个在线的、可定制的建筑工具。",
-                "repo": "pascalorg/editor",
-                "summary": "一个基于 React Three Fiber 和 WebGPU 的 3D 建筑编辑器，用于在浏览器中创建和分享建筑项目。它采用 Turborepo 单体仓库架构，使用节点系统和渲染器高效处理建筑元素的几何生成和交互操作。",
-                "tags": [
-                  "3D",
-                  "architecture",
-                  "webgpu",
-                  "react-three-fiber",
-                  "editor",
-                  "plugin"
-                ]
-              }
-            ],
-            "name": "开发工具与平台"
-          },
-          {
-            "items": [
-              {
-                "plain_explanation": "BitChat 解决了在没有网络或需要私密聊天时仍能通信的问题，类似于一个无服务器的、注重隐私的群聊工具。",
-                "repo": "permissionlesstech/bitchat",
-                "summary": "一款去中心化点对点消息应用，采用蓝牙网格网络进行离线通信和 Nostr 协议实现全球覆盖的双传输架构。它支持端到端加密、基于位置的地理频道和 IRC 风格命令，无需账户或中央服务器。",
-                "tags": [
-                  "bluetooth",
-                  "decentralized",
-                  "messaging",
-                  "mesh-network",
-                  "nostr",
-                  "swift"
-                ]
-              },
-              {
-                "plain_explanation": "这是 BitChat 的安卓版，功能类似，让你在没有互联网时也能靠设备间蓝牙互相发消息，同时也能连接全球网络。",
-                "repo": "permissionlesstech/bitchat-android",
-                "summary": "bitchat 的 Android 原生应用，同样采用蓝牙 Mesh 和 Nostr 协议的双传输架构。它在离线状态下通过蓝牙 Mesh 网络实现多设备间聊天，支持多跳中继；在线时通过 Nostr 进行全球通信，并提供基于地理坐标的频道。",
-                "tags": [
-                  "decentralized",
-                  "peer-to-peer",
-                  "messaging",
-                  "nostr",
-                  "bluetooth-mesh",
-                  "kotlin"
-                ]
-              }
-            ],
-            "name": "通信基础设施"
-          },
-          {
-            "items": [
-              {
-                "plain_explanation": "这个项目就像一个智能的 3D 建模助手，你给它一张图片，它就能自动生成对应的高质量 3D 模型，适合游戏开发、虚拟现实等场景。",
-                "repo": "microsoft/TRELLIS.2",
-                "summary": "微软开发的一个参数量达 40 亿的大型 3D 生成模型，专注于从单张图像生成高保真、带完整 PBR 材理的 3D 资产。它采用创新的 O-Voxel 稀疏体素结构，能处理复杂拓扑并支持高分辨率生成。",
-                "tags": [
-                  "3D生成",
-                  "图像到3D",
-                  "PBR材料",
-                  "稀疏体素",
-                  "大型模型"
-                ]
-              }
-            ],
-            "name": "3D 生成与可视化"
-          },
-          {
-            "items": [
-              {
-                "plain_explanation": "这是一个免费的 AI 入门教程，教你从零开始系统学习人工智能，适合对 AI 感兴趣但不知如何入门的开发者或学生。",
-                "repo": "microsoft/AI-For-Beginners",
-                "summary": "一个由微软提供的 12 周、24 课 AI 入门课程，涵盖神经网络、深度学习、计算机视觉、自然语言处理和 AI 伦理等内容。课程通过 Jupyter Notebook 提供交互式学习，并支持多语言。",
-                "tags": [
-                  "ai",
-                  "deep-learning",
-                  "machine-learning",
-                  "tutorial",
-                  "microsoft"
-                ]
-              },
-              {
-                "plain_explanation": "这其实是一本带完整实验代码的 AI Agent 教科书，专门给想要深入理解并动手实践如何构建 AI Agent 的开发者和研究者使用。",
-                "repo": "bojieli/ai-agent-book",
-                "summary": "开源书籍《深入理解 AI Agent：设计原理与工程实践》的主仓库，提供全书正文、编译版 PDF 及按章配套的 95 个实验代码。全书围绕“Agent = LLM + 上下文 + 工具”展开，系统性讲解从基础原理到生产实践的设计。",
-                "tags": [
-                  "ai-agent",
-                  "book",
-                  "context-engineering",
-                  "mcp",
-                  "rag",
-                  "coding-agent"
-                ]
-              }
-            ],
-            "name": "学习资源与文档"
-          }
-        ]
-      },
-      "prompt_hash": "9ab0bceab0cac518b61bfd340f40b9358ae85213b12ba6c7435e1488d5fd8701",
-      "schema_version": "report-llm:v1",
-      "stage": "organize_report"
     }
   }
 }
