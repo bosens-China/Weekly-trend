@@ -241,7 +241,7 @@ def _download_one(
             )
             return None
 
-        out_path = out_base.with_suffix("." + ext)
+        out_path = out_base.with_name(f"{out_base.name}.{ext}")
         out_path.write_bytes(resp.content)
         size = _validate(out_path)
         if size is None:
