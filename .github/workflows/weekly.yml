@@ -36,29 +36,36 @@ jobs:
         run: uv sync --locked --no-dev
 
       - name: Generate weekly report
+        id: generate
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          # 可选：自定义模型 / 代理网关（与 KEY 一并存放在 Secrets 里）
-          OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
-          OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
+          # 非敏感配置读取 Repository Variables，API Key 继续使用 Secrets。
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
+          OPENAI_BASE_URL: ${{ vars.OPENAI_BASE_URL }}
           # 用于调 GitHub API 抓 README，提高速率限制
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: uv run --no-sync python src/main.py
 
-      - name: Commit report
+      - name: Commit report and cache
+        if: ${{ !cancelled() && (steps.generate.outcome == 'success' || steps.generate.outcome == 'failure') }}
+        env:
+          REPORT_OUTCOME: ${{ steps.generate.outcome }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # reports/ 是周刊与期数台账；cache/ 是 LLM 输出缓存，提交回仓库供下次跨周复用；
-          # README.md（往期列表）与 feed.xml（RSS）随每期自动刷新，一并提交
-          git add reports/ README.md feed.xml
+          # 生成失败时只保存已成功批次的缓存，避免重跑时重复消耗 LLM。
+          message="chore: 保存已完成的 LLM 缓存"
+          if [ "$REPORT_OUTCOME" = "success" ]; then
+            git add reports/ README.md feed.xml
+            message="docs: 自动生成 GitHub 一周热点"
+          fi
           # 首次成功写入 LLM 缓存后 cache/ 才会存在。
           if [ -d cache ]; then
             git add cache/
           fi
           if git diff --staged --quiet; then
-            echo "本周无新增报告，跳过提交。"
+            echo "报告与缓存均无变化，跳过提交。"
           else
-            git commit -m "docs: 自动生成 GitHub 一周热点"
+            git commit -m "$message"
             git push
           fi

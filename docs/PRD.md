@@ -19,18 +19,19 @@ GitHub Trending 每天都在变，但开发者很难持续跟进。本项目通�
 |------|------|------|
 | F1 | 抓取 Trending | 抓 `https://github.com/trending?since=weekly`，解析仓库名、描述、语言、star、本周 star、贡献者等 |
 | F2 | 仓库信息补全 | 调 GitHub API 获取 README、主页链接（homepage）、topics |
-| F3 | 图片下载 + 识别 | **仅当 README 含图片时**逐张下载候选图为本地文件（按 Content-Type 定格式），再用多模态模型结合 README 上下文挑出「项目相关图」（截图/Logo/架构图），过滤徽章、头像等 |
+| F3 | 图片下载 + 筛选 | **仅当 README 含图片时**逐张下载候选图为本地文件（按 Content-Type 定格式），按 README 顺序、URL、alt、上下文和尺寸筛选代表图，过滤徽章、头像等；文件名保留仓库名中的点号与候选图序号，避免覆盖 |
 | F4 | 报告生成 | 按 20k 字符智能分批并发提炼仓库材料，再全局统一分类；根据项目数最多的三个分类生成 200 字以内的周刊导语，并生成“中文压缩概述 + 大白话解释”的 Markdown 正文 |
 | F5 | 输出归档 | 每期一个日期文件夹 `reports/YYYY_MM_DD/`，内含 `README.md` 与 `assets/`；带「第 N 期 + 日期」头部；**期数 = 已有日期文件夹数 + 1**。图片先下载到临时目录，**仅被正文引用到的**才移入 `assets/` |
-| F6 | CI 自动化 | GitHub Actions 每周一定时触发，生成后自动 commit 回仓库 |
+| F6 | CI 自动化 | GitHub Actions 每周一定时触发，生成后自动 commit 回仓库；模型名与接口地址读取 Repository Variables，API Key 读取 Secrets；生成失败时仅提交已完成批次的有效缓存，保留失败状态，取消运行不提交 |
 
 ## 4. 非功能需求
 
-- **成本可控**：README 截断（`README_MAX_CHARS`，默认 32k）、报告分批上限（`REPORT_BATCH_CHARS`，默认 20k）、单仓库候选图上限 8 张；GitHub 数据每次重新抓取，确保输入新鲜；仅缓存解析成功的 LLM 输出（`cache/` 提交进仓库供 CI 跨周复用），批次分析以项目为缓存颗粒度，超长 README 的分片保存在同一个项目记录中，每个 LLM 批次结束后批量原子落盘；全局分类和导语按整期输入复用。缓存 key 包含阶段、Prompt、模型配置、输入和输出结构版本，`CACHE_TTL_DAYS` 默认 30 天。
+- **成本可控**：README 截断（`README_MAX_CHARS`，默认 32k）、报告分批上限（`REPORT_BATCH_CHARS`，默认 20k）、单仓库候选图上限 12 张，每个项目最多保留 1 张代表图；GitHub 数据每次重新抓取，确保输入新鲜；仅缓存解析成功且结构有效的 LLM 输出（`cache/` 提交进仓库供 CI 跨周复用），批次分析以项目为缓存颗粒度，超长 README 的分片保存在同一个项目记录中，每个 LLM 批次结束后批量原子落盘；全局分类和导语按整期输入复用。缓存 key 包含阶段、Prompt、模型配置、输入和输出结构版本，`CACHE_TTL_DAYS` 默认 30 天。
 - **健壮兜底**：
   - 未配置 `OPENAI_API_KEY` → 直接跳过，不执行后续。
   - README 无图 / 抓取失败 → 跳过该仓库的图片处理，不影响整体。
   - GitHub API 限流 / 单图下载失败 / 非图片响应 → 记录日志并继续。
+  - 模型返回错误的列表类型（如 `items: null`、`categories: null`）→ 使用 topics 或批次草稿兜底，不写入异常输出缓存；已有结构无效的缓存视为未命中。
 - **并发**：仓库信息补全与图片下载的线程数由 `WEEKLY_CONCURRENCY` 控制（默认 8）；报告批次使用 LangGraph `Send` 并行分析，由 `REPORT_CONCURRENCY` 控制（默认 5）。
 
 ## 5. 技术方案
@@ -40,9 +41,9 @@ GitHub Trending 每天都在变，但开发者很难持续跟进。本项目通�
   `generate_report` 是子工作流：
   `prepare_report_batches → Send(analyze_report_batch × N) → organize_report → generate_overview → render_report`。
   批次节点只提炼内容，全局节点依据统一分类指南完成合并和分类；指南中的分类仅作为命名和粒度示例，并非固定枚举，遇到不适合的项目或清晰的新主题时允许生成新分类。导语节点由程序选定项目数最多的三个分类，再生成 Blog 卡片与周刊开头共用的 `overview`。
-- **LLM**：OpenAI 兼容的视觉模型（默认 `gpt-4o`，也可接 MiMo 等），经 `langchain-openai`。
+- **LLM**：OpenAI 兼容的对话模型（默认 `gpt-4o`，也可接 MiMo 等），经 `langchain-openai`；Actions 使用 `vars.OPENAI_MODEL`、`vars.OPENAI_BASE_URL` 与 `secrets.OPENAI_API_KEY` 注入环境变量。
 - **抓取**：`httpx` + `selectolax`（Trending 页）、GitHub REST API（README/主页）、`httpx` 下载 README 图片。
-- **图片相关性**：多模态模型，图片以 base64（data URL）传入，结合 README 文字上下文判定。
+- **图片相关性**：根据 README 顺序、alt、上下文、URL 关键词和图片尺寸确定性打分，不调用视觉模型。
 - **自动化**：GitHub Actions（cron + 手动触发）。
 
 ### 状态流转（WeeklyState）
@@ -52,7 +53,7 @@ repos          # crawler 产出的原始仓库列表
   ↓ enrich
 enriched       # 补全 README / homepage / topics / 图片候选
   ↓ filter_images
-enriched.relevant_images   # 下载到临时目录 + 多模态筛选后的图片（相对路径 assets/xxx）
+enriched.relevant_images   # 下载到临时目录 + 规则筛选后的图片（相对路径 assets/xxx）
 issue_number / date_str / tmp_assets_dir   # 期数、日期、候选图临时目录
   ↓ generate_report
 report_json    # 根节点含 overview；项目保留 description，并增加 summary / plain_explanation / tags

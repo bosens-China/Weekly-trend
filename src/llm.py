@@ -27,7 +27,7 @@ def get_llm(temperature: float = 0.3) -> ChatOpenAI:
 
     通过环境变量配置：
     - OPENAI_API_KEY : 必填
-    - OPENAI_MODEL   : 模型名，默认 gpt-4o（自带视觉能力）
+    - OPENAI_MODEL   : 模型名，默认 gpt-4o
     - OPENAI_BASE_URL: 可选，走代理/自建网关时设置
     """
     settings = get_llm_settings(temperature)
