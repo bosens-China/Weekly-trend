@@ -324,6 +324,56 @@ class GenerateReportTests(unittest.TestCase):
             ["acme/one", "acme/two", "acme/three"],
         )
 
+    def test_invalid_model_lists_keep_draft_fallbacks(self) -> None:
+        repos = [_repo("tool")]
+        batch = {
+            "batch_index": 0,
+            "items": [{"repo": "acme/tool", "part_index": 1, "topics": ["ai"]}],
+        }
+        for invalid in (None, 1, "invalid", {}):
+            with self.subTest(value=invalid):
+                result = report_workflow.normalize_batch_json({"items": invalid}, batch)
+                self.assertEqual(result["items"][0]["tags"], ["ai"])
+                for raw in (
+                    {"categories": invalid},
+                    {"categories": [{"name": "开发工具", "items": invalid}]},
+                ):
+                    report = generate_report._normalize_report_json(raw, repos)
+                    self.assertEqual(
+                        report["categories"][0]["items"][0]["repo"], "acme/tool"
+                    )
+
+    def test_non_object_json_is_rejected(self) -> None:
+        for text in ("null", "[]", '"text"', "1"):
+            with self.subTest(text=text), self.assertRaises(ValueError):
+                generate_report._parse_json_object(text)
+
+    def test_invalid_organize_output_is_not_cached(self) -> None:
+        model = _FakeModel()
+        with TemporaryDirectory() as temp_dir:
+            cache = LlmOutputCache(JsonCache("llm_outputs", directory=Path(temp_dir)))
+            state: report_workflow.ReportState = {"enriched": [_repo("tool")]}
+            with patch.object(
+                report_workflow,
+                "get_llm",
+                return_value=SimpleNamespace(
+                    invoke=lambda messages: SimpleNamespace(
+                        content='{"categories":null}'
+                    )
+                ),
+            ):
+                fallback = report_workflow.organize_report_node(state, cache)
+            self.assertEqual(
+                fallback["report_json"]["categories"][0]["name"], "其他项目"
+            )
+            self.assertFalse((Path(temp_dir) / "llm_outputs.json").exists())
+
+            with patch.object(report_workflow, "get_llm", return_value=model):
+                result = report_workflow.organize_report_node(state, cache)
+                cached_result = report_workflow.organize_report_node(state, cache)
+            self.assertEqual(model.call_count, 1)
+            self.assertEqual(result, cached_result)
+
 
 if __name__ == "__main__":
     unittest.main()

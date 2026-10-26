@@ -4,12 +4,34 @@ import json
 from typing import Literal, TypedDict, cast
 
 from cache import JsonCache, make_key
+from graph.reporting.common import LlmOutputParseError
 from llm import get_llm_settings
 
 CacheStage = Literal["analyze_project", "organize_report", "generate_overview"]
 
 # Prompt 已参与 key；此版本用于输出契约或缓存记录结构发生变化时强制整体失效。
 LLM_CACHE_SCHEMA_VERSION = "report-llm:v1"
+
+
+def _validate_output(output: dict, stage: CacheStage) -> None:
+    """缓存前后都检查容器结构，避免合法 JSON 中的 null 等值反复导致崩溃。"""
+    if stage == "generate_overview":
+        overview = output.get("overview")
+        if not isinstance(overview, str) or not overview.strip():
+            raise LlmOutputParseError("overview 必须是非空字符串")
+        return
+
+    field = "categories" if stage == "organize_report" else "items"
+    rows = output.get(field)
+    if not isinstance(rows, list) or any(not isinstance(row, dict) for row in rows):
+        raise LlmOutputParseError(f"{field} 必须是对象列表")
+    if stage == "organize_report":
+        for category in rows:
+            items = category.get("items")
+            if not isinstance(items, list) or any(
+                not isinstance(item, dict) for item in items
+            ):
+                raise LlmOutputParseError("分类 items 必须是对象列表")
 
 
 class CacheWrite(TypedDict):
@@ -64,7 +86,7 @@ def build_llm_cache_key(
 
 
 class LlmOutputCache:
-    """只保存解析成功的报告 LLM JSON 输出。"""
+    """只保存解析成功且结构有效的报告 LLM JSON 输出。"""
 
     def __init__(self, store: JsonCache | None = None):
         self._store = store or JsonCache("llm_outputs")
@@ -90,7 +112,12 @@ class LlmOutputCache:
             or not isinstance(record.get("output"), dict)
         ):
             return None
-        return cast(dict, record["output"])
+        output = cast(dict, record["output"])
+        try:
+            _validate_output(output, stage)
+        except LlmOutputParseError:
+            return None
+        return output
 
     def set(
         self,
@@ -118,6 +145,7 @@ class LlmOutputCache:
             return
         values: dict[str, dict] = {}
         for write in writes:
+            _validate_output(write["output"], write["stage"])
             settings = get_llm_settings(write["temperature"])
             key = build_llm_cache_key(
                 write["stage"],

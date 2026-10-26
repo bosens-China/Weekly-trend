@@ -7,6 +7,10 @@ from typing import List
 from graph.state import EnrichedRepo
 
 
+class LlmOutputParseError(ValueError):
+    """模型输出的语法或结构无效，交给报告节点兜底。"""
+
+
 def repo_key(repo: EnrichedRepo) -> str:
     owner, name = repo.get("owner", ""), repo.get("repo", "")
     key = f"{owner}/{name}" if owner and name else ""
@@ -25,7 +29,9 @@ def parse_json_object(text: str) -> dict:
         if not match:
             raise
         data = json.loads(match.group(0))
-    return data if isinstance(data, dict) else {}
+    if not isinstance(data, dict):
+        raise ValueError("模型输出必须是 JSON 对象")
+    return data
 
 
 def clean_text(value: object) -> str:

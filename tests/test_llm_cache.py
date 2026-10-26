@@ -12,18 +12,73 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from cache import JsonCache  # noqa: E402
+from graph.reporting.common import LlmOutputParseError  # noqa: E402
 from graph.reporting.llm_cache import (  # noqa: E402
+    LLM_CACHE_SCHEMA_VERSION,
     LlmOutputCache,
     build_llm_cache_key,
 )
 
 
 class LlmOutputCacheTests(unittest.TestCase):
+    def test_invalid_output_is_rejected_before_saving(self) -> None:
+        with TemporaryDirectory() as temp_dir:
+            store = JsonCache("llm_outputs", directory=Path(temp_dir))
+            cache = LlmOutputCache(store)
+            for output in (
+                {"categories": None},
+                {"categories": {}},
+                {"categories": [None]},
+                {"categories": [{"name": "工具", "items": None}]},
+                {"categories": [{"name": "工具", "items": [None]}]},
+            ):
+                with (
+                    self.subTest(output=output),
+                    self.assertRaises(LlmOutputParseError),
+                ):
+                    cache.set("organize_report", "system", "input", 0.2, output)
+            for overview in (None, [], "", " "):
+                with (
+                    self.subTest(overview=overview),
+                    self.assertRaises(LlmOutputParseError),
+                ):
+                    cache.set(
+                        "generate_overview",
+                        "system",
+                        "input",
+                        0.2,
+                        {"overview": overview},
+                    )
+            self.assertFalse(store.path.exists())
+
+    def test_existing_invalid_cache_is_ignored(self) -> None:
+        with TemporaryDirectory() as temp_dir:
+            store = JsonCache("llm_outputs", directory=Path(temp_dir))
+            key = build_llm_cache_key("organize_report", "system", "input", 0.2)
+            store.set_many_and_save(
+                {
+                    key: {
+                        "schema_version": LLM_CACHE_SCHEMA_VERSION,
+                        "stage": "organize_report",
+                        "output": {"categories": None},
+                    }
+                }
+            )
+            cache = LlmOutputCache(JsonCache("llm_outputs", directory=Path(temp_dir)))
+            self.assertIsNone(cache.get("organize_report", "system", "input", 0.2))
+            cache.set("organize_report", "system", "input", 0.2, {"categories": []})
+            self.assertEqual(
+                cache.get("organize_report", "system", "input", 0.2),
+                {"categories": []},
+            )
+
     def test_same_factors_hit_cache(self) -> None:
         with TemporaryDirectory() as temp_dir:
             store = JsonCache("llm_outputs", directory=Path(temp_dir))
             cache = LlmOutputCache(store)
-            output = {"items": [{"repo": "acme/tool"}]}
+            output = {
+                "categories": [{"name": "开发工具", "items": [{"repo": "acme/tool"}]}]
+            }
 
             cache.set("organize_report", "system", "input", 0.2, output)
 

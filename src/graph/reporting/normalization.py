@@ -11,7 +11,8 @@ from log import log
 def normalize_batch_json(raw: dict, batch: dict) -> dict:
     """按输入逐项对齐模型结果，确保并发批次不丢材料。"""
     returned: dict[tuple[str, int], dict] = {}
-    for item in raw.get("items", []):
+    raw_items = raw.get("items")
+    for item in raw_items if isinstance(raw_items, list) else []:
         if not isinstance(item, dict):
             continue
         key = (clean_text(item.get("repo")), clean_int(item.get("part_index"), 1))
@@ -140,12 +141,14 @@ def normalize_report_json(
     used: set[str] = set()
     categories: List[dict] = []
 
-    for category in raw.get("categories", []):
+    raw_categories = raw.get("categories")
+    for category in raw_categories if isinstance(raw_categories, list) else []:
         if not isinstance(category, dict):
             continue
         name = clean_text(category.get("name")) or "其他项目"
         items: List[dict] = []
-        for item in category.get("items", []):
+        raw_items = category.get("items")
+        for item in raw_items if isinstance(raw_items, list) else []:
             if not isinstance(item, dict):
                 continue
             key = clean_text(item.get("repo"))

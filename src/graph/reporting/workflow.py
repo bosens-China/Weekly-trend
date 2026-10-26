@@ -17,7 +17,7 @@ from graph.reporting.batching import (
     pack_report_units,
     report_concurrency,
 )
-from graph.reporting.common import count_items, parse_json_object
+from graph.reporting.common import LlmOutputParseError, count_items, parse_json_object
 from graph.reporting.llm_cache import (
     CacheStage,
     LlmOutputCache,
@@ -50,10 +50,6 @@ class ReportState(TypedDict, total=False):
     report_md: str
 
 
-class LlmOutputParseError(ValueError):
-    """LLM 返回内容不是预期 JSON；与可重试的网络错误区分。"""
-
-
 ANALYZE_USER_TEMPLATE = "本批共 {count} 条材料：\n{items}"
 
 
@@ -64,7 +60,7 @@ def _invoke_json(
     user_content: str,
     temperature: float = 0.2,
 ) -> dict:
-    """优先读取缓存；未命中时调用模型，并只缓存解析成功的 JSON。"""
+    """优先读取有效缓存；未命中时调用模型，缓存层校验结构后才写入。"""
     cached = llm_cache.get(stage, system_prompt, user_content, temperature)
     if cached is not None:
         log("generate_report", f"{stage} 命中 LLM 输出缓存", "ok")
