@@ -1,6 +1,6 @@
 # 📰 GitHub 一周热点周刊
 
-> 每周自动抓取 [GitHub Trending（本周）](https://github.com/trending?since=weekly)，借助 LLM 整理成一份分类、带图的**中文周刊**。
+> 每周整理 [GitHub Trending（本周）](https://github.com/trending?since=weekly)，输出一份分类、带图的**中文周刊**。
 
 [![Weekly Report](https://github.com/bosens-China/Weekly-trend/actions/workflows/weekly.yml/badge.svg)](https://github.com/bosens-China/Weekly-trend/actions/workflows/weekly.yml)
 [![RSS](https://img.shields.io/badge/RSS-订阅-orange?logo=rss)](https://raw.githubusercontent.com/bosens-China/Weekly-trend/master/feed.xml)
@@ -8,9 +8,9 @@
 
 ## 🧐 这是什么
 
-一条全自动的「GitHub Trending → 中文周刊」流水线：抓取本周热门仓库，补全 README、配图与项目信息，再由 LLM 按主题分类、生成中文正文，每周归档为「第 N 期」。
+每周由 ChatGPT 整理 GitHub Trending 热门仓库，参考项目 README 介绍项目用途，按主题分类并附项目配图，每周归档为「第 N 期」。
 
-每期周刊在 `reports/YYYY_MM_DD/README.md`，配图在同目录 `assets/`。
+每期周刊在 `reports/YYYY_MM_DD/README.md`，对应的结构化数据在同目录 `report.json`。配图使用项目仓库中的图片。
 
 ## 📰 往期周刊
 
@@ -42,7 +42,7 @@
 
 ## 📡 订阅（RSS）
 
-把下面的地址加进 RSS 阅读器，每出一期都会推送：
+历史周刊的 RSS 地址如下；新的周刊暂不自动更新此订阅源：
 
 ```
 https://raw.githubusercontent.com/bosens-China/Weekly-trend/master/feed.xml
@@ -50,7 +50,7 @@ https://raw.githubusercontent.com/bosens-China/Weekly-trend/master/feed.xml
 
 ## 开发与提交
 
-Actions 配置：在仓库 **Settings → Secrets and variables → Actions** 中，将 `OPENAI_API_KEY` 放在 **Secrets**，将 `OPENAI_MODEL` 和 `OPENAI_BASE_URL` 放在 **Variables → Repository variables**。工作流把这些值注入同名环境变量；本地运行继续使用 `.env`。
+原有 GitHub Actions 自动抓取已关闭，仅保留手动运行。手动运行沿用原有生成流程和格式。\n\nActions 配置：在仓库 **Settings → Secrets and variables → Actions** 中，将 `OPENAI_API_KEY` 放在 **Secrets**，将 `OPENAI_MODEL` 和 `OPENAI_BASE_URL` 放在 **Variables → Repository variables**。工作流把这些值注入同名环境变量；本地运行继续使用 `.env`。
 
 生成失败时，工作流仍会提交已完成批次的有效 LLM 缓存，供下次运行复用；周刊、期数台账、往期列表和 RSS 仅在生成步骤成功后提交。失败状态仍会保留，手动取消的运行不执行提交。
 
