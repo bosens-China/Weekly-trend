@@ -42,7 +42,7 @@
 
 ## 📡 订阅（RSS）
 
-历史周刊的 RSS 地址如下；新的周刊暂不自动更新此订阅源：
+将下面的地址添加到 RSS 阅读器，即可订阅周刊：
 
 ```
 https://raw.githubusercontent.com/bosens-China/Weekly-trend/master/feed.xml
