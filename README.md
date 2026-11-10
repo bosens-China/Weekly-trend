@@ -48,20 +48,6 @@
 https://raw.githubusercontent.com/bosens-China/Weekly-trend/master/feed.xml
 ```
 
-## 开发与提交
-
-原有 GitHub Actions 自动抓取已关闭，仅保留手动运行。手动运行沿用原有生成流程和格式。\n\nActions 配置：在仓库 **Settings → Secrets and variables → Actions** 中，将 `OPENAI_API_KEY` 放在 **Secrets**，将 `OPENAI_MODEL` 和 `OPENAI_BASE_URL` 放在 **Variables → Repository variables**。工作流把这些值注入同名环境变量；本地运行继续使用 `.env`。
-
-生成失败时，工作流仍会提交已完成批次的有效 LLM 缓存，供下次运行复用；周刊、期数台账、往期列表和 RSS 仅在生成步骤成功后提交。失败状态仍会保留，手动取消的运行不执行提交。
-
-首次拉取仓库后执行 `pnpm install --frozen-lockfile`。安装过程会启用 Husky 的 Git 钩子；每次提交前，钩子会仅格式化并检查已暂存的 Python 文件，格式化结果会自动加入本次提交。
-
-需要手动格式化整个仓库时，运行 `pnpm format`；运行 Ruff 静态检查使用 `pnpm lint`；运行 Python 类型检查使用 `pnpm typecheck`。本地开发需要 Git、Node.js 22.22.1 或更高版本、pnpm，以及 uv。
-
-需要验证真实抓取与 LLM 报告链路时，配置 `.env` 后运行 `uv run python scripts/smoke_single.py`。该脚本只处理一个仓库并打印结果，不会写入正式周刊。
-
-> Git 的 `post-commit` 钩子无法修改已经创建的提交，因此这里使用 `pre-commit` 钩子，以确保提交中的代码本身已格式化。
-
 ## License
 
 [MIT](./LICENSE) © 2026 yliu
