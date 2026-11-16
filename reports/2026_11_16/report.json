@@ -1,0 +1,243 @@
+{
+  "version": 2,
+  "source": "GitHub Trending（本周）",
+  "categories": [
+    {
+      "name": "前端与设计系统",
+      "items": [
+        {
+          "repo": "meta/astryx",
+          "url": "https://github.com/meta/astryx",
+          "description": "",
+          "language": "TypeScript",
+          "total_stars": "28,876",
+          "period_stars": "13,501 stars this week",
+          "homepage": "",
+          "topics": [],
+          "image": "https://lookaside.facebook.com/assets/astryx/Astryx-Banner.png",
+          "summary": "Meta 开源的 React 设计系统，提供组件、主题、深色模式和命令行工具。组件与文档也面向 AI Agent 设计，支持通过主题和 CSS 自定义界面。",
+          "plain_explanation": "",
+          "tags": [
+            "AI Agent",
+            "React",
+            "设计系统"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Agent Skills 与开发流程",
+      "items": [
+        {
+          "repo": "anthropics/skills",
+          "url": "https://github.com/anthropics/skills",
+          "description": "",
+          "language": "Python",
+          "total_stars": "195,371",
+          "period_stars": "6,077 stars this week",
+          "homepage": "",
+          "topics": [],
+          "image": "",
+          "summary": "Anthropic 的 Skills 示例集合，展示如何将说明、脚本和资源组织为可按需加载的技能，覆盖文档处理、设计、网页测试和 MCP 服务开发等任务。",
+          "plain_explanation": "",
+          "tags": [
+            "Agent Skills",
+            "Claude",
+            "工作流"
+          ]
+        },
+        {
+          "repo": "google/elephant-goldfish-model",
+          "url": "https://github.com/google/elephant-goldfish-model",
+          "description": "",
+          "language": "Python",
+          "total_stars": "19,782",
+          "period_stars": "5,060 stars this week",
+          "homepage": "",
+          "topics": [],
+          "image": "",
+          "summary": "一个辅助软件设计与文档评审的 Agent 插件：持有项目上下文的 Agent 起草方案，再由独立上下文的审查者检查文档和引用的代码，帮助发现遗漏与假设。",
+          "plain_explanation": "",
+          "tags": [
+            "Agent Skills",
+            "软件设计",
+            "设计评审"
+          ]
+        },
+        {
+          "repo": "addyosmani/agent-skills",
+          "url": "https://github.com/addyosmani/agent-skills",
+          "description": "",
+          "language": "JavaScript",
+          "total_stars": "117,950",
+          "period_stars": "3,889 stars this week",
+          "homepage": "",
+          "topics": [],
+          "image": "https://addyosmani.com/assets/images/addys-agent-skills.jpg",
+          "summary": "一套面向 AI 编程 Agent 的工程技能，将需求、计划、实现、测试、代码审查和发布等开发流程整理成可调用的技能与命令。",
+          "plain_explanation": "",
+          "tags": [
+            "Agent Skills",
+            "AI 编程",
+            "工程实践"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "信息检索",
+      "items": [
+        {
+          "repo": "sherlock-project/sherlock",
+          "url": "https://github.com/sherlock-project/sherlock",
+          "description": "",
+          "language": "Python",
+          "total_stars": "112,493",
+          "period_stars": "10,412 stars this week",
+          "homepage": "",
+          "topics": [],
+          "image": "",
+          "summary": "通过用户名查询多个社交网站上的同名账号，帮助整理账号可能存在的位置；查询结果仍需人工核实。",
+          "plain_explanation": "",
+          "tags": [
+            "用户名搜索",
+            "开源情报",
+            "CLI"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Agent 协作与审查",
+      "items": [
+        {
+          "repo": "backnotprop/plannotator",
+          "url": "https://github.com/backnotprop/plannotator",
+          "description": "",
+          "language": "TypeScript",
+          "total_stars": "11,847",
+          "period_stars": "1,719 stars this week",
+          "homepage": "",
+          "topics": [],
+          "image": "https://raw.githubusercontent.com/backnotprop/plannotator/main/.github/assets/annotate.webp",
+          "summary": "为编程 Agent 提供基于浏览器的审查界面，可以对计划、文档和 HTML 制品添加批注，审查代码差异，再把反馈交回 Agent。",
+          "plain_explanation": "",
+          "tags": [
+            "AI 编程",
+            "代码审查",
+            "协作"
+          ]
+        },
+        {
+          "repo": "milind-soni/OpenMausBot",
+          "url": "https://github.com/milind-soni/OpenMausBot",
+          "description": "",
+          "language": "TypeScript",
+          "total_stars": "23,420",
+          "period_stars": "5,463 stars this week",
+          "homepage": "",
+          "topics": [],
+          "image": "",
+          "summary": "一个本地优先的聊天式 Agent 工作台，可在同一界面管理多个机器人。各机器人可以使用不同身份、模型和连接的应用，底层可运行 Claude 或 Codex。",
+          "plain_explanation": "",
+          "tags": [
+            "AI Agent",
+            "多 Agent",
+            "桌面应用"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "浏览器自动化",
+      "items": [
+        {
+          "repo": "vercel-labs/agent-browser",
+          "url": "https://github.com/vercel-labs/agent-browser",
+          "description": "",
+          "language": "Rust",
+          "total_stars": "51,631",
+          "period_stars": "4,217 stars this week",
+          "homepage": "",
+          "topics": [],
+          "image": "",
+          "summary": "为 AI Agent 提供浏览器操作能力的命令行工具。它将页面转换为带元素引用的无障碍树，供 Agent 读取、点击和输入，并在操作后再次检查页面。",
+          "plain_explanation": "",
+          "tags": [
+            "浏览器自动化",
+            "AI Agent",
+            "CLI"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "金融与个人理财",
+      "items": [
+        {
+          "repo": "ZhuLinsen/daily_stock_analysis",
+          "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+          "description": "",
+          "language": "Python",
+          "total_stars": "72,511",
+          "period_stars": "4,548 stars this week",
+          "homepage": "",
+          "topics": [],
+          "image": "",
+          "summary": "基于大模型的多市场自选股分析系统，整合行情与新闻，生成分析看板，并支持将结果推送到聊天应用或邮箱。",
+          "plain_explanation": "",
+          "tags": [
+            "股票分析",
+            "大模型",
+            "数据看板"
+          ]
+        },
+        {
+          "repo": "we-promise/sure",
+          "url": "https://github.com/we-promise/sure",
+          "description": "",
+          "language": "Ruby",
+          "total_stars": "15,719",
+          "period_stars": "4,556 stars this week",
+          "homepage": "",
+          "topics": [],
+          "image": "https://raw.githubusercontent.com/we-promise/sure/main/docs/screenshots/dashboard-light.webp",
+          "summary": "一个开源个人理财应用，展示现金流、净资产和支出等信息，并提供 AI 助手。项目是 Maybe Finance 的社区分支。",
+          "plain_explanation": "",
+          "tags": [
+            "个人理财",
+            "资产管理",
+            "自托管"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "物理模拟",
+      "items": [
+        {
+          "repo": "google-deepmind/mujoco",
+          "url": "https://github.com/google-deepmind/mujoco",
+          "description": "",
+          "language": "C++",
+          "total_stars": "18,074",
+          "period_stars": "1,922 stars this week",
+          "homepage": "",
+          "topics": [],
+          "image": "https://raw.githubusercontent.com/google-deepmind/mujoco/main/banner.png",
+          "summary": "通用物理引擎，模拟多关节结构与环境之间的接触和动力学，常用于机器人、机器学习、动画和生物力学研究。它提供 C API、Python 接口和可视化工具。",
+          "plain_explanation": "",
+          "tags": [
+            "物理引擎",
+            "机器人",
+            "仿真"
+          ]
+        }
+      ]
+    }
+  ],
+  "overview": "本期收录 GitHub Trending 周榜上的 11 个项目，涵盖设计系统、Agent 工具、理财、信息检索和物理模拟等。",
+  "issue": 22,
+  "date": "2026_11_16",
+  "generated_at": "2026-11-16T09:14:47.154+08:00"
+}
